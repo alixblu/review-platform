@@ -33,7 +33,7 @@ public class Product {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 20)
-    private Category category;
+    private CategoryEnum categoryEnum;
 
     @Column(columnDefinition = "TEXT")
     private String ingredients;
@@ -41,17 +41,17 @@ public class Product {
     @Column(columnDefinition = "TEXT")
     private String description;
 
-    @ElementCollection(targetClass = ConcernTypeEnum.class)
-    @Enumerated(EnumType.STRING)
+//    @Enumerated(EnumType.STRING)
+    @ElementCollection
     @CollectionTable(name = "product_concern", joinColumns = @JoinColumn(name = "product_id"))
     @Column(name = "concern_type")
-    private List<ConcernTypeEnum> concernTypes;
+    private List<String> concernTypesEnum;
 
-    @ElementCollection(targetClass = SkinTypeEnum.class)
-    @Enumerated(EnumType.STRING)
+//    @Enumerated(EnumType.STRING)
+    @ElementCollection
     @CollectionTable(name = "product_skintype", joinColumns = @JoinColumn(name = "product_id"))
     @Column(name = "skin_type")
-    private List<SkinTypeEnum> skinTypes;
+    private List<String> skinTypesEnum;
 
     @Column(columnDefinition = "TEXT")
     private String imageUrl;
@@ -60,9 +60,11 @@ public class Product {
     @Column(nullable = false)
     private long price;
 
-    @Column(columnDefinition = "FLOAT DEFAULT 0.0", nullable = false)
-    private Float rating;
+    @Builder.Default
+    @Column(nullable = false, columnDefinition = "FLOAT DEFAULT 0.0")
+    private Float rating = 0.0f;
 
+    @Builder.Default
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 20)
     private Status status = Status.ACTIVE;

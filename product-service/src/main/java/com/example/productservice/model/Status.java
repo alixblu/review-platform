@@ -1,6 +1,5 @@
 package com.example.productservice.model;
 
-
 import lombok.Getter;
 
 @Getter

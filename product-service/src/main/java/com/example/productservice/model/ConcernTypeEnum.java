@@ -20,10 +20,10 @@ public enum ConcernTypeEnum {
         this.value = value;
     }
 
-    public static ConcernTypeEnum fromValue(String value) {
+    public static String validateEnum(String value) {
         for (ConcernTypeEnum type : ConcernTypeEnum.values()) {
-            if (type.value.equalsIgnoreCase(value)) {
-                return type;
+            if (type.value.equalsIgnoreCase(value) || type.name().equalsIgnoreCase(value)) {
+                return type.name();
             }
         }
         throw new IllegalArgumentException("Unknown concern type: " + value);

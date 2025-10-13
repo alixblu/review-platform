@@ -3,7 +3,7 @@ package com.example.productservice.model;
 import lombok.Getter;
 
 @Getter
-public enum Category {
+public enum CategoryEnum {
     CLEANSER("cleanser"),
     MOISTURIZER("moisturizer"),
     TONER("toner"),
@@ -16,12 +16,12 @@ public enum Category {
 
     private final String value;
 
-    Category(String value) {
+    CategoryEnum(String value) {
         this.value = value;
     }
 
-    public static String fromString(String input) {
-        for (Category c : values()) {
+    public static String validateEnum(String input) {
+        for (CategoryEnum c : values()) {
             if (c.name().equalsIgnoreCase(input) || c.value.equalsIgnoreCase(input)) {
                 return c.name();
             }

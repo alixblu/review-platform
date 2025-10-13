@@ -1,7 +1,5 @@
 package com.example.productservice.repository;
 
-import com.example.productservice.model.Category;
-import com.example.productservice.model.Status;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import com.example.productservice.model.Product;

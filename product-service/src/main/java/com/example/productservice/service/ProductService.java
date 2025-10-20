@@ -13,7 +13,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.util.Arrays;
 import java.util.List;
 
 @Slf4j
@@ -59,8 +58,8 @@ public class ProductService {
                 .name(request.name())
                 .categoryEnum(CategoryEnum.valueOf(category))
                 .ingredients(request.ingredients())
-                .skinTypesEnum(request.skinTypeEnum())
-                .concernTypesEnum(request.concernTypeEnum())
+                .skinTypesEnum(skinTypeEnumList)
+                .concernTypesEnum(concernTypeEnumList)
                 .description(request.description())
                 .imageUrl(request.imageUrl())
                 .price(request.price())

@@ -1,0 +1,19 @@
+package com.example.postservice.dto;
+
+import com.example.postservice.model.Post;
+import com.pgvector.PGvector;
+
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.UUID;
+
+public record PostResponse(
+        Long id,
+        UUID userId,
+        UUID productId,
+        String content,
+        Post.Status status,
+        LocalDateTime createAt,
+        List<String> mediaUrls,
+        PGvector embedding
+) {}

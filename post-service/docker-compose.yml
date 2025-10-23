@@ -1,0 +1,13 @@
+services:
+  postgres-post:
+    image: ankane/pgvector
+    container_name: postgres_post
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_DB: post-service
+    ports:
+      - "5433:5432"  # ⚠️ Different external port to avoid conflict with product-db (5432)
+    volumes:
+      - ./data/post:/var/lib/postgresql/data
+      - ./docker/postgres/init.sql:/docker-entrypoint-initdb.d/init.sql

@@ -1,12 +1,13 @@
 services:
-  postgres:
+  postgres-product:
     image: postgres:17
-    container_name: postgres_db
+    container_name: postgres_product
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: reviewplatform
+      POSTGRES_PASSWORD: 12345
       POSTGRES_DB: product-service
     ports:
       - "5432:5432"
     volumes:
-      - ./data:/var/lib/postgresql/data
+      - ./data/product:/var/lib/postgresql/data
+

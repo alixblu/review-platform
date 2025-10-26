@@ -1,5 +1,6 @@
 package com.example.productservice.dto.product;
 
+import com.example.productservice.model.CategoryEnum;
 import com.example.productservice.model.ConcernTypeEnum;
 import com.example.productservice.model.SkinTypeEnum;
 import jakarta.validation.constraints.NotEmpty;
@@ -14,8 +15,8 @@ public record ProductCreationRequest(
         @Size(max = 100, message = "Product name must not exceed 100 characters")
         String name,
 
-        @NotEmpty(message = "Category must not be empty")
-        String categoryEnum,
+        @NotNull(message = "Category must be provided")
+        CategoryEnum categoryEnum,
 
         @NotEmpty(message = "Ingredients must not be empty")
         String ingredients,

@@ -41,22 +41,22 @@ public class Product {
     @Column(columnDefinition = "TEXT")
     private String description;
 
-//    @Enumerated(EnumType.STRING)
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER)
+    @Enumerated(EnumType.STRING)
     @CollectionTable(name = "product_concern", joinColumns = @JoinColumn(name = "product_id"))
     @Column(name = "concern_type")
-    private List<String> concernTypesEnum;
+    private List<ConcernTypeEnum> concernTypeEnum;
 
-//    @Enumerated(EnumType.STRING)
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER)
+    @Enumerated(EnumType.STRING)
     @CollectionTable(name = "product_skintype", joinColumns = @JoinColumn(name = "product_id"))
     @Column(name = "skin_type")
-    private List<String> skinTypesEnum;
+    private List<SkinTypeEnum> skinTypeEnum;
+
 
     @Column(columnDefinition = "TEXT")
     private String imageUrl;
 
-    @Min(1000)
     @Column(nullable = false)
     private long price;
 

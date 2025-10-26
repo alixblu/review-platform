@@ -1,5 +1,7 @@
 package com.example.productservice.model;
 
+import com.example.productservice.exception.AppException;
+import com.example.productservice.exception.ErrorCode;
 import lombok.Getter;
 
 @Getter
@@ -20,13 +22,12 @@ public enum CategoryEnum {
         this.value = value;
     }
 
-    public static String validateEnum(String input) {
-        for (CategoryEnum c : values()) {
-            if (c.name().equalsIgnoreCase(input) || c.value.equalsIgnoreCase(input)) {
-                return c.name();
-            }
+    public static CategoryEnum check(String value) {
+        try {
+            return CategoryEnum.valueOf(value.toUpperCase());
+        } catch (Exception e) {
+            throw new AppException(ErrorCode.INVALID_INPUT, "Invalid Category Value");
         }
-        throw new IllegalArgumentException("Invalid category: " + input);
     }
 }
 

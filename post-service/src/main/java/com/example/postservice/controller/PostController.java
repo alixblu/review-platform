@@ -1,11 +1,10 @@
 package com.example.postservice.controller;
 
-import com.example.postservice.dto.PostRequest;
-import com.example.postservice.dto.PostResponse;
+import com.example.postservice.dto.post.PostCreationRequest;
+import com.example.postservice.dto.post.PostResponse;
 import com.example.postservice.service.PostService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -17,8 +16,9 @@ public class PostController {
 
     // 🟢 Create new post
     @PostMapping
-    public ResponseEntity<PostResponse> createPost(@RequestBody PostRequest postRequest) {
-        PostResponse postResponse = postService.createPost(postRequest);
-        return ResponseEntity.status(HttpStatus.CREATED).body(postResponse);
+    @ResponseStatus(HttpStatus.CREATED)
+    public PostResponse createPost(@RequestBody PostCreationRequest postCreationRequest) {
+        return postService.createPost(postCreationRequest);
+
     }
 }

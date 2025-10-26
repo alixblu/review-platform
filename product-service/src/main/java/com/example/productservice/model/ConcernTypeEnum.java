@@ -1,5 +1,7 @@
 package com.example.productservice.model;
 
+import com.example.productservice.exception.AppException;
+import com.example.productservice.exception.ErrorCode;
 import lombok.Getter;
 
 @Getter
@@ -20,13 +22,12 @@ public enum ConcernTypeEnum {
         this.value = value;
     }
 
-    public static String validateEnum(String value) {
-        for (ConcernTypeEnum type : ConcernTypeEnum.values()) {
-            if (type.value.equalsIgnoreCase(value) || type.name().equalsIgnoreCase(value)) {
-                return type.name();
-            }
+    public static ConcernTypeEnum check(String value) {
+        try {
+            return ConcernTypeEnum.valueOf(value.toUpperCase());
+        } catch (Exception e) {
+            throw new AppException(ErrorCode.INVALID_INPUT, "Invalid ConcernTypeEnum value");
         }
-        throw new IllegalArgumentException("Unknown concern type: " + value);
     }
 
     @Override

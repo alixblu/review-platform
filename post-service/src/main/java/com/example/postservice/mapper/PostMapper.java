@@ -1,34 +1,17 @@
 package com.example.postservice.mapper;
 
-import com.example.postservice.dto.PostRequest;
-import com.example.postservice.dto.PostResponse;
+import com.example.postservice.dto.post.PostCreationRequest;
+import com.example.postservice.dto.post.PostResponse;
 import com.example.postservice.model.Post;
+import org.mapstruct.Mapper;
+import org.mapstruct.factory.Mappers;
 
-import java.util.stream.Collectors;
+@Mapper(componentModel = "spring")
+public interface PostMapper {
 
-public class PostMapper {
-    public static PostResponse toDTO(Post post) {
-        return new PostResponse(
-                post.getId(),
-                post.getUserId(),
-                post.getProductId(),
-                post.getContent(),
-                post.getStatus(),
-                post.getCreateAt(),
-                post.getMediaList() != null
-                        ? post.getMediaList().stream().toList()
-                        : null,
-                post.getEmbedding()
-        );
-    }
+    PostMapper INSTANCE = Mappers.getMapper(PostMapper.class);
 
-    public static PostRequest toDto(Post post) {
-        return new PostRequest(
-                post.getUserId(),
-                post.getProductId(),
-                post.getContent(),
-                post.getMediaList(),
-                post.getEmbedding()
-        );
-    }
+    PostResponse toResponse(Post post);
+
+    Post toModel(PostCreationRequest postCreationRequest);
 }

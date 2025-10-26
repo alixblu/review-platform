@@ -1,7 +1,10 @@
 package com.example.productservice.service;
 
-import com.example.productservice.dto.ProductRequest;
-import com.example.productservice.dto.ProductResponse;
+import com.example.productservice.dto.product.ProductCreationRequest;
+import com.example.productservice.dto.product.ProductResponse;
+import com.example.productservice.exception.AppException;
+import com.example.productservice.exception.ErrorCode;
+import com.example.productservice.mapper.ProductMapper;
 import com.example.productservice.model.CategoryEnum;
 import com.example.productservice.model.ConcernTypeEnum;
 import com.example.productservice.model.Product;
@@ -9,9 +12,7 @@ import com.example.productservice.model.SkinTypeEnum;
 import com.example.productservice.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -19,84 +20,30 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class ProductService {
+
     private final ProductRepository productRepository;
-    public ProductResponse createProduct(ProductRequest request)
-    {
-        String category;
-        try {
-            category = CategoryEnum.validateEnum(request.categoryEnum());
-        } catch (IllegalArgumentException e) {
-            throw new ResponseStatusException(
-                    HttpStatus.BAD_REQUEST,
-                    "Invalid category: " + request.categoryEnum()
-            );
-        }
-        List<String> skinTypeEnumList;
-        try {
-            skinTypeEnumList = request.skinTypeEnum().stream()
-                    .map(SkinTypeEnum::validateEnum)
-                    .toList();
-        } catch (IllegalArgumentException e) {
-            throw new ResponseStatusException(
-                    HttpStatus.BAD_REQUEST,
-                    "Invalid skin type: " + e.getMessage()
-            );
-        }
-        List<String> concernTypeEnumList;
-        try {
-            concernTypeEnumList = request.concernTypeEnum().stream()
-                    .map(ConcernTypeEnum::validateEnum)
-                    .toList();
-        } catch (IllegalArgumentException e) {
-            throw new ResponseStatusException(
-                    HttpStatus.BAD_REQUEST,
-                    "Invalid skin type: " + e.getMessage()
-            );
+    private final ProductMapper productMapper;
+
+    public ProductResponse createProduct(ProductCreationRequest request) {
+        if (productRepository.existsByName(request.name())) {
+            throw new AppException(ErrorCode.EXISTED, "Product already exists");
         }
 
-        Product product = Product.builder()
-                .name(request.name())
-                .categoryEnum(CategoryEnum.valueOf(category))
-                .ingredients(request.ingredients())
-                .skinTypesEnum(skinTypeEnumList)
-                .concernTypesEnum(concernTypeEnumList)
-                .description(request.description())
-                .imageUrl(request.imageUrl())
-                .price(request.price())
-                .build();
+        // Use mapper to convert request → model
+        Product product = productMapper.toModel(request);
+
         productRepository.save(product);
         log.info("Create product successfully");
-        return new ProductResponse(
-                product.getId(),
-                product.getName(),
-                product.getBrand(),
-                product.getCategoryEnum(),
-                product.getIngredients(),
-                product.getSkinTypesEnum(),
-                product.getConcernTypesEnum(),
-                product.getDescription(),
-                product.getImageUrl(),
-                product.getPrice(),
-                product.getRating(),
-                product.getStatus());
+
+        // Map model → response
+        return productMapper.toResponse(product);
     }
 
-    public List<ProductResponse> getAllProducts()
-    {
-        return productRepository.findAll()
-                .stream().map(product -> new ProductResponse(
-                        product.getId(),
-                        product.getName(),
-                        product.getBrand(),
-                        product.getCategoryEnum(),
-                        product.getIngredients(),
-                        product.getSkinTypesEnum(),
-                        product.getConcernTypesEnum(),
-                        product.getDescription(),
-                        product.getImageUrl(),
-                        product.getPrice(),
-                        product.getRating(),
-                        product.getStatus())
-                ).toList();
+    public List<ProductResponse> getAllProducts() {
+        List<Product> products = productRepository.findAll();
+        return products
+                .stream()
+                .map(productMapper::toResponse)
+                .toList();
     }
 }

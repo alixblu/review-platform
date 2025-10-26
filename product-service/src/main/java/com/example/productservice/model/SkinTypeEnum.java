@@ -1,5 +1,7 @@
 package com.example.productservice.model;
 
+import com.example.productservice.exception.AppException;
+import com.example.productservice.exception.ErrorCode;
 import lombok.Getter;
 
 @Getter
@@ -15,14 +17,12 @@ public enum SkinTypeEnum {
         this.value = value;
     }
 
-    //validate enum and cast to name
-    public static String validateEnum(String value) {
-        for (SkinTypeEnum type : values()) {
-            if (type.value.equalsIgnoreCase(value) || type.name().equalsIgnoreCase(value)) {
-                return type.name();
-            }
+    public static SkinTypeEnum check(String value) {
+        try {
+            return SkinTypeEnum.valueOf(value.toUpperCase());
+        } catch (Exception e) {
+            throw new AppException(ErrorCode.INVALID_INPUT, "Invalid SkinTypeEnum value");
         }
-        throw new IllegalArgumentException("Unknown concern type: " + value);
     }
 
     @Override

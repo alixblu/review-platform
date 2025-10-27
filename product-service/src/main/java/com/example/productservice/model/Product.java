@@ -19,7 +19,7 @@ import java.util.UUID;
 public class Product {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
     @Column(columnDefinition = "uuid", updatable = false, nullable = false)
     private UUID id;
@@ -27,9 +27,8 @@ public class Product {
     @Column(nullable = false, length = 255)
     private String name;
 
-//    @Column(nullable = false, columnDefinition = "uuid")
-    @Column(nullable = true, columnDefinition = "uuid")
-    private UUID brand; // External reference, not enforced
+    @Column(nullable = false, columnDefinition = "uuid")
+    private UUID brand_id; // External reference, not enforced
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 20)

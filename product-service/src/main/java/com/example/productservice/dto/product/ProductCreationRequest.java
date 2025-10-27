@@ -9,6 +9,7 @@ import jakarta.validation.constraints.Size;
 import jakarta.validation.constraints.Min;
 
 import java.util.List;
+import java.util.UUID;
 
 public record ProductCreationRequest(
         @NotEmpty(message = "Product name must not be empty")
@@ -17,6 +18,9 @@ public record ProductCreationRequest(
 
         @NotNull(message = "Category must be provided")
         CategoryEnum categoryEnum,
+
+        @NotNull(message = "Empty brand ID")
+        UUID brand_id,
 
         @NotEmpty(message = "Ingredients must not be empty")
         String ingredients,

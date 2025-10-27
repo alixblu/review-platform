@@ -39,12 +39,12 @@
         private LocalDateTime createAt = LocalDateTime.now();
 
         @Enumerated(EnumType.STRING)
-        private Status status = Status.ACTIVE;
+        private Status status = Status.PUBLIC;
 
         @Column(columnDefinition = "vector(1536)")
         private PGvector embedding;
 
         public enum Status {
-            ACTIVE, INACTIVE, DELETED
+            PUBLIC, HIDDEN
         }
     }

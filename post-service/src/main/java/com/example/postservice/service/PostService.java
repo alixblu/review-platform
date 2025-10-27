@@ -19,14 +19,7 @@ public class PostService {
     private final PostMapper postMapper;
 
     public PostResponse createPost(PostCreationRequest postCreationRequest) {
-        Post post = Post.builder()
-                .content(postCreationRequest.content())
-                .productId(postCreationRequest.productId())
-                .userId(postCreationRequest.userId())
-                .mediaList(postCreationRequest.mediaList())
-                .status(Post.Status.ACTIVE)
-                .createAt(LocalDateTime.now())
-                .build();
+        Post post = postMapper.toModel(postCreationRequest);
         postRepository.save(post);
         log.info("Post created");
         return postMapper.toResponse(post);//this func return postresponse

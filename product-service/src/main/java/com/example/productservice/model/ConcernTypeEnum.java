@@ -22,13 +22,7 @@ public enum ConcernTypeEnum {
         this.value = value;
     }
 
-    public static ConcernTypeEnum check(String value) {
-        try {
-            return ConcernTypeEnum.valueOf(value.toUpperCase());
-        } catch (Exception e) {
-            throw new AppException(ErrorCode.INVALID_INPUT, "Invalid ConcernTypeEnum value");
-        }
-    }
+
 
     @Override
     public String toString() {

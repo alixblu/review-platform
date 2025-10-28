@@ -1,9 +1,9 @@
     package com.example.postservice.model;
 
-    import com.pgvector.PGvector;
     import jakarta.persistence.*;
+    import jakarta.validation.constraints.Null;
     import lombok.*;
-
+    import com.pgvector.PGvector;
     import java.time.LocalDateTime;
     import java.util.List;
     import java.util.UUID;
@@ -15,6 +15,7 @@
     @AllArgsConstructor
     @Builder
     @Getter
+
     public class Post {
 
         @Id
@@ -25,26 +26,27 @@
         private String content;
 
         @Column(name = "product_id")
-        private UUID productId; // Foreign key to Product service
+        private UUID productId;
 
         @Column(name = "user_id", nullable = false)
-        private UUID userId; // Foreign key to User service
+        private UUID userId;
 
         @ElementCollection
         @CollectionTable(name = "post_media", joinColumns = @JoinColumn(name = "post_id"))
         @Column(name = "url")
         private List<String> mediaList;
 
-        @Column(name = "create_at", nullable = false)
-        private LocalDateTime createAt = LocalDateTime.now();
+        @Column(name = "create_at", nullable = false, updatable = false)
+        private LocalDateTime createAt;
 
         @Enumerated(EnumType.STRING)
         private Status status = Status.PUBLIC;
 
-        @Column(columnDefinition = "vector(1536)")
-        private PGvector embedding;
+        public enum Status { PUBLIC, HIDDEN }
 
-        public enum Status {
-            PUBLIC, HIDDEN
+        @PrePersist
+        protected void onCreate() {
+            this.createAt = LocalDateTime.now() ;
+            this.status = Status.PUBLIC;
         }
     }

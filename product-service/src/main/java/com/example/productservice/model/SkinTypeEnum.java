@@ -17,14 +17,6 @@ public enum SkinTypeEnum {
         this.value = value;
     }
 
-    public static SkinTypeEnum check(String value) {
-        try {
-            return SkinTypeEnum.valueOf(value.toUpperCase());
-        } catch (Exception e) {
-            throw new AppException(ErrorCode.INVALID_INPUT, "Invalid SkinTypeEnum value");
-        }
-    }
-
     @Override
     public String toString() {
         return value;

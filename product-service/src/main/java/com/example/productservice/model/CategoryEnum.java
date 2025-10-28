@@ -22,12 +22,6 @@ public enum CategoryEnum {
         this.value = value;
     }
 
-    public static CategoryEnum check(String value) {
-        try {
-            return CategoryEnum.valueOf(value.toUpperCase());
-        } catch (Exception e) {
-            throw new AppException(ErrorCode.INVALID_INPUT, "Invalid Category Value");
-        }
-    }
+
 }
 

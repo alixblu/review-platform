@@ -52,7 +52,6 @@ public class Product {
     @Column(name = "skin_type")
     private List<SkinTypeEnum> skinTypeEnum;
 
-
     @Column(columnDefinition = "TEXT")
     private String imageUrl;
 

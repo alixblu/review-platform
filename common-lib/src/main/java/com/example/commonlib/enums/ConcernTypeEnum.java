@@ -1,7 +1,4 @@
-package com.example.productservice.model;
-
-import com.example.productservice.exception.AppException;
-import com.example.productservice.exception.ErrorCode;
+package com.example.commonlib.enums;
 import lombok.Getter;
 
 @Getter
@@ -20,14 +17,6 @@ public enum ConcernTypeEnum {
 
     ConcernTypeEnum(String value) {
         this.value = value;
-    }
-
-    public static ConcernTypeEnum check(String value) {
-        try {
-            return ConcernTypeEnum.valueOf(value.toUpperCase());
-        } catch (Exception e) {
-            throw new AppException(ErrorCode.INVALID_INPUT, "Invalid ConcernTypeEnum value");
-        }
     }
 
     @Override

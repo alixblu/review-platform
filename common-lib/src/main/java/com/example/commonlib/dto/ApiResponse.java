@@ -1,4 +1,4 @@
-package com.example.postservice.dto;
+package com.example.commonlib.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;

@@ -1,6 +1,5 @@
 package com.example.postservice.dto.post;
 
-import com.pgvector.PGvector;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -20,7 +19,6 @@ public record PostCreationRequest(
         String content,
 
         @Size(max = 3, message = "You can upload up to 3 media items")
-        List<String> mediaList,
+        List<String> mediaList
 
-        PGvector embedding
 ) {}

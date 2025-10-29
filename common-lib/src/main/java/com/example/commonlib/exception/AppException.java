@@ -1,6 +1,7 @@
-package com.example.productservice.exception;
+package com.example.commonlib.exception;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
 
 
 @Getter

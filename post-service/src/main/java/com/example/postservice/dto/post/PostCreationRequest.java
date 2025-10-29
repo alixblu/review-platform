@@ -1,5 +1,6 @@
 package com.example.postservice.dto.post;
 
+import com.pgvector.PGvector;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -21,4 +22,6 @@ public record PostCreationRequest(
         @Size(max = 3, message = "You can upload up to 3 media items")
         List<String> mediaList
 
+//need AI api for this
+//        PGvector embedding
 ) {}

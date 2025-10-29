@@ -14,6 +14,6 @@ public record PostResponse(
         String content,
         Post.Status status,
         LocalDateTime createAt,
-        List<String> mediaUrls,
-        PGvector embedding
+        List<String> mediaUrls
+//        PGvector embedding
 ) {}

@@ -1,7 +1,9 @@
 package com.example.productservice.model;
 
+import com.example.commonlib.enums.CategoryEnum;
+import com.example.commonlib.enums.ConcernTypeEnum;
+import com.example.commonlib.enums.SkinTypeEnum;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Min;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 

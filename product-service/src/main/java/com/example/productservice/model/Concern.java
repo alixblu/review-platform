@@ -1,4 +1,5 @@
 package com.example.productservice.model;
+import com.example.commonlib.enums.ConcernTypeEnum;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

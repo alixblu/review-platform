@@ -1,8 +1,7 @@
-package com.example.postservice.exception;
+package com.example.commonlib.exception;
 
-import com.example.postservice.dto.ApiResponse;
-import com.example.postservice.exception.AppException;
-import com.example.postservice.exception.ErrorCode;
+import com.example.commonlib.dto.ApiResponse;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;

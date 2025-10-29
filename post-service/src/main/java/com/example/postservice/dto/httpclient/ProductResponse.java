@@ -1,10 +1,11 @@
-package com.example.productservice.dto.product;
+package com.example.postservice.dto.httpclient;
+
 
 
 import com.example.commonlib.enums.CategoryEnum;
 import com.example.commonlib.enums.ConcernTypeEnum;
 import com.example.commonlib.enums.SkinTypeEnum;
-import com.example.productservice.model.Status;
+import com.example.commonlib.enums.Status;
 
 import java.util.List;
 import java.util.UUID;

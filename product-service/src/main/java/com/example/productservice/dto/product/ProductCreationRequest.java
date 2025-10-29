@@ -1,8 +1,9 @@
 package com.example.productservice.dto.product;
 
-import com.example.productservice.model.CategoryEnum;
-import com.example.productservice.model.ConcernTypeEnum;
-import com.example.productservice.model.SkinTypeEnum;
+
+import com.example.commonlib.enums.CategoryEnum;
+import com.example.commonlib.enums.ConcernTypeEnum;
+import com.example.commonlib.enums.SkinTypeEnum;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;

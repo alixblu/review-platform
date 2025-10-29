@@ -1,7 +1,4 @@
-package com.example.productservice.model;
-
-import com.example.productservice.exception.AppException;
-import com.example.productservice.exception.ErrorCode;
+package com.example.commonlib.enums;
 import lombok.Getter;
 
 @Getter

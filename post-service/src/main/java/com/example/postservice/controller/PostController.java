@@ -1,6 +1,7 @@
 package com.example.postservice.controller;
 
-import com.example.postservice.dto.ApiResponse;
+
+import com.example.commonlib.dto.ApiResponse;
 import com.example.postservice.dto.post.PostCreationRequest;
 import com.example.postservice.dto.post.PostResponse;
 import com.example.postservice.service.PostService;

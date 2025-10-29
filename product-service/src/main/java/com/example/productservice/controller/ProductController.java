@@ -1,6 +1,7 @@
 package com.example.productservice.controller;
 
-import com.example.productservice.dto.ApiResponse;import com.example.productservice.dto.product.ProductCreationRequest;
+import com.example.commonlib.dto.ApiResponse;
+import com.example.productservice.dto.product.ProductCreationRequest;
 import com.example.productservice.dto.product.ProductResponse;
 import com.example.productservice.service.ProductService;
 import jakarta.validation.Valid;
@@ -19,7 +20,6 @@ public class ProductController {
     private final ProductService productService;
 
     @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<ApiResponse<ProductResponse>> createProduct(@RequestBody @Valid ProductCreationRequest product) {
         ProductResponse response = productService.createProduct(product);
         return ResponseEntity.status(HttpStatus.CREATED)
@@ -27,7 +27,6 @@ public class ProductController {
     }
 
     @GetMapping("/all")
-    @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<ApiResponse<List<ProductResponse>>> getAllProducts() {
         List<ProductResponse> products = productService.getAllProducts();
         return ResponseEntity.status(HttpStatus.OK)

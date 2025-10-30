@@ -1,7 +1,5 @@
 package com.example.postservice.dto.httpclient;
 
-
-
 import com.example.commonlib.enums.CategoryEnum;
 import com.example.commonlib.enums.ConcernTypeEnum;
 import com.example.commonlib.enums.SkinTypeEnum;

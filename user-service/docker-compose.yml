@@ -1,0 +1,20 @@
+services:
+  neo4j-user:
+    image: neo4j:5.21.0
+    container_name: neo4j_user
+    environment:
+      - NEO4J_AUTH=neo4j/12345678
+      - NEO4J_PLUGINS=["graph-data-science"]
+      - NEO4J_dbms_memory_pagecache_size=2G
+      - NEO4J_dbms_memory_heap_initial__size=1G
+      - NEO4J_dbms_memory_heap_max__size=2G
+      - NEO4J_ACCEPT_LICENSE_AGREEMENT=yes
+      - NEO4J_server_memory_heap_max__size=2G
+    ports:
+      - "7474:7474"   # HTTP interface
+      - "7687:7687"   # Bolt protocol
+    volumes:
+      - ./data/neo4j:/data
+      - ./logs/neo4j:/logs
+      - ./import:/import
+      - ./plugins:/plugins

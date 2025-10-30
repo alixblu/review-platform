@@ -1,28 +1,35 @@
 package com.example.productservice.dto.analysis;
 
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
-
+import jakarta.validation.constraints.*;
 import java.util.List;
 import java.util.UUID;
 
-public record AnalysisUpdateRequest (
-    @NotNull(message = "Product ID must not be null")
-    UUID productId,
+public record AnalysisUpdateRequest(
 
-    @NotNull(message = "High risk list must not be null")
-    @Size(min = 1, message = "High risk list must contain at least one element")
-    List<@NotEmpty(message = "High risk item cannot be empty") String> highRisk,
+        @NotNull(message = "Product ID must not be null")
+        UUID productId,
 
-    @NotNull(message = "Average risk list must not be null")
-    @Size(min = 1, message = "Average risk list must contain at least one element")
-    List<@NotEmpty(message = "Average risk item cannot be empty") String> avgRisk,
+        @NotNull(message = "High risk list must not be null")
+        @Size(min = 1, message = "High risk list must contain at least one element")
+        List<
+                @NotBlank(message = "High risk item cannot be blank")
+                @Size(max = 100, message = "High risk item must not exceed 100 characters")
+                        String
+                > highRisk,
 
-    @NotNull(message = "Low risk list must not be null")
-    @Size(min = 1, message = "Low risk list must contain at least one element")
-    List<@NotEmpty(message = "Low risk item cannot be empty") String> lowRisk
+        @NotNull(message = "Average risk list must not be null")
+        @Size(min = 1, message = "Average risk list must contain at least one element")
+        List<
+                @NotBlank(message = "Average risk item cannot be blank")
+                @Size(max = 100, message = "Average risk item must not exceed 100 characters")
+                        String
+                > avgRisk,
+
+        @NotNull(message = "Low risk list must not be null")
+        @Size(min = 1, message = "Low risk list must contain at least one element")
+        List<
+                @NotBlank(message = "Low risk item cannot be blank")
+                @Size(max = 100, message = "Low risk item must not exceed 100 characters")
+                        String
+                > lowRisk
 ) {}

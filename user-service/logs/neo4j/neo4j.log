@@ -79,3 +79,5 @@
 2025-10-30 06:09:35.993+0000 INFO  name: system
 2025-10-30 06:09:35.994+0000 INFO  creationDate: 2025-10-29T16:00:58.746Z
 2025-10-30 06:09:35.994+0000 INFO  Started.
+2025-10-30 16:32:36.982+0000 INFO  Neo4j Server shutdown initiated by request
+2025-10-30 16:32:37.012+0000 INFO  Stopping...

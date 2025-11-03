@@ -43,7 +43,7 @@ public class AnalysisController {
     /**
      * Get all analysis records
      */
-    @GetMapping("/all")
+    @GetMapping
     public ResponseEntity<ApiResponse<List<AnalysisResponse>>> getAllAnalyses() {
         List<AnalysisResponse> analyses = analysisService.getAllAnalyses();
         return ResponseEntity.status(HttpStatus.OK)

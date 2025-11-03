@@ -27,7 +27,7 @@ public class ProductController {
                 .body(new ApiResponse<>("Product created successfully", response));
     }
 
-    @GetMapping("/all")
+    @GetMapping
     public ResponseEntity<ApiResponse<List<ProductResponse>>> getAllProducts() {
         List<ProductResponse> products = productService.getAllProducts();
         return ResponseEntity.status(HttpStatus.OK)

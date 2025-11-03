@@ -33,7 +33,7 @@ public class ReviewController {
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(new ApiResponse<>("Review created successfully", response));
     }
-    @GetMapping("/all")
+    @GetMapping
     public ResponseEntity<ApiResponse<List<ReviewResponse>>> getAllReviews() {
         List<ReviewResponse> analyses = reviewService.getAllReviews();
         return ResponseEntity.status(HttpStatus.OK)

@@ -1,0 +1,13 @@
+services:
+  admin-service:
+    image: ankane/pgvector
+    container_name: postgres_admin
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_DB: admin-service
+    ports:
+      - "5435:5432"
+    volumes:
+      - ./data/admin:/var/lib/postgresql/data
+      - ./docker/postgres/init.sql:/docker-entrypoint-initdb.d/init.sql

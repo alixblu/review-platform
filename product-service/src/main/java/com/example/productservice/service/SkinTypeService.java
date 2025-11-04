@@ -1,12 +1,14 @@
 package com.example.productservice.service;
 
+import com.example.productservice.dto.skintype.SkinTypeResponse;
+import com.example.productservice.dto.skintype.SkinTypeUpdateRequest;
+import com.example.productservice.mapper.SkinTypeMapper;
 import com.example.productservice.model.SkinType;
 import com.example.productservice.repository.SkinTypeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -14,24 +16,24 @@ import java.util.UUID;
 public class SkinTypeService {
 
     private final SkinTypeRepository repository;
+    private final SkinTypeMapper mapper;
 
-    public List<SkinType> getAll() {
-        return repository.findAll();
+    // READ all
+    public List<SkinTypeResponse> getAllSkinTypes() {
+        return repository.findAll()
+                .stream()
+                .map(mapper::toReadDTO)
+                .toList();
     }
 
-    public Optional<SkinType> getById(UUID id) {
-        return repository.findById(id);
-    }
-
-    public SkinType update(UUID id, SkinType updated) {
-        return repository.findById(id)
-                .map(existing -> {
-                    existing.setType(updated.getType());
-                    existing.setDescription(updated.getDescription());
-                    existing.setAvoid(updated.getAvoid());
-                    existing.setRecommend(updated.getRecommend());
-                    return repository.save(existing);
-                })
+    // UPDATE
+    public SkinTypeResponse updateSkinType(UUID id, SkinTypeUpdateRequest dto) {
+        SkinType existing = repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("SkinType not found with id: " + id));
+
+        mapper.updateEntityFromDTO(dto, existing);
+        repository.save(existing);
+
+        return mapper.toReadDTO(existing);
     }
 }

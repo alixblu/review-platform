@@ -18,7 +18,7 @@ public class SkinTypeService {
     private final SkinTypeRepository repository;
     private final SkinTypeMapper mapper;
 
-    // READ all
+    // ✅ READ all
     public List<SkinTypeResponse> getAllSkinTypes() {
         return repository.findAll()
                 .stream()
@@ -26,14 +26,21 @@ public class SkinTypeService {
                 .toList();
     }
 
-    // UPDATE
+    // ✅ READ by id
+    public SkinTypeResponse getSkinTypeById(UUID id) {
+        SkinType skinType = repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("SkinType not found with id: " + id));
+        return mapper.toReadDTO(skinType);
+    }
+
+    // ✅ UPDATE
     public SkinTypeResponse updateSkinType(UUID id, SkinTypeUpdateRequest dto) {
-        SkinType existing = repository.findById(id)
+        SkinType skinType = repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("SkinType not found with id: " + id));
 
-        mapper.updateEntityFromDTO(dto, existing);
-        repository.save(existing);
+        mapper.updateEntityFromDTO(dto, skinType);
+        SkinType updated = repository.save(skinType);
 
-        return mapper.toReadDTO(existing);
+        return mapper.toReadDTO(updated);
     }
 }

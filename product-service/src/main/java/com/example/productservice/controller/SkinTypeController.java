@@ -20,20 +20,28 @@ public class SkinTypeController {
 
     private final SkinTypeService skinTypeService;
 
+    // ✅ GET all
     @GetMapping("/all")
     public ResponseEntity<ApiResponse<List<SkinTypeResponse>>> getAllSkinTypes() {
-        List<SkinTypeResponse> skinTypes = skinTypeService.getAllSkinTypes();
-        return ResponseEntity.status(HttpStatus.OK)
-                .body(new ApiResponse<>("Fetched all skin types", skinTypes));
+        List<SkinTypeResponse> response = skinTypeService.getAllSkinTypes();
+        return ResponseEntity.ok(new ApiResponse<>("Fetched all skin types", response));
     }
 
+    // ✅ GET by id
+    @GetMapping("/{id}")
+    public ResponseEntity<ApiResponse<SkinTypeResponse>> getSkinTypeById(@PathVariable UUID id) {
+        SkinTypeResponse response = skinTypeService.getSkinTypeById(id);
+        return ResponseEntity.ok(new ApiResponse<>("Fetched skin type by id", response));
+    }
+
+    // ✅ UPDATE
     @PutMapping("/{id}")
     public ResponseEntity<ApiResponse<SkinTypeResponse>> updateSkinType(
             @PathVariable UUID id,
-            @RequestBody @Valid SkinTypeUpdateRequest request
+            @Valid @RequestBody SkinTypeUpdateRequest request
     ) {
-        SkinTypeResponse updated = skinTypeService.updateSkinType(id, request);
+        SkinTypeResponse response = skinTypeService.updateSkinType(id, request);
         return ResponseEntity.status(HttpStatus.OK)
-                .body(new ApiResponse<>("Skin type updated successfully", updated));
+                .body(new ApiResponse<>("Skin type updated successfully", response));
     }
 }

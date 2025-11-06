@@ -18,7 +18,7 @@ public class ConcernService {
     private final ConcernRepository repository;
     private final ConcernMapper mapper;
 
-    // READ all
+    // ✅ READ all
     public List<ConcernResponse> getAllConcerns() {
         return repository.findAll()
                 .stream()
@@ -26,7 +26,14 @@ public class ConcernService {
                 .toList();
     }
 
-    // UPDATE
+    // ✅ READ by id
+    public ConcernResponse getConcernById(UUID id) {
+        Concern concern = repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Concern not found with id: " + id));
+        return mapper.toResponse(concern);
+    }
+
+    // ✅ UPDATE
     public ConcernResponse updateConcern(UUID id, ConcernUpdateRequest dto) {
         Concern existing = repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Concern not found with id: " + id));

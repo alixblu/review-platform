@@ -3,6 +3,7 @@ package com.example.authservice.model;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Type;
 
 import java.util.UUID;
 
@@ -14,14 +15,10 @@ import java.util.UUID;
 @AllArgsConstructor
 @Builder
 public class Account {
-
     @Id
-    @GeneratedValue(generator = "UUID")
-    @GenericGenerator(
-            name = "UUID",
-            strategy = "org.hibernate.id.UUIDGenerator"
-    )
-    @Column(name = "id", updatable = false, nullable = false)
+    @GeneratedValue
+    @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
+    @Column(columnDefinition = "BINARY(16)", updatable = false, nullable = false)
     private UUID id;
 
     @Column(nullable = false, unique = true)
@@ -35,7 +32,7 @@ public class Account {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private AccountRole role;
+    private AccountRole role =  AccountRole.USER;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)

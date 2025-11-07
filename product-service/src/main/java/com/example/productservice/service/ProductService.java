@@ -10,6 +10,8 @@ import com.example.productservice.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import com.example.productservice.dto.product.ProductUpdateRequest;
+import java.util.UUID;
 
 import java.util.List;
 
@@ -42,5 +44,18 @@ public class ProductService {
                 .stream()
                 .map(productMapper::toResponse)
                 .toList();
+    }
+
+    public ProductResponse updateProduct(UUID id, ProductUpdateRequest request) {
+        Product product = productRepository.findById(id)
+                .orElseThrow(() -> new AppException(ErrorCode.NOT_FOUND, "Product not found"));
+
+        // Dùng mapper để update các field không null
+        productMapper.updateProductFromRequest(request, product);
+
+        productRepository.save(product);
+        log.info("Updated product successfully: {}", product.getName());
+
+        return productMapper.toResponse(product);
     }
 }

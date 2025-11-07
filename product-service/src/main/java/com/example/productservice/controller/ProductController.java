@@ -10,6 +10,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import com.example.productservice.dto.product.ProductUpdateRequest;
+import java.util.UUID;
 
 import java.util.List;
 
@@ -32,6 +34,15 @@ public class ProductController {
         List<ProductResponse> products = productService.getAllProducts();
         return ResponseEntity.status(HttpStatus.OK)
                 .body(new ApiResponse<>("Fetched all products", products));
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<ApiResponse<ProductResponse>> updateProduct(
+            @PathVariable UUID id,
+            @RequestBody @Valid ProductUpdateRequest request) {
+        ProductResponse updated = productService.updateProduct(id, request);
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(new ApiResponse<>("Product updated successfully", updated));
     }
 
 }

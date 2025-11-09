@@ -1,6 +1,6 @@
 package com.example.userservice.dto.user;
 
-import com.example.userservice.model.User.Gender;
+//import com.example.userservice.model.User.Gender;
 import jakarta.annotation.Nullable;
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
@@ -23,12 +23,12 @@ public class UserCreationRequest {
     @Size(min = 2, max = 50, message = "Name must be between 2 and 50 characters")
     private String name;
 
-    @NotNull(message = "Age is required")
-    @Min(value = 16, message = "Age must be at least 16")
-    private Integer age;
+//    @NotNull(message = "Age is required")
+//    @Min(value = 16, message = "Age must be at least 16")
+//    private Integer age;
 
-    @NotNull(message = "Gender is required")
-    private Gender gender;
+//    @NotNull(message = "Gender is required")
+//    private Gender gender;
 
     @Nullable
     @Size(max = 255, message = "Profile picture URL must not exceed 255 characters")

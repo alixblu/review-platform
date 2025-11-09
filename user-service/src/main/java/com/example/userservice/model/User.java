@@ -28,22 +28,18 @@ public class User {
     @Property("name")
     private String name;
 
-    // Age (>16)
-    @Property("age")
-    private Integer age;
-
-    // Enum gender
-    @Property("gender")
-    private Gender gender;
 
     // Optional profile picture
     @Property("profile_pic")
 //    @Nullable
     private String profilePic;
 
-    // Gender enum
-    public enum Gender {
-        MALE,
-        FEMALE
-    }
+//    // Enum gender
+//    @Property("gender")
+//    private Gender gender;
+//    // Gender enum
+//    public enum Gender {
+//        MALE,
+//        FEMALE
+//    }
 }

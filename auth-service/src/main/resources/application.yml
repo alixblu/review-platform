@@ -1,0 +1,38 @@
+
+spring:
+#  application:
+#    name: auth-service
+#  datasource:
+#    url: jdbc:mysql://localhost:3307/auth_service?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+#    username: auth_user
+#    password: 12345
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    show-sql: true
+
+  security:
+    oauth2:
+      client:
+        registration:
+          cognito:
+            client-id: 62te3nhct6ltri9o1acf44n5b5
+            client-secret: c6sv28j8gg5l6mcss0ol96v7h8cjnea4mbg4da64j621paojfmf
+            scope:
+              - email
+              - openid
+              - phone
+            # Spring Security by default uses a redirect-uri in the format: {baseUrl}/login/oauth2/code/{registrationId}
+            # For example: http://localhost:8080/login/oauth2/code/cognito
+            # See more: https://docs.spring.io/spring-security/reference/servlet/oauth2/login/core.html#oauth2login-sample-redirect-uri
+            redirect-uri: http://localhost:8080/login/oauth2/code/cognito
+        provider:
+          cognito:
+            issuerUri: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_jHi5WpbS9
+            user-name-attribute: username

@@ -3,10 +3,7 @@ package com.example.userservice.dto.user;
 import com.example.userservice.model.User.Gender;
 import jakarta.annotation.Nullable;
 import jakarta.validation.constraints.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.UUID;
 
@@ -16,8 +13,8 @@ import java.util.UUID;
 @Builder
 public class UserCreationRequest {
 
-    @NotNull(message = "Account ID is required")
-    private UUID accId;
+    @NotNull(message = "User ID is required")
+    private UUID userId;  // Thay accId -> userId
 
     @NotBlank(message = "Name cannot be blank")
     @Size(min = 2, max = 50, message = "Name must be between 2 and 50 characters")

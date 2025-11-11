@@ -11,7 +11,7 @@ import java.util.UUID;
 @Builder
 public class UserResponse {
     private String id;
-    private UUID accId;
+    private UUID userId;  // Thay accId -> userId
     private String name;
     private Integer age;
     private Gender gender;

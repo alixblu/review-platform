@@ -4,7 +4,6 @@ import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.neo4j.core.schema.*;
 import org.springframework.data.neo4j.core.support.UUIDStringGenerator;
-import org.springframework.lang.Nullable;
 
 import java.util.UUID;
 
@@ -17,31 +16,24 @@ public class User {
 
     @Id
     @GeneratedValue(generatorClass = UUIDStringGenerator.class)
-    private String id;  // use Neo4j’s internal UUID generator
+    private String id; // Neo4j internal UUID
 
+    // Business user ID (unique external reference)
+    @Property("user_id")
+    private UUID userId;
 
-    // External business UUID (unique)
-    @Property("acc_id")
-    private UUID accId;
-
-    // Name
     @Property("name")
     private String name;
 
-    // Age (>16)
     @Property("age")
     private Integer age;
 
-    // Enum gender
     @Property("gender")
     private Gender gender;
 
-    // Optional profile picture
     @Property("profile_pic")
-//    @Nullable
     private String profilePic;
 
-    // Gender enum
     public enum Gender {
         MALE,
         FEMALE

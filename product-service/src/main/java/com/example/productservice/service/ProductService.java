@@ -58,4 +58,11 @@ public class ProductService {
 
         return productMapper.toResponse(product);
     }
+
+    public ProductResponse getProductById(UUID id) {
+        Product product = productRepository.findById(id)
+                .orElseThrow(() -> new AppException(ErrorCode.NOT_FOUND, "Product not found"));
+
+        return productMapper.toResponse(product);
+    }
 }

@@ -45,4 +45,11 @@ public class ProductController {
                 .body(new ApiResponse<>("Product updated successfully", updated));
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<ApiResponse<ProductResponse>> getProductById(@PathVariable UUID id) {
+        ProductResponse product = productService.getProductById(id);
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(new ApiResponse<>("Fetched product successfully", product));
+    }
+
 }

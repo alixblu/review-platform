@@ -1,5 +1,9 @@
 
 spring:
+  config:
+    import:
+      - optional:file:./auth-service/.env[.properties]
+
 #  application:
 #    name: auth-service
 #  datasource:
@@ -23,7 +27,7 @@ spring:
         registration:
           cognito:
             client-id: 62te3nhct6ltri9o1acf44n5b5
-            client-secret: c6sv28j8gg5l6mcss0ol96v7h8cjnea4mbg4da64j621paojfmf
+            client-secret: ${COGNITO_CLIENT_SECRET}
             scope:
               - email
               - openid
@@ -36,3 +40,5 @@ spring:
           cognito:
             issuerUri: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_jHi5WpbS9
             user-name-attribute: username
+cognito:
+  domain: https://us-east-1jhi5wpbs9.auth.us-east-1.amazoncognito.com

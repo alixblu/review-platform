@@ -3415,3 +3415,22 @@
 2025-11-09 12:56:07.566+0000 WARN  [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=258, gcTime=0, gcCount=0}
 2025-11-09 12:56:07.995+0000 WARN  [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=243, gcTime=0, gcCount=0}
 2025-11-09 14:31:38.324+0000 WARN  [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=415, gcTime=0, gcCount=0}
+2025-11-09 16:12:47.485+0000 WARN  [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=301, gcTime=0, gcCount=0}
+2025-11-09 16:26:58.739+0000 WARN  [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=226, gcTime=283, gcCount=1}
+2025-11-10 00:48:21.224+0000 WARN  [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=281, gcTime=0, gcCount=0}
+2025-11-10 00:48:22.010+0000 WARN  [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=1516, gcTime=0, gcCount=0}
+2025-11-10 02:04:22.133+0000 WARN  [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=203, gcTime=0, gcCount=0}
+2025-11-10 03:01:34.106+0000 WARN  [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=452, gcTime=0, gcCount=0}
+2025-11-10 03:01:34.765+0000 WARN  [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=919, gcTime=0, gcCount=0}
+2025-11-10 04:17:39.027+0000 INFO  [o.n.g.f.DatabaseManagementServiceFactory] Shutdown started
+2025-11-10 04:17:39.723+0000 INFO  [o.n.b.BoltServer] Requested Bolt server shutdown
+2025-11-10 04:17:39.735+0000 INFO  [o.n.b.p.c.c.ConnectionRegistry] Stopping remaining idle connections for connector bolt-local
+2025-11-10 04:17:39.754+0000 INFO  [o.n.b.p.c.c.ConnectionRegistry] Stopped 0 idling connections for connector bolt-local
+2025-11-10 04:17:39.772+0000 INFO  [o.n.b.p.c.c.ConnectionRegistry] Stopping remaining idle connections for connector bolt
+2025-11-10 04:17:39.773+0000 INFO  [o.n.b.p.c.c.ConnectionRegistry] Stopped 0 idling connections for connector bolt
+2025-11-10 04:17:39.796+0000 INFO  [o.n.d.d.DatabaseLifecycles] Stopping 'DatabaseId{43556453[neo4j]}'.
+2025-11-10 04:17:39.959+0000 INFO  [o.n.k.a.DatabaseAvailabilityGuard] [neo4j/43556453] Requirement `Database unavailable` makes database neo4j unavailable.
+2025-11-10 04:17:39.960+0000 INFO  [o.n.k.a.DatabaseAvailabilityGuard] [neo4j/43556453] DatabaseId{43556453[neo4j]} is unavailable.
+2025-11-10 04:17:39.979+0000 INFO  [o.n.k.d.Database] [neo4j/43556453] Waiting for closing transactions.
+2025-11-10 04:17:39.982+0000 INFO  [o.n.k.d.Database] [neo4j/43556453] All transactions are closed.
+2025-11-10 04:17:39.997+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] [neo4j/43556453] Checkpoint triggered by "Database shutdown" @ txId: 18 checkpoint started...

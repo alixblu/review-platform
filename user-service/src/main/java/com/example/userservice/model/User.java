@@ -19,27 +19,27 @@ public class User {
     @GeneratedValue(generatorClass = UUIDStringGenerator.class)
     private String id;  // use Neo4j’s internal UUID generator
 
-
     // External business UUID (unique)
     @Property("acc_id")
-    private UUID accId;
+    private String accId;
 
     // Name
     @Property("name")
     private String name;
 
+    @Property("age")
+    private Integer age;
+
+    @Property("gender")
+    private Gender gender;
 
     // Optional profile picture
     @Property("profile_pic")
-//    @Nullable
     private String profilePic;
 
-//    // Enum gender
-//    @Property("gender")
-//    private Gender gender;
-//    // Gender enum
-//    public enum Gender {
-//        MALE,
-//        FEMALE
-//    }
+    // Gender enum
+    public enum Gender {
+        MALE,
+        FEMALE
+    }
 }

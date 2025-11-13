@@ -12,10 +12,11 @@ import org.mapstruct.NullValuePropertyMappingStrategy;
 @Mapper(componentModel = "spring", nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
 public interface UserMapper {
 
-//    @Mapping(target = "gender", constant = "FEMALE")
+    @Mapping(target = "gender", constant = "FEMALE")
+    @Mapping(target = "age", constant = "16")
     User toModel(UserCreationRequest userCreationRequest);
+
     UserResponse toResponse(User user);
 
     void updateUserFromRequest(UserUpdateRequest request, @MappingTarget User user);
-
 }

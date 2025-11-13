@@ -121,367 +121,43 @@
 2025-10-31 06:57:32.998+0000 INFO  Started.
 2025-10-31 13:37:09.637+0000 INFO  Neo4j Server shutdown initiated by request
 2025-10-31 13:37:09.639+0000 INFO  Stopping...
-2025-11-06 08:40:04.777+0000 INFO  Logging config in use: File '/var/lib/neo4j/conf/user-logs.xml'
-2025-11-06 08:40:04.792+0000 WARN  Use of deprecated setting 'dbms.memory.pagecache.size'. It is replaced by 'server.memory.pagecache.size'.
-2025-11-06 08:40:04.793+0000 WARN  Use of deprecated setting 'dbms.memory.heap.max_size'. It is replaced by 'server.memory.heap.max_size'.
-2025-11-06 08:40:04.793+0000 WARN  Use of deprecated setting 'dbms.memory.heap.initial_size'. It is replaced by 'server.memory.heap.initial_size'.
-2025-11-06 08:40:04.809+0000 INFO  Starting...
-2025-11-06 08:40:05.930+0000 INFO  This instance is ServerId{47c9344d} (47c9344d-e1ed-4d9d-9e46-c94187935e9a)
-2025-11-06 08:40:07.367+0000 INFO  ======== Neo4j 5.21.0 ========
-2025-11-06 08:40:07.668+0000 INFO  GDS license file: null
-2025-11-06 08:40:07.671+0000 INFO  GDS license state: unlicensed
-2025-11-06 08:40:07.685+0000 INFO  Progress tracking: enabled
-2025-11-06 08:40:07.687+0000 INFO  Memory usage guard: minimum estimate
-2025-11-06 08:40:07.698+0000 INFO  Building Graph Data Science extension...
-2025-11-06 08:40:07.709+0000 INFO  Register Graph Data Science...
-2025-11-06 08:40:07.710+0000 INFO  Graph Data Science registered.
-2025-11-06 08:40:07.711+0000 INFO  Register Metrics Facade...
-2025-11-06 08:40:07.713+0000 INFO  Metrics Facade registered.
-2025-11-06 08:40:07.719+0000 INFO  Register Model Catalog...
-2025-11-06 08:40:07.721+0000 INFO  Model Catalog registered.
-2025-11-06 08:40:07.722+0000 INFO  Register Task Registry Factory...
-2025-11-06 08:40:07.723+0000 INFO  Task Registry Factory registered.
-2025-11-06 08:40:07.725+0000 INFO  Register Task Store...
-2025-11-06 08:40:07.726+0000 INFO  Task Store registered.
-2025-11-06 08:40:07.728+0000 INFO  Register User Log Registry Factory...
-2025-11-06 08:40:07.729+0000 INFO  User Log Registry Factory registered.
-2025-11-06 08:40:07.730+0000 INFO  Graph Data Science extension built.
-2025-11-06 08:40:07.732+0000 INFO  Building Graph Data Science Extras extension...
-2025-11-06 08:40:07.735+0000 INFO  Register Graph Data Science Extras...
-2025-11-06 08:40:07.737+0000 INFO  Graph Data Science Extras registered.
-2025-11-06 08:40:07.738+0000 INFO  Graph Data Science Extras extension built.
-2025-11-06 08:40:07.806+0000 INFO  GDS compatibility: for Neo4j 5.17 -- not available, for Neo4j 5.18 -- not available, for Neo4j 5.19 -- not available, for Neo4j 5.20 -- not available, for Neo4j 5.21 -- available, for Neo4j 5.22 -- not available, for Neo4j 5.23 -- not available, selected: Neo4j 5.21
-2025-11-06 08:41:16.162+0000 INFO  Anonymous Usage Data is being sent to Neo4j, see https://neo4j.com/docs/usage-data/
-2025-11-06 08:41:16.246+0000 INFO  Bolt enabled on 0.0.0.0:7687.
-2025-11-06 08:41:17.047+0000 INFO  HTTP enabled on 0.0.0.0:7474.
-2025-11-06 08:41:17.049+0000 INFO  Remote interface available at http://localhost:7474/
-2025-11-06 08:41:17.054+0000 INFO  id: 762BE1A7D23EA3E8297961B7C3A62C7CA1259FC38C50CFF19F9109AB2C1DA9D0
-2025-11-06 08:41:17.055+0000 INFO  name: system
-2025-11-06 08:41:17.056+0000 INFO  creationDate: 2025-11-06T08:40:08.837Z
-2025-11-06 08:41:17.057+0000 INFO  Started.
-2025-11-06 08:58:27.286+0000 INFO  Neo4j Server shutdown initiated by request
-2025-11-06 08:58:27.291+0000 INFO  Stopping...
-2025-11-06 09:00:45.472+0000 INFO  Logging config in use: File '/var/lib/neo4j/conf/user-logs.xml'
-2025-11-06 09:00:45.486+0000 WARN  Use of deprecated setting 'dbms.memory.pagecache.size'. It is replaced by 'server.memory.pagecache.size'.
-2025-11-06 09:00:45.487+0000 WARN  Use of deprecated setting 'dbms.memory.heap.max_size'. It is replaced by 'server.memory.heap.max_size'.
-2025-11-06 09:00:45.488+0000 WARN  Use of deprecated setting 'dbms.memory.heap.initial_size'. It is replaced by 'server.memory.heap.initial_size'.
-2025-11-06 09:00:45.508+0000 INFO  Starting...
-2025-11-06 09:00:46.134+0000 INFO  Neo4j Server shutdown initiated by request
-2025-11-06 09:00:46.137+0000 INFO  Stopped.
-2025-11-06 09:02:10.801+0000 INFO  Logging config in use: File '/var/lib/neo4j/conf/user-logs.xml'
-2025-11-06 09:02:10.814+0000 WARN  Use of deprecated setting 'dbms.memory.pagecache.size'. It is replaced by 'server.memory.pagecache.size'.
-2025-11-06 09:02:10.815+0000 WARN  Use of deprecated setting 'dbms.memory.heap.max_size'. It is replaced by 'server.memory.heap.max_size'.
-2025-11-06 09:02:10.815+0000 WARN  Use of deprecated setting 'dbms.memory.heap.initial_size'. It is replaced by 'server.memory.heap.initial_size'.
-2025-11-06 09:02:10.829+0000 INFO  Starting...
-2025-11-06 09:02:11.870+0000 INFO  This instance is ServerId{47c9344d} (47c9344d-e1ed-4d9d-9e46-c94187935e9a)
-2025-11-06 09:02:12.871+0000 INFO  ======== Neo4j 5.21.0 ========
-2025-11-06 09:02:13.132+0000 INFO  GDS license file: null
-2025-11-06 09:02:13.134+0000 INFO  GDS license state: unlicensed
-2025-11-06 09:02:13.166+0000 INFO  Progress tracking: enabled
-2025-11-06 09:02:13.168+0000 INFO  Memory usage guard: minimum estimate
-2025-11-06 09:02:13.189+0000 INFO  Building Graph Data Science extension...
-2025-11-06 09:02:13.207+0000 INFO  Register Graph Data Science...
-2025-11-06 09:02:13.208+0000 INFO  Graph Data Science registered.
-2025-11-06 09:02:13.209+0000 INFO  Register Metrics Facade...
-2025-11-06 09:02:13.211+0000 INFO  Metrics Facade registered.
-2025-11-06 09:02:13.212+0000 INFO  Register Model Catalog...
-2025-11-06 09:02:13.213+0000 INFO  Model Catalog registered.
-2025-11-06 09:02:13.215+0000 INFO  Register Task Registry Factory...
-2025-11-06 09:02:13.215+0000 INFO  Task Registry Factory registered.
-2025-11-06 09:02:13.217+0000 INFO  Register Task Store...
-2025-11-06 09:02:13.218+0000 INFO  Task Store registered.
-2025-11-06 09:02:13.221+0000 INFO  Register User Log Registry Factory...
-2025-11-06 09:02:13.222+0000 INFO  User Log Registry Factory registered.
-2025-11-06 09:02:13.223+0000 INFO  Graph Data Science extension built.
-2025-11-06 09:02:13.224+0000 INFO  Building Graph Data Science Extras extension...
-2025-11-06 09:02:13.227+0000 INFO  Register Graph Data Science Extras...
-2025-11-06 09:02:13.228+0000 INFO  Graph Data Science Extras registered.
-2025-11-06 09:02:13.229+0000 INFO  Graph Data Science Extras extension built.
-2025-11-06 09:02:13.299+0000 INFO  GDS compatibility: for Neo4j 5.17 -- not available, for Neo4j 5.18 -- not available, for Neo4j 5.19 -- not available, for Neo4j 5.20 -- not available, for Neo4j 5.21 -- available, for Neo4j 5.22 -- not available, for Neo4j 5.23 -- not available, selected: Neo4j 5.21
-2025-11-06 09:03:00.771+0000 INFO  Anonymous Usage Data is being sent to Neo4j, see https://neo4j.com/docs/usage-data/
-2025-11-06 09:03:00.822+0000 INFO  Bolt enabled on 0.0.0.0:7687.
-2025-11-06 09:03:01.616+0000 INFO  HTTP enabled on 0.0.0.0:7474.
-2025-11-06 09:03:01.618+0000 INFO  Remote interface available at http://localhost:7474/
-2025-11-06 09:03:01.623+0000 INFO  id: 762BE1A7D23EA3E8297961B7C3A62C7CA1259FC38C50CFF19F9109AB2C1DA9D0
-2025-11-06 09:03:01.624+0000 INFO  name: system
-2025-11-06 09:03:01.626+0000 INFO  creationDate: 2025-11-06T08:40:08.837Z
-2025-11-06 09:03:01.626+0000 INFO  Started.
-2025-11-06 09:03:32.142+0000 INFO  Neo4j Server shutdown initiated by request
-2025-11-06 09:03:32.149+0000 INFO  Stopping...
-2025-11-06 09:05:05.687+0000 INFO  Logging config in use: File '/var/lib/neo4j/conf/user-logs.xml'
-2025-11-06 09:05:05.705+0000 WARN  Use of deprecated setting 'dbms.memory.pagecache.size'. It is replaced by 'server.memory.pagecache.size'.
-2025-11-06 09:05:05.706+0000 WARN  Use of deprecated setting 'dbms.memory.heap.max_size'. It is replaced by 'server.memory.heap.max_size'.
-2025-11-06 09:05:05.706+0000 WARN  Use of deprecated setting 'dbms.memory.heap.initial_size'. It is replaced by 'server.memory.heap.initial_size'.
-2025-11-06 09:05:05.721+0000 INFO  Starting...
-2025-11-06 09:05:06.821+0000 INFO  This instance is ServerId{47c9344d} (47c9344d-e1ed-4d9d-9e46-c94187935e9a)
-2025-11-06 09:05:07.981+0000 INFO  ======== Neo4j 5.21.0 ========
-2025-11-06 09:05:08.258+0000 INFO  GDS license file: null
-2025-11-06 09:05:08.260+0000 INFO  GDS license state: unlicensed
-2025-11-06 09:05:08.279+0000 INFO  Progress tracking: enabled
-2025-11-06 09:05:08.281+0000 INFO  Memory usage guard: minimum estimate
-2025-11-06 09:05:08.296+0000 INFO  Building Graph Data Science extension...
-2025-11-06 09:05:08.312+0000 INFO  Register Graph Data Science...
-2025-11-06 09:05:08.314+0000 INFO  Graph Data Science registered.
-2025-11-06 09:05:08.316+0000 INFO  Register Metrics Facade...
-2025-11-06 09:05:08.317+0000 INFO  Metrics Facade registered.
-2025-11-06 09:05:08.318+0000 INFO  Register Model Catalog...
-2025-11-06 09:05:08.320+0000 INFO  Model Catalog registered.
-2025-11-06 09:05:08.322+0000 INFO  Register Task Registry Factory...
-2025-11-06 09:05:08.323+0000 INFO  Task Registry Factory registered.
-2025-11-06 09:05:08.325+0000 INFO  Register Task Store...
-2025-11-06 09:05:08.326+0000 INFO  Task Store registered.
-2025-11-06 09:05:08.328+0000 INFO  Register User Log Registry Factory...
-2025-11-06 09:05:08.329+0000 INFO  User Log Registry Factory registered.
-2025-11-06 09:05:08.331+0000 INFO  Graph Data Science extension built.
-2025-11-06 09:05:08.333+0000 INFO  Building Graph Data Science Extras extension...
-2025-11-06 09:05:08.336+0000 INFO  Register Graph Data Science Extras...
-2025-11-06 09:05:08.338+0000 INFO  Graph Data Science Extras registered.
-2025-11-06 09:05:08.339+0000 INFO  Graph Data Science Extras extension built.
-2025-11-06 09:05:08.422+0000 INFO  GDS compatibility: for Neo4j 5.17 -- not available, for Neo4j 5.18 -- not available, for Neo4j 5.19 -- not available, for Neo4j 5.20 -- not available, for Neo4j 5.21 -- available, for Neo4j 5.22 -- not available, for Neo4j 5.23 -- not available, selected: Neo4j 5.21
-2025-11-06 09:05:48.439+0000 INFO  Anonymous Usage Data is being sent to Neo4j, see https://neo4j.com/docs/usage-data/
-2025-11-06 09:05:48.499+0000 INFO  Bolt enabled on 0.0.0.0:7687.
-2025-11-06 09:05:49.278+0000 INFO  HTTP enabled on 0.0.0.0:7474.
-2025-11-06 09:05:49.280+0000 INFO  Remote interface available at http://localhost:7474/
-2025-11-06 09:05:49.286+0000 INFO  id: 762BE1A7D23EA3E8297961B7C3A62C7CA1259FC38C50CFF19F9109AB2C1DA9D0
-2025-11-06 09:05:49.287+0000 INFO  name: system
-2025-11-06 09:05:49.289+0000 INFO  creationDate: 2025-11-06T08:40:08.837Z
-2025-11-06 09:05:49.290+0000 INFO  Started.
-2025-11-06 09:09:06.829+0000 INFO  Neo4j Server shutdown initiated by request
-2025-11-06 09:09:06.833+0000 INFO  Stopping...
-2025-11-06 09:11:43.713+0000 INFO  Logging config in use: File '/var/lib/neo4j/conf/user-logs.xml'
-2025-11-06 09:11:43.726+0000 WARN  Use of deprecated setting 'dbms.memory.pagecache.size'. It is replaced by 'server.memory.pagecache.size'.
-2025-11-06 09:11:43.727+0000 WARN  Use of deprecated setting 'dbms.memory.heap.max_size'. It is replaced by 'server.memory.heap.max_size'.
-2025-11-06 09:11:43.728+0000 WARN  Use of deprecated setting 'dbms.memory.heap.initial_size'. It is replaced by 'server.memory.heap.initial_size'.
-2025-11-06 09:11:43.743+0000 INFO  Starting...
-2025-11-06 09:11:44.762+0000 INFO  This instance is ServerId{47c9344d} (47c9344d-e1ed-4d9d-9e46-c94187935e9a)
-2025-11-06 09:11:45.851+0000 INFO  ======== Neo4j 5.21.0 ========
-2025-11-06 09:11:46.083+0000 INFO  GDS license file: null
-2025-11-06 09:11:46.087+0000 INFO  GDS license state: unlicensed
-2025-11-06 09:11:46.101+0000 INFO  Progress tracking: enabled
-2025-11-06 09:11:46.105+0000 INFO  Memory usage guard: minimum estimate
-2025-11-06 09:11:46.119+0000 INFO  Building Graph Data Science extension...
-2025-11-06 09:11:46.133+0000 INFO  Register Graph Data Science...
-2025-11-06 09:11:46.134+0000 INFO  Graph Data Science registered.
-2025-11-06 09:11:46.136+0000 INFO  Register Metrics Facade...
-2025-11-06 09:11:46.137+0000 INFO  Metrics Facade registered.
-2025-11-06 09:11:46.138+0000 INFO  Register Model Catalog...
-2025-11-06 09:11:46.140+0000 INFO  Model Catalog registered.
-2025-11-06 09:11:46.143+0000 INFO  Register Task Registry Factory...
-2025-11-06 09:11:46.144+0000 INFO  Task Registry Factory registered.
-2025-11-06 09:11:46.146+0000 INFO  Register Task Store...
-2025-11-06 09:11:46.147+0000 INFO  Task Store registered.
-2025-11-06 09:11:46.149+0000 INFO  Register User Log Registry Factory...
-2025-11-06 09:11:46.150+0000 INFO  User Log Registry Factory registered.
-2025-11-06 09:11:46.152+0000 INFO  Graph Data Science extension built.
-2025-11-06 09:11:46.154+0000 INFO  Building Graph Data Science Extras extension...
-2025-11-06 09:11:46.158+0000 INFO  Register Graph Data Science Extras...
-2025-11-06 09:11:46.159+0000 INFO  Graph Data Science Extras registered.
-2025-11-06 09:11:46.160+0000 INFO  Graph Data Science Extras extension built.
-2025-11-06 09:11:46.234+0000 INFO  GDS compatibility: for Neo4j 5.17 -- not available, for Neo4j 5.18 -- not available, for Neo4j 5.19 -- not available, for Neo4j 5.20 -- not available, for Neo4j 5.21 -- available, for Neo4j 5.22 -- not available, for Neo4j 5.23 -- not available, selected: Neo4j 5.21
-2025-11-06 09:12:34.479+0000 INFO  Anonymous Usage Data is being sent to Neo4j, see https://neo4j.com/docs/usage-data/
-2025-11-06 09:12:34.542+0000 INFO  Bolt enabled on 0.0.0.0:7687.
-2025-11-06 09:12:35.304+0000 INFO  HTTP enabled on 0.0.0.0:7474.
-2025-11-06 09:12:35.306+0000 INFO  Remote interface available at http://localhost:7474/
-2025-11-06 09:12:35.312+0000 INFO  id: 762BE1A7D23EA3E8297961B7C3A62C7CA1259FC38C50CFF19F9109AB2C1DA9D0
-2025-11-06 09:12:35.313+0000 INFO  name: system
-2025-11-06 09:12:35.316+0000 INFO  creationDate: 2025-11-06T08:40:08.837Z
-2025-11-06 09:12:35.318+0000 INFO  Started.
-2025-11-06 09:12:50.775+0000 INFO  Neo4j Server shutdown initiated by request
-2025-11-06 09:12:50.776+0000 INFO  Stopping...
-2025-11-06 09:14:16.870+0000 INFO  Logging config in use: File '/var/lib/neo4j/conf/user-logs.xml'
-2025-11-06 09:14:16.881+0000 WARN  Use of deprecated setting 'dbms.memory.pagecache.size'. It is replaced by 'server.memory.pagecache.size'.
-2025-11-06 09:14:16.882+0000 WARN  Use of deprecated setting 'dbms.memory.heap.max_size'. It is replaced by 'server.memory.heap.max_size'.
-2025-11-06 09:14:16.883+0000 WARN  Use of deprecated setting 'dbms.memory.heap.initial_size'. It is replaced by 'server.memory.heap.initial_size'.
-2025-11-06 09:14:16.899+0000 INFO  Starting...
-2025-11-06 09:14:17.855+0000 INFO  This instance is ServerId{47c9344d} (47c9344d-e1ed-4d9d-9e46-c94187935e9a)
-2025-11-06 09:14:18.943+0000 INFO  ======== Neo4j 5.21.0 ========
-2025-11-06 09:14:19.238+0000 INFO  GDS license file: null
-2025-11-06 09:14:19.242+0000 INFO  GDS license state: unlicensed
-2025-11-06 09:14:19.266+0000 INFO  Progress tracking: enabled
-2025-11-06 09:14:19.268+0000 INFO  Memory usage guard: minimum estimate
-2025-11-06 09:14:19.283+0000 INFO  Building Graph Data Science extension...
-2025-11-06 09:14:19.302+0000 INFO  Register Graph Data Science...
-2025-11-06 09:14:19.303+0000 INFO  Graph Data Science registered.
-2025-11-06 09:14:19.305+0000 INFO  Register Metrics Facade...
-2025-11-06 09:14:19.307+0000 INFO  Metrics Facade registered.
-2025-11-06 09:14:19.308+0000 INFO  Register Model Catalog...
-2025-11-06 09:14:19.310+0000 INFO  Model Catalog registered.
-2025-11-06 09:14:19.312+0000 INFO  Register Task Registry Factory...
-2025-11-06 09:14:19.313+0000 INFO  Task Registry Factory registered.
-2025-11-06 09:14:19.315+0000 INFO  Register Task Store...
-2025-11-06 09:14:19.317+0000 INFO  Task Store registered.
-2025-11-06 09:14:19.318+0000 INFO  Register User Log Registry Factory...
-2025-11-06 09:14:19.320+0000 INFO  User Log Registry Factory registered.
-2025-11-06 09:14:19.321+0000 INFO  Graph Data Science extension built.
-2025-11-06 09:14:19.324+0000 INFO  Building Graph Data Science Extras extension...
-2025-11-06 09:14:19.327+0000 INFO  Register Graph Data Science Extras...
-2025-11-06 09:14:19.329+0000 INFO  Graph Data Science Extras registered.
-2025-11-06 09:14:19.330+0000 INFO  Graph Data Science Extras extension built.
-2025-11-06 09:14:19.406+0000 INFO  GDS compatibility: for Neo4j 5.17 -- not available, for Neo4j 5.18 -- not available, for Neo4j 5.19 -- not available, for Neo4j 5.20 -- not available, for Neo4j 5.21 -- available, for Neo4j 5.22 -- not available, for Neo4j 5.23 -- not available, selected: Neo4j 5.21
-2025-11-06 09:15:10.678+0000 INFO  Anonymous Usage Data is being sent to Neo4j, see https://neo4j.com/docs/usage-data/
-2025-11-06 09:15:10.742+0000 INFO  Bolt enabled on 0.0.0.0:7687.
-2025-11-06 09:15:11.562+0000 INFO  HTTP enabled on 0.0.0.0:7474.
-2025-11-06 09:15:11.563+0000 INFO  Remote interface available at http://localhost:7474/
-2025-11-06 09:15:11.567+0000 INFO  id: 762BE1A7D23EA3E8297961B7C3A62C7CA1259FC38C50CFF19F9109AB2C1DA9D0
-2025-11-06 09:15:11.568+0000 INFO  name: system
-2025-11-06 09:15:11.569+0000 INFO  creationDate: 2025-11-06T08:40:08.837Z
-2025-11-06 09:15:11.570+0000 INFO  Started.
-2025-11-06 09:51:34.982+0000 INFO  Neo4j Server shutdown initiated by request
-2025-11-06 09:51:34.984+0000 INFO  Stopping...
-2025-11-06 09:53:11.887+0000 INFO  Logging config in use: File '/var/lib/neo4j/conf/user-logs.xml'
-2025-11-06 09:53:11.898+0000 WARN  Use of deprecated setting 'dbms.memory.pagecache.size'. It is replaced by 'server.memory.pagecache.size'.
-2025-11-06 09:53:11.899+0000 WARN  Use of deprecated setting 'dbms.memory.heap.max_size'. It is replaced by 'server.memory.heap.max_size'.
-2025-11-06 09:53:11.899+0000 WARN  Use of deprecated setting 'dbms.memory.heap.initial_size'. It is replaced by 'server.memory.heap.initial_size'.
-2025-11-06 09:53:11.914+0000 INFO  Starting...
-2025-11-06 09:53:13.016+0000 INFO  This instance is ServerId{47c9344d} (47c9344d-e1ed-4d9d-9e46-c94187935e9a)
-2025-11-06 09:53:14.532+0000 INFO  ======== Neo4j 5.21.0 ========
-2025-11-06 09:53:14.841+0000 INFO  GDS license file: null
-2025-11-06 09:53:14.844+0000 INFO  GDS license state: unlicensed
-2025-11-06 09:53:14.860+0000 INFO  Progress tracking: enabled
-2025-11-06 09:53:14.862+0000 INFO  Memory usage guard: minimum estimate
-2025-11-06 09:53:14.872+0000 INFO  Building Graph Data Science extension...
-2025-11-06 09:53:14.884+0000 INFO  Register Graph Data Science...
-2025-11-06 09:53:14.885+0000 INFO  Graph Data Science registered.
-2025-11-06 09:53:14.887+0000 INFO  Register Metrics Facade...
-2025-11-06 09:53:14.888+0000 INFO  Metrics Facade registered.
-2025-11-06 09:53:14.888+0000 INFO  Register Model Catalog...
-2025-11-06 09:53:14.890+0000 INFO  Model Catalog registered.
-2025-11-06 09:53:14.892+0000 INFO  Register Task Registry Factory...
-2025-11-06 09:53:14.893+0000 INFO  Task Registry Factory registered.
-2025-11-06 09:53:14.894+0000 INFO  Register Task Store...
-2025-11-06 09:53:14.895+0000 INFO  Task Store registered.
-2025-11-06 09:53:14.897+0000 INFO  Register User Log Registry Factory...
-2025-11-06 09:53:14.898+0000 INFO  User Log Registry Factory registered.
-2025-11-06 09:53:14.899+0000 INFO  Graph Data Science extension built.
-2025-11-06 09:53:14.900+0000 INFO  Building Graph Data Science Extras extension...
-2025-11-06 09:53:14.903+0000 INFO  Register Graph Data Science Extras...
-2025-11-06 09:53:14.904+0000 INFO  Graph Data Science Extras registered.
-2025-11-06 09:53:14.906+0000 INFO  Graph Data Science Extras extension built.
-2025-11-06 09:53:14.976+0000 INFO  GDS compatibility: for Neo4j 5.17 -- not available, for Neo4j 5.18 -- not available, for Neo4j 5.19 -- not available, for Neo4j 5.20 -- not available, for Neo4j 5.21 -- available, for Neo4j 5.22 -- not available, for Neo4j 5.23 -- not available, selected: Neo4j 5.21
-2025-11-06 09:54:05.696+0000 INFO  Anonymous Usage Data is being sent to Neo4j, see https://neo4j.com/docs/usage-data/
-2025-11-06 09:54:05.761+0000 INFO  Bolt enabled on 0.0.0.0:7687.
-2025-11-06 09:54:06.807+0000 INFO  HTTP enabled on 0.0.0.0:7474.
-2025-11-06 09:54:06.809+0000 INFO  Remote interface available at http://localhost:7474/
-2025-11-06 09:54:06.817+0000 INFO  id: 762BE1A7D23EA3E8297961B7C3A62C7CA1259FC38C50CFF19F9109AB2C1DA9D0
-2025-11-06 09:54:06.819+0000 INFO  name: system
-2025-11-06 09:54:06.820+0000 INFO  creationDate: 2025-11-06T08:40:08.837Z
-2025-11-06 09:54:06.821+0000 INFO  Started.
-2025-11-11 06:31:58.817+0000 INFO  Logging config in use: File '/var/lib/neo4j/conf/user-logs.xml'
-2025-11-11 06:31:58.832+0000 WARN  Use of deprecated setting 'dbms.memory.pagecache.size'. It is replaced by 'server.memory.pagecache.size'.
-2025-11-11 06:31:58.834+0000 WARN  Use of deprecated setting 'dbms.memory.heap.max_size'. It is replaced by 'server.memory.heap.max_size'.
-2025-11-11 06:31:58.834+0000 WARN  Use of deprecated setting 'dbms.memory.heap.initial_size'. It is replaced by 'server.memory.heap.initial_size'.
-2025-11-11 06:31:58.857+0000 INFO  Starting...
-2025-11-11 06:32:00.238+0000 INFO  This instance is ServerId{47c9344d} (47c9344d-e1ed-4d9d-9e46-c94187935e9a)
-2025-11-11 06:32:02.032+0000 INFO  ======== Neo4j 5.21.0 ========
-2025-11-11 06:32:02.419+0000 INFO  GDS license file: null
-2025-11-11 06:32:02.422+0000 INFO  GDS license state: unlicensed
-2025-11-11 06:32:02.442+0000 INFO  Progress tracking: enabled
-2025-11-11 06:32:02.444+0000 INFO  Memory usage guard: minimum estimate
-2025-11-11 06:32:02.461+0000 INFO  Building Graph Data Science extension...
-2025-11-11 06:32:02.478+0000 INFO  Register Graph Data Science...
-2025-11-11 06:32:02.482+0000 INFO  Graph Data Science registered.
-2025-11-11 06:32:02.484+0000 INFO  Register Metrics Facade...
-2025-11-11 06:32:02.486+0000 INFO  Metrics Facade registered.
-2025-11-11 06:32:02.488+0000 INFO  Register Model Catalog...
-2025-11-11 06:32:02.490+0000 INFO  Model Catalog registered.
-2025-11-11 06:32:02.492+0000 INFO  Register Task Registry Factory...
-2025-11-11 06:32:02.493+0000 INFO  Task Registry Factory registered.
-2025-11-11 06:32:02.496+0000 INFO  Register Task Store...
-2025-11-11 06:32:02.497+0000 INFO  Task Store registered.
-2025-11-11 06:32:02.500+0000 INFO  Register User Log Registry Factory...
-2025-11-11 06:32:02.501+0000 INFO  User Log Registry Factory registered.
-2025-11-11 06:32:02.503+0000 INFO  Graph Data Science extension built.
-2025-11-11 06:32:02.505+0000 INFO  Building Graph Data Science Extras extension...
-2025-11-11 06:32:02.508+0000 INFO  Register Graph Data Science Extras...
-2025-11-11 06:32:02.511+0000 INFO  Graph Data Science Extras registered.
-2025-11-11 06:32:02.512+0000 INFO  Graph Data Science Extras extension built.
-2025-11-11 06:32:02.612+0000 INFO  GDS compatibility: for Neo4j 5.17 -- not available, for Neo4j 5.18 -- not available, for Neo4j 5.19 -- not available, for Neo4j 5.20 -- not available, for Neo4j 5.21 -- available, for Neo4j 5.22 -- not available, for Neo4j 5.23 -- not available, selected: Neo4j 5.21
-2025-11-11 06:32:57.099+0000 INFO  Anonymous Usage Data is being sent to Neo4j, see https://neo4j.com/docs/usage-data/
-2025-11-11 06:32:57.161+0000 INFO  Bolt enabled on 0.0.0.0:7687.
-2025-11-11 06:32:58.105+0000 INFO  HTTP enabled on 0.0.0.0:7474.
-2025-11-11 06:32:58.106+0000 INFO  Remote interface available at http://localhost:7474/
-2025-11-11 06:32:58.112+0000 INFO  id: 762BE1A7D23EA3E8297961B7C3A62C7CA1259FC38C50CFF19F9109AB2C1DA9D0
-2025-11-11 06:32:58.114+0000 INFO  name: system
-2025-11-11 06:32:58.117+0000 INFO  creationDate: 2025-11-06T08:40:08.837Z
-2025-11-11 06:32:58.118+0000 INFO  Started.
-2025-11-11 07:07:09.396+0000 INFO  Neo4j Server shutdown initiated by request
-2025-11-11 07:07:09.401+0000 INFO  Stopping...
-2025-11-12 14:25:42.094+0000 INFO  Logging config in use: File '/var/lib/neo4j/conf/user-logs.xml'
-2025-11-12 14:25:42.134+0000 WARN  Use of deprecated setting 'dbms.memory.pagecache.size'. It is replaced by 'server.memory.pagecache.size'.
-2025-11-12 14:25:42.136+0000 WARN  Use of deprecated setting 'dbms.memory.heap.max_size'. It is replaced by 'server.memory.heap.max_size'.
-2025-11-12 14:25:42.138+0000 WARN  Use of deprecated setting 'dbms.memory.heap.initial_size'. It is replaced by 'server.memory.heap.initial_size'.
-2025-11-12 14:25:42.175+0000 INFO  Starting...
-2025-11-12 14:25:44.538+0000 INFO  This instance is ServerId{7f614fa8} (7f614fa8-8504-4783-8d4f-8b161060c1bd)
-2025-11-12 14:25:46.650+0000 INFO  ======== Neo4j 5.21.0 ========
-2025-11-12 14:25:46.953+0000 INFO  GDS license file: null
-2025-11-12 14:25:46.956+0000 INFO  GDS license state: unlicensed
-2025-11-12 14:25:46.970+0000 INFO  Progress tracking: enabled
-2025-11-12 14:25:46.972+0000 INFO  Memory usage guard: minimum estimate
-2025-11-12 14:25:46.984+0000 INFO  Building Graph Data Science extension...
-2025-11-12 14:25:47.008+0000 INFO  Register Graph Data Science...
-2025-11-12 14:25:47.013+0000 INFO  Graph Data Science registered.
-2025-11-12 14:25:47.015+0000 INFO  Register Metrics Facade...
-2025-11-12 14:25:47.017+0000 INFO  Metrics Facade registered.
-2025-11-12 14:25:47.019+0000 INFO  Register Model Catalog...
-2025-11-12 14:25:47.021+0000 INFO  Model Catalog registered.
-2025-11-12 14:25:47.023+0000 INFO  Register Task Registry Factory...
-2025-11-12 14:25:47.024+0000 INFO  Task Registry Factory registered.
-2025-11-12 14:25:47.026+0000 INFO  Register Task Store...
-2025-11-12 14:25:47.028+0000 INFO  Task Store registered.
-2025-11-12 14:25:47.029+0000 INFO  Register User Log Registry Factory...
-2025-11-12 14:25:47.030+0000 INFO  User Log Registry Factory registered.
-2025-11-12 14:25:47.031+0000 INFO  Graph Data Science extension built.
-2025-11-12 14:25:47.032+0000 INFO  Building Graph Data Science Extras extension...
-2025-11-12 14:25:47.036+0000 INFO  Register Graph Data Science Extras...
-2025-11-12 14:25:47.037+0000 INFO  Graph Data Science Extras registered.
-2025-11-12 14:25:47.038+0000 INFO  Graph Data Science Extras extension built.
-2025-11-12 14:25:47.132+0000 INFO  GDS compatibility: for Neo4j 5.17 -- not available, for Neo4j 5.18 -- not available, for Neo4j 5.19 -- not available, for Neo4j 5.20 -- not available, for Neo4j 5.21 -- available, for Neo4j 5.22 -- not available, for Neo4j 5.23 -- not available, selected: Neo4j 5.21
-2025-11-12 14:26:20.813+0000 INFO  Anonymous Usage Data is being sent to Neo4j, see https://neo4j.com/docs/usage-data/
-2025-11-12 14:26:20.874+0000 INFO  Bolt enabled on 0.0.0.0:7687.
-2025-11-12 14:26:21.739+0000 INFO  HTTP enabled on 0.0.0.0:7474.
-2025-11-12 14:26:21.741+0000 INFO  Remote interface available at http://localhost:7474/
-2025-11-12 14:26:21.745+0000 INFO  id: 91530B8F2D9472B0E9AA1979DA84978E108D16DF79270FA5839927A308FD4ECE
-2025-11-12 14:26:21.746+0000 INFO  name: system
-2025-11-12 14:26:21.747+0000 INFO  creationDate: 2025-10-29T16:00:58.746Z
-2025-11-12 14:26:21.747+0000 INFO  Started.
-2025-11-13 00:55:07.302+0000 INFO  Logging config in use: File '/var/lib/neo4j/conf/user-logs.xml'
-2025-11-13 00:55:07.316+0000 WARN  Use of deprecated setting 'dbms.memory.pagecache.size'. It is replaced by 'server.memory.pagecache.size'.
-2025-11-13 00:55:07.317+0000 WARN  Use of deprecated setting 'dbms.memory.heap.max_size'. It is replaced by 'server.memory.heap.max_size'.
-2025-11-13 00:55:07.318+0000 WARN  Use of deprecated setting 'dbms.memory.heap.initial_size'. It is replaced by 'server.memory.heap.initial_size'.
-2025-11-13 00:55:07.334+0000 INFO  Starting...
-2025-11-13 00:55:08.324+0000 INFO  This instance is ServerId{7f614fa8} (7f614fa8-8504-4783-8d4f-8b161060c1bd)
-2025-11-13 00:55:09.773+0000 INFO  ======== Neo4j 5.21.0 ========
-2025-11-13 00:55:10.100+0000 INFO  GDS license file: null
-2025-11-13 00:55:10.102+0000 INFO  GDS license state: unlicensed
-2025-11-13 00:55:10.115+0000 INFO  Progress tracking: enabled
-2025-11-13 00:55:10.117+0000 INFO  Memory usage guard: minimum estimate
-2025-11-13 00:55:10.127+0000 INFO  Building Graph Data Science extension...
-2025-11-13 00:55:10.138+0000 INFO  Register Graph Data Science...
-2025-11-13 00:55:10.139+0000 INFO  Graph Data Science registered.
-2025-11-13 00:55:10.141+0000 INFO  Register Metrics Facade...
-2025-11-13 00:55:10.141+0000 INFO  Metrics Facade registered.
-2025-11-13 00:55:10.143+0000 INFO  Register Model Catalog...
-2025-11-13 00:55:10.144+0000 INFO  Model Catalog registered.
-2025-11-13 00:55:10.146+0000 INFO  Register Task Registry Factory...
-2025-11-13 00:55:10.147+0000 INFO  Task Registry Factory registered.
-2025-11-13 00:55:10.148+0000 INFO  Register Task Store...
-2025-11-13 00:55:10.149+0000 INFO  Task Store registered.
-2025-11-13 00:55:10.150+0000 INFO  Register User Log Registry Factory...
-2025-11-13 00:55:10.151+0000 INFO  User Log Registry Factory registered.
-2025-11-13 00:55:10.152+0000 INFO  Graph Data Science extension built.
-2025-11-13 00:55:10.153+0000 INFO  Building Graph Data Science Extras extension...
-2025-11-13 00:55:10.155+0000 INFO  Register Graph Data Science Extras...
-2025-11-13 00:55:10.156+0000 INFO  Graph Data Science Extras registered.
-2025-11-13 00:55:10.156+0000 INFO  Graph Data Science Extras extension built.
-2025-11-13 00:55:10.221+0000 INFO  GDS compatibility: for Neo4j 5.17 -- not available, for Neo4j 5.18 -- not available, for Neo4j 5.19 -- not available, for Neo4j 5.20 -- not available, for Neo4j 5.21 -- available, for Neo4j 5.22 -- not available, for Neo4j 5.23 -- not available, selected: Neo4j 5.21
-2025-11-13 00:55:37.960+0000 INFO  Anonymous Usage Data is being sent to Neo4j, see https://neo4j.com/docs/usage-data/
-2025-11-13 00:55:38.056+0000 INFO  Bolt enabled on 0.0.0.0:7687.
-2025-11-13 00:55:38.980+0000 INFO  HTTP enabled on 0.0.0.0:7474.
-2025-11-13 00:55:38.982+0000 INFO  Remote interface available at http://localhost:7474/
-2025-11-13 00:55:38.986+0000 INFO  id: 91530B8F2D9472B0E9AA1979DA84978E108D16DF79270FA5839927A308FD4ECE
-2025-11-13 00:55:38.987+0000 INFO  name: system
-2025-11-13 00:55:38.988+0000 INFO  creationDate: 2025-10-29T16:00:58.746Z
-2025-11-13 00:55:38.989+0000 INFO  Started.
-2025-11-13 01:16:22.415+0000 WARN  [bolt-7] The client is unauthorized due to authentication failure.
-2025-11-13 01:16:22.429+0000 WARN  [bolt-8] The client is unauthorized due to authentication failure.
-2025-11-13 01:16:22.451+0000 WARN  [bolt-9] The client is unauthorized due to authentication failure.
+2025-11-09 09:14:58.190+0000 INFO  Logging config in use: File '/var/lib/neo4j/conf/user-logs.xml'
+2025-11-09 09:14:58.351+0000 WARN  Use of deprecated setting 'dbms.memory.pagecache.size'. It is replaced by 'server.memory.pagecache.size'.
+2025-11-09 09:14:58.400+0000 WARN  Use of deprecated setting 'dbms.memory.heap.max_size'. It is replaced by 'server.memory.heap.max_size'.
+2025-11-09 09:14:58.521+0000 WARN  Use of deprecated setting 'dbms.memory.heap.initial_size'. It is replaced by 'server.memory.heap.initial_size'.
+2025-11-09 09:14:58.891+0000 INFO  Starting...
+2025-11-09 09:15:08.027+0000 INFO  This instance is ServerId{7f614fa8} (7f614fa8-8504-4783-8d4f-8b161060c1bd)
+2025-11-09 09:15:22.387+0000 INFO  ======== Neo4j 5.21.0 ========
+2025-11-09 09:15:24.373+0000 INFO  GDS license file: null
+2025-11-09 09:15:24.408+0000 INFO  GDS license state: unlicensed
+2025-11-09 09:15:24.518+0000 INFO  Progress tracking: enabled
+2025-11-09 09:15:24.523+0000 INFO  Memory usage guard: minimum estimate
+2025-11-09 09:15:24.629+0000 INFO  Building Graph Data Science extension...
+2025-11-09 09:15:24.698+0000 INFO  Register Graph Data Science...
+2025-11-09 09:15:24.700+0000 INFO  Graph Data Science registered.
+2025-11-09 09:15:24.708+0000 INFO  Register Metrics Facade...
+2025-11-09 09:15:24.718+0000 INFO  Metrics Facade registered.
+2025-11-09 09:15:24.720+0000 INFO  Register Model Catalog...
+2025-11-09 09:15:24.726+0000 INFO  Model Catalog registered.
+2025-11-09 09:15:24.728+0000 INFO  Register Task Registry Factory...
+2025-11-09 09:15:24.736+0000 INFO  Task Registry Factory registered.
+2025-11-09 09:15:24.744+0000 INFO  Register Task Store...
+2025-11-09 09:15:24.745+0000 INFO  Task Store registered.
+2025-11-09 09:15:24.753+0000 INFO  Register User Log Registry Factory...
+2025-11-09 09:15:24.754+0000 INFO  User Log Registry Factory registered.
+2025-11-09 09:15:24.759+0000 INFO  Graph Data Science extension built.
+2025-11-09 09:15:24.796+0000 INFO  Building Graph Data Science Extras extension...
+2025-11-09 09:15:24.859+0000 INFO  Register Graph Data Science Extras...
+2025-11-09 09:15:24.867+0000 INFO  Graph Data Science Extras registered.
+2025-11-09 09:15:24.875+0000 INFO  Graph Data Science Extras extension built.
+2025-11-09 09:15:25.370+0000 INFO  GDS compatibility: for Neo4j 5.17 -- not available, for Neo4j 5.18 -- not available, for Neo4j 5.19 -- not available, for Neo4j 5.20 -- not available, for Neo4j 5.21 -- available, for Neo4j 5.22 -- not available, for Neo4j 5.23 -- not available, selected: Neo4j 5.21
+2025-11-09 09:16:46.219+0000 INFO  Anonymous Usage Data is being sent to Neo4j, see https://neo4j.com/docs/usage-data/
+2025-11-09 09:16:46.311+0000 INFO  Bolt enabled on 0.0.0.0:7687.
+2025-11-09 09:16:47.485+0000 INFO  HTTP enabled on 0.0.0.0:7474.
+2025-11-09 09:16:47.488+0000 INFO  Remote interface available at http://localhost:7474/
+2025-11-09 09:16:47.500+0000 INFO  id: 91530B8F2D9472B0E9AA1979DA84978E108D16DF79270FA5839927A308FD4ECE
+2025-11-09 09:16:47.502+0000 INFO  name: system
+2025-11-09 09:16:47.504+0000 INFO  creationDate: 2025-10-29T16:00:58.746Z
+2025-11-09 09:16:47.505+0000 INFO  Started.
+2025-11-10 04:17:39.010+0000 INFO  Neo4j Server shutdown initiated by request
+2025-11-10 04:17:39.025+0000 INFO  Stopping...

@@ -1,5 +1,6 @@
 package com.example.userservice.service;
-
+import com.example.commonlib.exception.AppException;
+import com.example.commonlib.exception.ErrorCode;
 import com.example.userservice.dto.notification.NotificationCreationRequest;
 import com.example.userservice.dto.notification.NotificationResponse;
 import com.example.userservice.mapper.NotificationMapper;
@@ -35,7 +36,8 @@ public class NotificationService {
 
     public void markAsRead(String id) {
         Notification notification = notificationRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Notification not found"));
+                .orElseThrow(() -> new AppException(ErrorCode.NOT_FOUND, "Notification not found"));
+
         notification.setRead(true);
         notificationRepository.save(notification);
     }

@@ -35,14 +35,16 @@ public class UserService {
 
     public UserResponse updateUser(String id, UserUpdateRequest request) {
         User user = userRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("User not found"));
+                .orElseThrow(() -> new AppException(ErrorCode.NOT_FOUND, "User not found"));
+
         userMapper.updateUserFromRequest(request, user);
-        return userMapper.toResponse(userRepository.save(user));
+        User updated = userRepository.save(user);
+        return userMapper.toResponse(updated);
     }
 
     public UserResponse getUserById(String id) {
         User user = userRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("User not found"));
+                .orElseThrow(() -> new AppException(ErrorCode.NOT_FOUND, "User not found"));
         return userMapper.toResponse(user);
     }
 

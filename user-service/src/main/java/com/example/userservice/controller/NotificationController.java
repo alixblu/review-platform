@@ -34,7 +34,7 @@ public class NotificationController {
         return ResponseEntity.ok(new ApiResponse<>("Fetched notifications successfully", list));
     }
 
-    @PutMapping("/{id}/read")
+    @PutMapping("/{id}")
     public ResponseEntity<ApiResponse<Void>> markAsRead(@PathVariable String id) {
         notificationService.markAsRead(id);
         return ResponseEntity.ok(new ApiResponse<>("Marked notification as read", null));

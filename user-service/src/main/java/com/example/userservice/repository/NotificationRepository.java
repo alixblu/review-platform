@@ -9,5 +9,5 @@ import java.util.UUID;
 
 @Repository
 public interface NotificationRepository extends Neo4jRepository<Notification, String> {
-    List<Notification> findByUserId(UUID userId);
+    List<Notification> findByUserId(String userId);
 }

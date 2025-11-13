@@ -12,7 +12,7 @@ public interface UserPreferenceMapper {
     @Mapping(target = "updatedAt", ignore = true)
     UserPreference toModel(UserPreferenceCreationRequest request);
 
-    @Mapping(target = "userId", expression = "java(userPreference.getUser().getUserId())")
+    @Mapping(target = "userId", expression = "java(userPreference.getUser().getId())")
     UserPreferenceResponse toResponse(UserPreference userPreference);
 
     @Mapping(target = "user", ignore = true)

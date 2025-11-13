@@ -1,5 +1,7 @@
 package com.example.userservice.service;
 
+import com.example.commonlib.exception.AppException;
+import com.example.commonlib.exception.ErrorCode;
 import com.example.userservice.dto.user.UserCreationRequest;
 import com.example.userservice.dto.user.UserResponse;
 import com.example.userservice.dto.user.UserUpdateRequest;
@@ -21,8 +23,12 @@ public class UserService {
     final UserRepository userRepository;
     final UserMapper userMapper;
 
-    public UserResponse createUser(UserCreationRequest request) {
-        User user = userMapper.toModel(request);
+    public UserResponse createUser(UserCreationRequest userCreationRequest) {
+        if (userRepository.existsUserByAccId(String.valueOf(userCreationRequest.getAccId()))) {
+            throw new AppException(ErrorCode.EXISTED, "User with this accId already exists");
+        }
+
+        User user = userMapper.toModel(userCreationRequest);
         User saved = userRepository.save(user);
         return userMapper.toResponse(saved);
     }

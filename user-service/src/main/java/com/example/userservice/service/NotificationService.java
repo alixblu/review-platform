@@ -29,7 +29,7 @@ public class NotificationService {
     }
 
     public List<NotificationResponse> getNotificationsByUserId(String userId) {
-        List<Notification> list = notificationRepository.findByUserId(UUID.fromString(userId));
+        List<Notification> list = notificationRepository.findByUserId(userId);
         return list.stream().map(notificationMapper::toResponse).collect(Collectors.toList());
     }
 

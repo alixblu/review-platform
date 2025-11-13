@@ -11,7 +11,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.UUID;
+import java.lang.String;
+
 
 @RestController
 @RequestMapping("api/user-preference")
@@ -31,7 +32,7 @@ public class UserPreferenceController {
 
     @PutMapping("/{userId}")
     public ResponseEntity<ApiResponse<UserPreferenceResponse>> updatePreference(
-            @PathVariable UUID userId,
+            @PathVariable String userId,
             @RequestBody @Valid UserPreferenceUpdateRequest request) {
         return ResponseEntity.ok(
                 new ApiResponse<>("User preference updated successfully",
@@ -39,15 +40,15 @@ public class UserPreferenceController {
     }
 
     @GetMapping("/{userId}")
-    public ResponseEntity<ApiResponse<UserPreferenceResponse>> getPreference(@PathVariable UUID userId) {
+    public ResponseEntity<ApiResponse<UserPreferenceResponse>> getPreference(@PathVariable String userId) {
         return ResponseEntity.ok(
                 new ApiResponse<>("User preference retrieved successfully",
-                        userPreferenceService.getUserPreference(userId)));
+                        userPreferenceService.getUserPreference(String.valueOf(userId))));
     }
-
-    @DeleteMapping("/{userId}")
-    public ResponseEntity<ApiResponse<Void>> deletePreference(@PathVariable UUID userId) {
-        userPreferenceService.deleteUserPreference(userId);
-        return ResponseEntity.ok(new ApiResponse<>("User preference deleted successfully", null));
-    }
+//
+//    @DeleteMapping("/{userId}")
+//    public ResponseEntity<ApiResponse<Void>> deletePreference(@PathVariable String userId) {
+//        userPreferenceService.deleteUserPreference(userId);
+//        return ResponseEntity.ok(new ApiResponse<>("User preference deleted successfully", null));
+//    }
 }

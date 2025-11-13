@@ -13,6 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Getter
 public class UserPreference {
 
     @Id
@@ -30,9 +31,6 @@ public class UserPreference {
 
     @Property("preferences_text")
     private String preferencesText;
-
-    @Property("embedding")
-    private String embedding;
 
     @Property("updated_at")
     private Instant updatedAt;

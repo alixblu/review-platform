@@ -5,10 +5,9 @@ import org.springframework.data.neo4j.repository.Neo4jRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
-import java.util.UUID;
 
 @Repository
 public interface UserPreferenceRepository extends Neo4jRepository<UserPreference, String> {
 
-    Optional<UserPreference> findByUser_UserId(UUID userId);
+    Optional<UserPreference> findByUser_Id(String id);
 }

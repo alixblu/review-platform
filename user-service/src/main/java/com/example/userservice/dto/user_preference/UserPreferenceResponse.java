@@ -13,10 +13,9 @@ import java.util.UUID;
 public class UserPreferenceResponse {
 
     private String id;
-    private UUID userId;
+    private String userId;
     private String skinType;
     private List<String> concerns;
     private String preferencesText;
-    private String embedding;
     private Instant updatedAt;
 }

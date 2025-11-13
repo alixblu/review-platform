@@ -6,8 +6,6 @@ import com.example.userservice.model.Notification;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-import java.time.LocalDateTime;
-
 @Mapper(componentModel = "spring")
 public interface NotificationMapper {
 

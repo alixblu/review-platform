@@ -37,7 +37,7 @@ public class UserController {
         return ResponseEntity.ok(new ApiResponse<>("Update user successfully", userResponse));
     }
 
-    @GetMapping("/all")
+    @GetMapping
     public ResponseEntity<ApiResponse<List<UserResponse>>> getAllUsers() {
         List<UserResponse> userResponseList = userService.getAllUsers();
         return ResponseEntity.ok(new ApiResponse<>("Get all users successfully", userResponseList));

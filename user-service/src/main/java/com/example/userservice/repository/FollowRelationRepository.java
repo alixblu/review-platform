@@ -11,9 +11,9 @@ import java.util.UUID;
 @Repository
 public interface FollowRelationRepository extends Neo4jRepository<FollowRelation, String> {
 
-    List<FollowRelation> findByFollowerId(UUID followerId);
+    List<FollowRelation> findByFollowerId(String followerId);
 
-    List<FollowRelation> findByFollowingId(UUID followingId);
+    List<FollowRelation> findByFollowingId(String followingId);
 
-    Optional<FollowRelation> findByFollowerIdAndFollowingId(UUID followerId, UUID followingId);
+    Optional<FollowRelation> findByFollowerIdAndFollowingId(String followerId, UUID followingId);
 }

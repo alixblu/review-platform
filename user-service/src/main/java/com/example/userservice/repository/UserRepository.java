@@ -8,8 +8,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Repository
-public interface UserRepository extends Neo4jRepository<User, String> {
-    boolean existsByUserId(UUID userId);
-
-    Optional<User> findByUserId(UUID userId);
+public interface UserRepository extends Neo4jRepository<User,String> {
+    boolean existsUserByAccId(String accId);
+    Optional<User> findUserById(String id);
 }

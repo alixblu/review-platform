@@ -14,7 +14,7 @@ import java.util.UUID;
 public class UserPreferenceCreationRequest {
 
     @NotNull(message = "User ID không được để trống")
-    private UUID userId;
+    private String userId;
 
     @Size(max = 50, message = "Skin type tối đa 50 ký tự")
     private String skinType;
@@ -24,5 +24,4 @@ public class UserPreferenceCreationRequest {
     @Size(max = 1000, message = "Preferences text tối đa 1000 ký tự")
     private String preferencesText;
 
-    private String embedding;
 }

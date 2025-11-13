@@ -23,7 +23,7 @@ public class FollowRelationService {
     final FollowRelationMapper followRelationMapper;
 
     public FollowResponse follow(FollowRequest request) {
-        if (followRelationRepository.findByFollowerIdAndFollowingId(request.getFollowerId(), request.getFollowingId()).isPresent()) {
+        if (followRelationRepository.findByFollowerIdAndFollowingId(String.valueOf(request.getFollowerId()), request.getFollowingId()).isPresent()) {
             throw new RuntimeException("Already following this user");
         }
         FollowRelation relation = followRelationMapper.toModel(request);
@@ -32,18 +32,18 @@ public class FollowRelationService {
     }
 
     public void unfollow(FollowRequest request) {
-        FollowRelation relation = followRelationRepository.findByFollowerIdAndFollowingId(request.getFollowerId(), request.getFollowingId())
+        FollowRelation relation = followRelationRepository.findByFollowerIdAndFollowingId(String.valueOf(request.getFollowerId()), request.getFollowingId())
                 .orElseThrow(() -> new RuntimeException("Follow relation not found"));
         followRelationRepository.delete(relation);
     }
 
     public List<FollowResponse> getFollowers(String userId) {
-        return followRelationRepository.findByFollowingId(UUID.fromString(userId))
+        return followRelationRepository.findByFollowingId(userId)
                 .stream().map(followRelationMapper::toResponse).collect(Collectors.toList());
     }
 
     public List<FollowResponse> getFollowing(String userId) {
-        return followRelationRepository.findByFollowerId(UUID.fromString(userId))
+        return followRelationRepository.findByFollowerId(userId)
                 .stream().map(followRelationMapper::toResponse).collect(Collectors.toList());
     }
 }

@@ -14,6 +14,7 @@ public record PostResponse(
         String content,
         Post.Status status,
         LocalDateTime createAt,
-        List<String> mediaUrls
+        List<String> mediaUrls,
+        int likeCount
 //        PGvector embedding
 ) {}

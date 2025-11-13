@@ -7,6 +7,7 @@
     import java.time.LocalDateTime;
     import java.util.List;
     import java.util.UUID;
+    import org.hibernate.annotations.Formula;
 
     @Entity
     @Table(name = "post")
@@ -41,6 +42,16 @@
 
         @Enumerated(EnumType.STRING)
         private Status status = Status.PUBLIC;
+
+        @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
+        private List<Comment> comments;
+
+        @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
+        private List<PostLike> likes;
+
+        // Tự động đếm số like bằng câu lệnh SQL
+        @Formula("(select count(1) from post_like pl where pl.post_id = id)")
+        private int likeCount;
 
         public enum Status { PUBLIC, HIDDEN }
 

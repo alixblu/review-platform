@@ -5,3 +5,6 @@ data/
 #http://localhost:8080/swagger-ui/index.html
 review-platform-fe/
 logs/
+
+#testuser123:
+#admin:

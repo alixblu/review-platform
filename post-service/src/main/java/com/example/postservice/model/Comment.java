@@ -40,7 +40,6 @@ public class Comment {
 
     public enum Status { PUBLIC, HIDDEN }
 
-
     @PrePersist
     protected void onCreate() {
         this.createAt = LocalDateTime.now();

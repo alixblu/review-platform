@@ -42,3 +42,6 @@ spring:
             user-name-attribute: username
 cognito:
   domain: https://us-east-1jhi5wpbs9.auth.us-east-1.amazoncognito.com
+  logoutRedirect: http://localhost:3000/
+
+

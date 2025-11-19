@@ -48,4 +48,10 @@ public class UserController {
         UserResponse userResponse = userService.getUserById(id);
         return ResponseEntity.ok(new ApiResponse<>("Get user successfully", userResponse));
     }
+	
+		@GetMapping("/acc/{accId}")
+		public ResponseEntity<ApiResponse<UserResponse>> getUserByAccId(@PathVariable String accId) {
+			UserResponse userResponse = userService.getUserByAccId(accId);
+			return ResponseEntity.ok(new ApiResponse<>("Get user by accId successfully", userResponse));
+		}
 }

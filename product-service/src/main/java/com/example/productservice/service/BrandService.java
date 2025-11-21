@@ -61,24 +61,24 @@ public class BrandService {
         return brandMapper.toResponse(brand);
     }
 
-    /**
-     * Cập nhật thương hiệu
-     */
-    public BrandResponse updateBrand(UUID id, BrandCreationRequest request) {
-        Brand existingBrand = brandRepository.findById(id)
-                .orElseThrow(() -> new AppException(ErrorCode.NOT_FOUND, "Brand not found"));
-
-        existingBrand.setName(request.name());
-        existingBrand.setDescription(request.description());
-        existingBrand.setWebsite(request.website());
-        existingBrand.setLogoUrl(request.logoUrl());
-        existingBrand.setCountry(request.country());
-
-        brandRepository.save(existingBrand);
-        log.info("Updated brand successfully: {}", existingBrand.getName());
-
-        return brandMapper.toResponse(existingBrand);
-    }
+//    /**
+//     * Cập nhật thương hiệu
+//     */
+//    public BrandResponse updateBrand(UUID id, BrandCreationRequest request) {
+//        Brand existingBrand = brandRepository.findById(id)
+//                .orElseThrow(() -> new AppException(ErrorCode.NOT_FOUND, "Brand not found"));
+//
+//        existingBrand.setName(request.name());
+//        existingBrand.setDescription(request.description());
+//        existingBrand.setWebsite(request.website());
+//        existingBrand.setLogoUrl(request.logoUrl());
+//        existingBrand.setCountry(request.country());
+//
+//        brandRepository.save(existingBrand);
+//        log.info("Updated brand successfully: {}", existingBrand.getName());
+//
+//        return brandMapper.toResponse(existingBrand);
+//    }
 
     /**
      * Xóa thương hiệu

@@ -23,4 +23,9 @@ public class ApiResponse<T> {
         this.message = message;
         this.result = result;
     }
+
+    public ApiResponse(int code, String message) {
+        this.code = code;
+        this.message = message;
+    }
 }

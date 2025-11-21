@@ -5181,3 +5181,26 @@
 2025-11-18 16:07:17.485+0000 INFO  [o.n.c.i.c.CypherQueryCaches] [neo4j/43556453] Discarded stale query from the query cache after 488 seconds. Reason: IndexPropertyExistsSelectivity(IndexDescriptor(Range,Node(LabelId(0)),List(PropertyKeyId(13)),Set(),NONE,DoNotGetValue,None,false)) changed from 0.1 to 0.0, which is a divergence of 1.0 which is greater than threshold 0.6675729946944686. Query id: 568.
 2025-11-19 03:17:11.714+0000 WARN  [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=242, gcTime=0, gcCount=0}
 2025-11-19 03:17:12.084+0000 WARN  [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=414, gcTime=0, gcCount=0}
+2025-11-19 03:20:08.514+0000 WARN  [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=202, gcTime=0, gcCount=0}
+2025-11-19 03:20:09.937+0000 WARN  [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=461, gcTime=0, gcCount=0}
+2025-11-19 04:32:41.973+0000 WARN  [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=371, gcTime=0, gcCount=0}
+2025-11-19 04:32:42.190+0000 WARN  [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=405, gcTime=0, gcCount=0}
+2025-11-19 05:37:39.397+0000 WARN  [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=226, gcTime=0, gcCount=0}
+2025-11-19 05:37:39.890+0000 WARN  [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=364, gcTime=0, gcCount=0}
+2025-11-19 06:35:36.768+0000 WARN  [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=207, gcTime=0, gcCount=0}
+2025-11-19 06:35:37.600+0000 WARN  [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=759, gcTime=0, gcCount=0}
+2025-11-19 06:35:38.084+0000 WARN  [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=285, gcTime=0, gcCount=0}
+2025-11-19 10:12:25.814+0000 WARN  [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=226, gcTime=0, gcCount=0}
+2025-11-19 10:12:26.224+0000 WARN  [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=324, gcTime=0, gcCount=0}
+2025-11-19 12:58:43.306+0000 WARN  [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=219, gcTime=0, gcCount=0}
+2025-11-19 12:58:45.829+0000 WARN  [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=470, gcTime=0, gcCount=0}
+2025-11-19 15:02:06.792+0000 WARN  [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=264, gcTime=0, gcCount=0}
+2025-11-19 15:06:18.488+0000 WARN  [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=1329, gcTime=0, gcCount=0}
+2025-11-19 15:06:37.678+0000 WARN  [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=271, gcTime=0, gcCount=0}
+2025-11-19 16:17:00.535+0000 INFO  [o.n.g.f.DatabaseManagementServiceFactory] Shutdown started
+2025-11-19 16:17:01.347+0000 INFO  [o.n.b.BoltServer] Requested Bolt server shutdown
+2025-11-19 16:17:01.362+0000 INFO  [o.n.b.p.c.c.ConnectionRegistry] Stopping remaining idle connections for connector bolt-local
+2025-11-19 16:17:01.389+0000 INFO  [o.n.b.p.c.c.ConnectionRegistry] Stopped 0 idling connections for connector bolt-local
+2025-11-19 16:17:01.396+0000 INFO  [o.n.b.p.c.c.ConnectionRegistry] Stopping remaining idle connections for connector bolt
+2025-11-19 16:17:01.398+0000 INFO  [o.n.b.p.c.c.ConnectionRegistry] Stopped 4 idling connections for connector bolt
+2025-11-19 16:17:01.432+0000 INFO  [o.n.d.d.DatabaseLifecycles] Stopping 'DatabaseId{43556453[neo4j]}'.

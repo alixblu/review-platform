@@ -57,7 +57,7 @@ public class BrandController {
     @PutMapping("/{id}")
     public ResponseEntity<ApiResponse<BrandResponse>> updateBrand(
             @PathVariable UUID id,
-            @RequestBody @Valid BrandCreationRequest request) {
+            @RequestBody @Valid BrandUpdateRequest request) {
         BrandResponse updated = brandService.updateBrand(id, request);
         return ResponseEntity.status(HttpStatus.OK)
                 .body(new ApiResponse<>("Brand updated successfully", updated));
@@ -73,12 +73,12 @@ public class BrandController {
                 .body(new ApiResponse<>("Brand deleted successfully", null));
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<ApiResponse<BrandResponse>> updateBrand(
-            @PathVariable UUID id,
-            @RequestBody @Valid BrandUpdateRequest request) {
-        BrandResponse updated = brandService.updateBrand(id, request);
-        return ResponseEntity.status(HttpStatus.OK)
-                .body(new ApiResponse<>("Brand updated successfully", updated));
-    }
+//    @PutMapping("/{id}")
+//    public ResponseEntity<ApiResponse<BrandResponse>> updateBrand(
+//            @PathVariable UUID id,
+//            @RequestBody @Valid BrandUpdateRequest request) {
+//        BrandResponse updated = brandService.updateBrand(id, request);
+//        return ResponseEntity.status(HttpStatus.OK)
+//                .body(new ApiResponse<>("Brand updated successfully", updated));
+//    }
 }

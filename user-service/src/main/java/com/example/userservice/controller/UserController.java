@@ -23,12 +23,12 @@ public class UserController {
 
     final UserService userService;
 
-    @PostMapping
-    public ResponseEntity<ApiResponse<UserResponse>> createUser(@RequestBody @Valid UserCreationRequest user) {
-        UserResponse response = userService.createUser(user);
-        return ResponseEntity.status(HttpStatus.CREATED)
-                .body(new ApiResponse<>("User profile created successfully", response));
-    }
+//    @PostMapping
+//    public ResponseEntity<ApiResponse<UserResponse>> createUser(@RequestBody @Valid UserCreationRequest user) {
+//        UserResponse response = userService.createUser(user);
+//        return ResponseEntity.status(HttpStatus.CREATED)
+//                .body(new ApiResponse<>("User profile created successfully", response));
+//    }
 
     @PutMapping("/{id}")
     public ResponseEntity<ApiResponse<UserResponse>> updateUser(@PathVariable String id,

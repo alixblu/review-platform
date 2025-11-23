@@ -27,34 +27,32 @@ public class SecurityConfiguration {
     public CognitoLogoutHandler cognitoLogoutHandler(
             @Value("${cognito.domain}") String domain,
             @Value("${cognito.logoutRedirect}") String logoutRedirect,
-            @Value("${spring.security.oauth2.client.registration.cognito.client-id}") String clientId
-    ) {
+            @Value("${spring.security.oauth2.client.registration.cognito.client-id}") String clientId) {
         return new CognitoLogoutHandler(domain, logoutRedirect, clientId);
     }
 
     @Bean
-	public SecurityFilterChain filterChain(HttpSecurity http, CognitoLogoutHandler cognitoLogoutHandler) throws Exception {
+    public SecurityFilterChain filterChain(HttpSecurity http, CognitoLogoutHandler cognitoLogoutHandler)
+            throws Exception {
 
-		RegexRequestMatcher logoutGetMatcher = new RegexRequestMatcher("^/logout$", "GET");
+        RegexRequestMatcher logoutGetMatcher = new RegexRequestMatcher("^/logout$", "GET");
 
         http
-                .csrf(csrf -> csrf.disable()) // Optional: disable CSRF for APIs
+                .cors(cors -> cors.disable()) // Disable CORS in auth-service, let API Gateway handle it
+                .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/", "/oauth2/**", "/login/**", "/api/auth/exchange", "/logout").permitAll()
-                        .requestMatchers("/admin/**").hasRole("admin")
-                        .anyRequest().authenticated()
-                )
-                .oauth2Login(oauth -> oauth
-                        .successHandler((request, response, authentication) -> response.sendRedirect("http://localhost:3000/auth/callback"))
-                )
-                .oauth2ResourceServer(oauth2 -> oauth2
-                        .jwt(jwt -> jwt.jwtAuthenticationConverter(jwtAuthenticationConverter()))
-                )
-                .logout(logout -> logout
-						.logoutRequestMatcher(logoutGetMatcher)
+                        .requestMatchers("/", "/oauth2/**", "/login/**", "/api/auth/**", "/logout", "/error")
                         .permitAll()
-                        .logoutSuccessHandler(cognitoLogoutHandler)
-                );
+                        .requestMatchers("/admin/**").hasRole("admin")
+                        .anyRequest().authenticated())
+                .oauth2Login(oauth -> oauth
+                        .defaultSuccessUrl("http://localhost:3000/auth/callback", true))
+                .oauth2ResourceServer(oauth2 -> oauth2
+                        .jwt(jwt -> jwt.jwtAuthenticationConverter(jwtAuthenticationConverter())))
+                .logout(logout -> logout
+                        .logoutRequestMatcher(logoutGetMatcher)
+                        .permitAll()
+                        .logoutSuccessHandler(cognitoLogoutHandler));
 
         return http.build();
     }
@@ -70,11 +68,12 @@ public class SecurityConfiguration {
         JwtAuthenticationConverter converter = new JwtAuthenticationConverter();
         converter.setJwtGrantedAuthoritiesConverter(jwt -> {
             List<String> groups = jwt.getClaimAsStringList("cognito:groups");
-            if (groups == null || groups.isEmpty()) return Collections.emptyList();
-//            if (groups == null || groups.isEmpty()) {
-//                return List.of(new SimpleGrantedAuthority("ROLE_User"));
-//            }
-//
+            if (groups == null || groups.isEmpty())
+                return Collections.emptyList();
+            // if (groups == null || groups.isEmpty()) {
+            // return List.of(new SimpleGrantedAuthority("ROLE_User"));
+            // }
+            //
             return groups.stream()
                     .map(group -> new SimpleGrantedAuthority("ROLE_" + group))
                     .collect(Collectors.toList());

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 @FeignClient(name = "user-service", url = "http://localhost:8081/api")
 public interface UserClient {
-    @PostMapping(value = "/user", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "internal/user", produces = MediaType.APPLICATION_JSON_VALUE)
     Object createUser (@RequestBody UserCreationRequest request);
 
     @GetMapping(value = "/user/{id}", produces = MediaType.APPLICATION_JSON_VALUE)

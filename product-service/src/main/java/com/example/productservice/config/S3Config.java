@@ -4,9 +4,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import lombok.extern.slf4j.Slf4j;
-import software.amazon.awssdk.auth.credentials.AwsBasicCredentials;
-import software.amazon.awssdk.auth.credentials.DefaultCredentialsProvider;
-import software.amazon.awssdk.auth.credentials.StaticCredentialsProvider;
+
 import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.s3.S3Client;
 import software.amazon.awssdk.services.s3.S3ClientBuilder;
@@ -22,18 +20,18 @@ public class S3Config {
 			@Value("${aws.secretAccessKey:${AWS_SECRET_ACCESS_KEY:${AWS_SECRET_KEY:}}}") String secretAccessKey
 	) {
 		S3ClientBuilder builder = S3Client.builder().region(Region.of(region));
-
-        log.info("====>" ,region , accessKeyId, secretAccessKey);
-		if (accessKeyId != null && !accessKeyId.isBlank() && secretAccessKey != null && !secretAccessKey.isBlank()) {
-			String masked = accessKeyId.length() > 4 ? accessKeyId.substring(0, 4) + "****" : "****";
-			log.info("S3Config: Using STATIC AWS credentials (accessKeyId={}...)", masked);
-			builder = builder.credentialsProvider(
-					StaticCredentialsProvider.create(AwsBasicCredentials.create(accessKeyId, secretAccessKey))
-			);
-		} else {
-			log.info("S3Config: Using DEFAULT AWS credentials provider chain");
-			builder = builder.credentialsProvider(DefaultCredentialsProvider.create());
-		}
+//
+//        log.info("====>" ,region , accessKeyId, secretAccessKey);
+//		if (accessKeyId != null && !accessKeyId.isBlank() && secretAccessKey != null && !secretAccessKey.isBlank()) {
+//			String masked = accessKeyId.length() > 4 ? accessKeyId.substring(0, 4) + "****" : "****";
+//			log.info("S3Config: Using STATIC AWS credentials (accessKeyId={}...)", masked);
+//			builder = builder.credentialsProvider(
+//					StaticCredentialsProvider.create(AwsBasicCredentials.create(accessKeyId, secretAccessKey))
+//			);
+//		} else {
+//			log.info("S3Config: Using DEFAULT AWS credentials provider chain");
+//			builder = builder.credentialsProvider(DefaultCredentialsProvider.create());
+//		}
 
 		return builder.build();
 	}

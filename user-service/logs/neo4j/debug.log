@@ -5204,3 +5204,875 @@
 2025-11-19 16:17:01.396+0000 INFO  [o.n.b.p.c.c.ConnectionRegistry] Stopping remaining idle connections for connector bolt
 2025-11-19 16:17:01.398+0000 INFO  [o.n.b.p.c.c.ConnectionRegistry] Stopped 4 idling connections for connector bolt
 2025-11-19 16:17:01.432+0000 INFO  [o.n.d.d.DatabaseLifecycles] Stopping 'DatabaseId{43556453[neo4j]}'.
+2025-11-23 10:46:01.784+0000 INFO  [o.n.g.f.m.GlobalModule] Logging config in use: File '/var/lib/neo4j/conf/server-logs.xml'
+2025-11-23 10:46:02.421+0000 INFO  [o.n.i.d.DiagnosticsManager] 
+                                                                ********************************************************************************
+                                                                                             [ System diagnostics ]                             
+                                                                ********************************************************************************
+                                                                --------------------------------------------------------------------------------
+                                                                                         [ System memory information ]                          
+                                                                --------------------------------------------------------------------------------
+                                                                Total Physical memory: 7.652GiB
+                                                                Free Physical memory: 4.063GiB
+                                                                Committed virtual memory: 5.687GiB
+                                                                Total swap space: 2.000GiB
+                                                                Free swap space: 2.000GiB
+                                                                
+                                                                --------------------------------------------------------------------------------
+                                                                                           [ JVM memory information ]                           
+                                                                --------------------------------------------------------------------------------
+                                                                Free  memory: 987.0MiB
+                                                                Total memory: 1.000GiB
+                                                                Max   memory: 2.000GiB
+                                                                Garbage Collector: G1 Young Generation: [G1 Eden Space, G1 Survivor Space, G1 Old Gen]
+                                                                Garbage Collector: G1 Old Generation: [G1 Eden Space, G1 Survivor Space, G1 Old Gen]
+                                                                Memory Pool: CodeHeap 'non-nmethods' (Non-heap memory): committed=2.438MiB, used=1.231MiB, max=5.570MiB, threshold=0B
+                                                                Memory Pool: Metaspace (Non-heap memory): committed=21.88MiB, used=21.60MiB, max=-1B, threshold=0B
+                                                                Memory Pool: CodeHeap 'profiled nmethods' (Non-heap memory): committed=5.813MiB, used=5.766MiB, max=117.2MiB, threshold=0B
+                                                                Memory Pool: Compressed Class Space (Non-heap memory): committed=2.500MiB, used=2.343MiB, max=1.000GiB, threshold=0B
+                                                                Memory Pool: G1 Eden Space (Heap memory): committed=642.0MiB, used=4.000MiB, max=-1B, threshold=?
+                                                                Memory Pool: G1 Old Gen (Heap memory): committed=379.0MiB, used=30.92MiB, max=2.000GiB, threshold=0B
+                                                                Memory Pool: G1 Survivor Space (Heap memory): committed=3.000MiB, used=2.110MiB, max=-1B, threshold=?
+                                                                Memory Pool: CodeHeap 'non-profiled nmethods' (Non-heap memory): committed=2.438MiB, used=1.811MiB, max=117.2MiB, threshold=0B
+                                                                
+                                                                --------------------------------------------------------------------------------
+                                                                                        [ Operating system information ]                        
+                                                                --------------------------------------------------------------------------------
+                                                                Operating System: Linux; version: 5.15.167.4-microsoft-standard-WSL2; arch: amd64; cpus: 8
+                                                                Max number of file descriptors: 1048576
+                                                                Number of open file descriptors: 243
+                                                                Process id: 7
+                                                                Byte order: LITTLE_ENDIAN
+                                                                Local timezone: Etc/UTC
+                                                                Memory page size: 4096
+                                                                Unaligned memory access allowed: true
+                                                                
+                                                                --------------------------------------------------------------------------------
+                                                                                              [ JVM information ]                               
+                                                                --------------------------------------------------------------------------------
+                                                                VM Name: OpenJDK 64-Bit Server VM
+                                                                VM Vendor: Eclipse Adoptium
+                                                                VM Version: 17.0.11+9
+                                                                JIT compiler: HotSpot 64-Bit Tiered Compilers
+                                                                VM Arguments: [-XX:+UseG1GC, -XX:-OmitStackTraceInFastThrow, -XX:+AlwaysPreTouch, -XX:+UnlockExperimentalVMOptions, -XX:+TrustFinalNonStaticFields, -XX:+DisableExplicitGC, -Djdk.nio.maxCachedBufferSize=1024, -Dio.netty.tryReflectionSetAccessible=true, -Djdk.tls.ephemeralDHKeySize=2048, -Djdk.tls.rejectClientInitiatedRenegotiation=true, -XX:FlightRecorderOptions=stackdepth=256, -XX:+UnlockDiagnosticVMOptions, -XX:+DebugNonSafepoints, --add-opens=java.base/java.nio=ALL-UNNAMED, --add-opens=java.base/java.io=ALL-UNNAMED, --add-opens=java.base/sun.nio.ch=ALL-UNNAMED, -Dlog4j2.disable.jmx=true, -Dfile.encoding=UTF-8, -Xms1048576k, -Xmx2097152k]
+                                                                
+                                                                --------------------------------------------------------------------------------
+                                                                                               [ Java classpath ]                               
+                                                                --------------------------------------------------------------------------------
+                                                                 [classpath] /var/lib/neo4j/lib/cypher-v5-antlr-parser-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/cypher-shell-5.21.0.jar
+                                                                 [classpath] /plugins/graph-data-science.jar
+                                                                 [classpath] /var/lib/neo4j/lib/netty-handler-4.1.110.Final.jar
+                                                                 [classpath] /var/lib/neo4j/lib/jackson-jaxrs-json-provider-2.17.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/grpc-context-1.63.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/jetty-alpn-server-10.0.20.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-front-end-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/jaxb-runtime-2.3.2.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-cypher-ir-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/grpc-api-1.63.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/netty-buffer-4.1.110.Final.jar
+                                                                 [classpath] /var/lib/neo4j/lib/jersey-container-servlet-2.34.jar
+                                                                 [classpath] /var/lib/neo4j/lib/netty-handler-proxy-4.1.110.Final.jar
+                                                                 [classpath] /var/lib/neo4j/lib/caffeine-3.1.8.jar
+                                                                 [classpath] /var/lib/neo4j/lib/magnolia_2.13-1.1.8.jar
+                                                                 [classpath] /var/lib/neo4j/lib/scala-library-2.13.11.jar
+                                                                 [classpath] /var/lib/neo4j/lib/lucene-core-9.10.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-browser-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/jackson-datatype-jsr310-2.17.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/lucene-analysis-common-9.10.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-fabric-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-cypher-macros-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-cypher-config-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/jetty-io-10.0.20.jar
+                                                                 [classpath] /var/lib/neo4j/lib/jetty-servlet-10.0.20.jar
+                                                                 [classpath] /var/lib/neo4j/lib/netty-tcnative-2.0.65.Final-linux-aarch_64.jar
+                                                                 [classpath] /var/lib/neo4j/conf/*
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-ast-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-diagnostics-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/WMI4Java-1.6.3.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-exceptions-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/jakarta.xml.bind-api-2.3.2.jar
+                                                                 [classpath] /var/lib/neo4j/lib/cypher-antlr-common-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/jProcesses-1.6.5.jar
+                                                                 [classpath] /var/lib/neo4j/lib/jackson-annotations-2.17.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/hk2-locator-2.6.1.jar
+                                                                 [classpath] /var/lib/neo4j/lib/grpc-core-1.63.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/eclipse-collections-api-11.1.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-common-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/jersey-container-servlet-core-2.34.jar
+                                                                 [classpath] /var/lib/neo4j/lib/jansi-2.4.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/jetty-xml-10.0.20.jar
+                                                                 [classpath] /var/lib/neo4j/lib/netty-transport-native-epoll-4.1.110.Final-linux-aarch_64.jar
+                                                                 [classpath] /var/lib/neo4j/lib/jline-terminal-3.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/grpc-protobuf-lite-1.62.2.jar
+                                                                 [classpath] /var/lib/neo4j/lib/cypher-parser-common-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/netty-tcnative-2.0.65.Final-linux-aarch_64-fedora.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-cypher-physical-planning-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-spatial-index-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/proto-google-common-protos-2.38.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/cypher-parser-ast-common-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-ssl-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/netty-transport-classes-kqueue-4.1.110.Final.jar
+                                                                 [classpath] /var/lib/neo4j/lib/jakarta.ws.rs-api-2.1.6.jar
+                                                                 [classpath] /var/lib/neo4j/lib/kiama_2.13-2.5.1.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-cypher-planner-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/arrow-format-16.0.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/grpc-stub-1.63.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/commons-compress-1.26.1.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-resource-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/istack-commons-runtime-3.0.8.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-schema-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/jetty-servlet-api-4.0.6.jar
+                                                                 [classpath] /var/lib/neo4j/lib/eclipse-collections-11.1.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-cypher-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/shiro-cache-2.0.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-bolt-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/commons-text-1.12.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/byte-buddy-1.14.14.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-configuration-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/netty-codec-socks-4.1.110.Final.jar
+                                                                 [classpath] /var/lib/neo4j/lib/gson-2.10.1.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-import-tool-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/jakarta.validation-api-2.0.2.jar
+                                                                 [classpath] /var/lib/neo4j/lib/shiro-crypto-hash-2.0.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/shiro-hashes-argon2-2.0.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-procedure-api-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-monitoring-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/antlr4-runtime-4.13.1.jar
+                                                                 [classpath] /var/lib/neo4j/lib/hk2-utils-2.6.1.jar
+                                                                 [classpath] /var/lib/neo4j/lib/stax-ex-1.8.1.jar
+                                                                 [classpath] /var/lib/neo4j/lib/http2-common-10.0.20.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-java-driver-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/txw2-2.3.2.jar
+                                                                 [classpath] /var/lib/neo4j/lib/jetty-webapp-10.0.20.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-lock-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/commons-lang3-3.14.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/log4j-api-2.20.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/arrow-memory-netty-buffer-patch-16.0.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/netty-transport-native-kqueue-4.1.110.Final-osx-x86_64.jar
+                                                                 [classpath] /var/lib/neo4j/lib/argparse4j-0.9.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/ipaddress-5.5.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/log4j-core-2.20.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/netty-codec-4.1.110.Final.jar
+                                                                 [classpath] /var/lib/neo4j/lib/jetty-http-10.0.20.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-procedure-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/commons-configuration2-2.10.1.jar
+                                                                 [classpath] /var/lib/neo4j/lib/protobuf-java-util-3.25.3.jar
+                                                                 [classpath] /var/lib/neo4j/lib/jetty-util-10.0.20.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-wal-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-command-line-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-token-api-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-query-router-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-index-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/jackson-module-jaxb-annotations-2.17.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-gql-status-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-concurrent-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/jetty-server-10.0.20.jar
+                                                                 [classpath] /var/lib/neo4j/lib/netty-transport-native-unix-common-4.1.110.Final.jar
+                                                                 [classpath] /var/lib/neo4j/lib/zstd-jni-1.5.6-3.jar
+                                                                 [classpath] /var/lib/neo4j/lib/cypher-v5-literal-interpreter-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-util-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-values-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/server-api-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/commons-logging-1.3.1.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-collections-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-record-storage-engine-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/cypher-v5-parser-listener-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/netty-resolver-4.1.110.Final.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-native-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/arrow-memory-netty-16.0.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-storage-engine-util-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/animal-sniffer-annotations-1.23.jar
+                                                                 [classpath] /var/lib/neo4j/lib/scala-collection-contrib_2.13-0.3.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/jersey-client-2.34.jar
+                                                                 [classpath] /var/lib/neo4j/lib/jctools-core-4.0.3.jar
+                                                                 [classpath] /var/lib/neo4j/lib/jetty-security-10.0.20.jar
+                                                                 [classpath] /var/lib/neo4j/lib/jersey-hk2-2.34.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-cypher-dsl-2023.9.7.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-cypher-cache-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/arrow-vector-16.0.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/jPowerShell-3.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/netty-codec-http-4.1.110.Final.jar
+                                                                 [classpath] /var/lib/neo4j/lib/reactive-streams-1.0.4.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-capabilities-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/flight-core-16.0.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/javassist-3.25.0-GA.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-graph-algo-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/netty-tcnative-2.0.65.Final-linux-x86_64.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-bootcheck-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+                                                                 [classpath] /var/lib/neo4j/lib/picocli-4.7.5.jar
+                                                                 [classpath] /var/lib/neo4j/lib/failureaccess-1.0.2.jar
+                                                                 [classpath] /var/lib/neo4j/lib/annotations-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/http2-hpack-10.0.20.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-slf4j-provider-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-io-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/jersey-common-2.34.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-cypher-rendering-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-cloud-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/netty-transport-native-epoll-4.1.110.Final-linux-x86_64.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-id-generator-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/http2-server-10.0.20.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-csv-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-notifications-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/netty-common-4.1.110.Final.jar
+                                                                 [classpath] /var/lib/neo4j/lib/shiro-crypto-core-2.0.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/netty-codec-http2-4.1.110.Final.jar
+                                                                 [classpath] /var/lib/neo4j/lib/jna-5.14.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-cypher-logical-plans-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/reactor-core-3.6.6.jar
+                                                                 [classpath] /var/lib/neo4j/lib/zstd-proxy-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/cypher-v5-ast-factory-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-logging-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/lucene-backward-codecs-9.10.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/protobuf-java-3.25.2.jar
+                                                                 [classpath] /var/lib/neo4j/lib/jline-terminal-jansi-3.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/hk2-api-2.6.1.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-cypher-javacc-parser-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-cypher-ast-factory-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/shiro-core-2.0.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/jsr305-3.0.2.jar
+                                                                 [classpath] /var/lib/neo4j/lib/jackson-core-2.17.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-push-to-cloud-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/shiro-lang-2.0.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/commons-codec-1.17.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/jakarta.activation-api-1.2.2.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-unsafe-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/netty-transport-native-kqueue-4.1.110.Final-osx-aarch_64.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-kernel-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/grpc-util-1.62.2.jar
+                                                                 [classpath] /var/lib/neo4j/lib/jetty-alpn-java-server-10.0.20.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-expressions-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-consistency-check-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/jackson-databind-2.17.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/jettison-1.5.4.jar
+                                                                 [classpath] /var/lib/neo4j/lib/jackson-jaxrs-base-2.17.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/jakarta.inject-2.6.1.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-udc-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/netty-tcnative-classes-2.0.65.Final.jar
+                                                                 [classpath] /var/lib/neo4j/lib/slf4j-api-2.0.9.jar
+                                                                 [classpath] /var/lib/neo4j/lib/lucene-queryparser-9.10.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/perfmark-api-0.26.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/jline-reader-3.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-kernel-api-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/FastInfoset-1.2.16.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-security-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/shiro-crypto-cipher-2.0.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/netty-tcnative-2.0.65.Final-linux-x86_64-fedora.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-cypher-interpreted-runtime-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-server-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/flatbuffers-java-23.5.26.jar
+                                                                 [classpath] /var/lib/neo4j/lib/cypher-antlr-ast-common-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-cypher-slotted-runtime-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-dbms-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/netty-transport-4.1.110.Final.jar
+                                                                 [classpath] /var/lib/neo4j/lib/guava-33.2.0-jre.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-cypher-runtime-util-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-data-collector-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-import-util-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-rewriting-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/scala-reflect-2.13.11.jar
+                                                                 [classpath] /var/lib/neo4j/lib/commons-io-2.16.1.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-cypher-expression-evaluator-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/jakarta.annotation-api-1.3.5.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-graphdb-api-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/cypher-ast-factory-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-lucene-index-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-cypher-planner-spi-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-layout-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/grpc-protobuf-1.63.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/log4j-layout-template-json-2.20.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/shiro-hashes-bcrypt-2.0.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/jersey-server-2.34.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-fulltext-index-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/shiro-config-core-2.0.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/neo4j-codegen-5.21.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/shiro-event-2.0.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/arrow-memory-core-16.0.0.jar
+                                                                 [classpath] /var/lib/neo4j/lib/netty-transport-classes-epoll-4.1.110.Final.jar
+                                                                 [classpath] /var/lib/neo4j/lib/grpc-netty-1.63.0.jar
+                                                                
+                                                                --------------------------------------------------------------------------------
+                                                                                                [ Library path ]                                
+                                                                --------------------------------------------------------------------------------
+                                                                /usr/java/packages/lib
+                                                                /usr/lib64
+                                                                /lib64
+                                                                /lib
+                                                                /usr/lib
+                                                                
+                                                                --------------------------------------------------------------------------------
+                                                                                             [ System properties ]                              
+                                                                --------------------------------------------------------------------------------
+                                                                jdk.tls.rejectClientInitiatedRenegotiation = true
+                                                                sun.jnu.encoding = ANSI_X3.4-1968
+                                                                sun.arch.data.model = 64
+                                                                user.timezone = Etc/UTC
+                                                                sun.java.launcher = SUN_STANDARD
+                                                                user.country = US
+                                                                sun.boot.library.path = /opt/java/openjdk/lib
+                                                                sun.java.command = org.neo4j.server.CommunityEntryPoint --home-dir=/var/lib/neo4j --config-dir=/var/lib/neo4j/conf --console-mode
+                                                                jdk.debug = release
+                                                                io.netty.tryReflectionSetAccessible = true
+                                                                sun.cpu.endian = little
+                                                                user.home = /var/lib/neo4j
+                                                                user.language = en
+                                                                file.separator = /
+                                                                jdk.tls.ephemeralDHKeySize = 2048
+                                                                sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+                                                                user.name = neo4j
+                                                                jdk.nio.maxCachedBufferSize = 1024
+                                                                path.separator = :
+                                                                file.encoding = UTF-8
+                                                                jnidispatch.path = /var/lib/neo4j/.cache/JNA/temp/jna3387793554295836861.tmp
+                                                                jna.loaded = true
+                                                                user.dir = /var/lib/neo4j
+                                                                native.encoding = ANSI_X3.4-1968
+                                                                sun.io.unicode.encoding = UnicodeLittle
+                                                                log4j2.disable.jmx = true
+                                                                
+                                                                --------------------------------------------------------------------------------
+                                                                                      [ (IANA) TimeZone database version ]                      
+                                                                --------------------------------------------------------------------------------
+                                                                  TimeZone version: 2024a (available for 603 zone identifiers)
+                                                                
+                                                                --------------------------------------------------------------------------------
+                                                                                            [ Network information ]                             
+                                                                --------------------------------------------------------------------------------
+                                                                Interface eth0:
+                                                                    address: 172.19.0.2
+                                                                Interface lo:
+                                                                    address: 0:0:0:0:0:0:0:1%lo
+                                                                    address: 127.0.0.1
+                                                                
+                                                                --------------------------------------------------------------------------------
+                                                                                         [ Native access information ]                          
+                                                                --------------------------------------------------------------------------------
+                                                                Native access details: Linux native access is available.
+                                                                
+                                                                --------------------------------------------------------------------------------
+                                                                                                [ DBMS config ]                                 
+                                                                --------------------------------------------------------------------------------
+                                                                DBMS provided settings:
+                                                                db.tx_log.rotation.retention_policy=2 days 2G
+                                                                dbms.security.procedures.unrestricted=gds.*
+                                                                server.bolt.enabled=true
+                                                                server.default_listen_address=0.0.0.0
+                                                                server.directories.import=/import
+                                                                server.directories.logs=/logs
+                                                                server.directories.neo4j_home=/var/lib/neo4j
+                                                                server.directories.plugins=/plugins
+                                                                server.http.enabled=true
+                                                                server.https.enabled=false
+                                                                server.jvm.additional=-XX:+UseG1GC
+-XX:-OmitStackTraceInFastThrow
+-XX:+AlwaysPreTouch
+-XX:+UnlockExperimentalVMOptions
+-XX:+TrustFinalNonStaticFields
+-XX:+DisableExplicitGC
+-Djdk.nio.maxCachedBufferSize=1024
+-Dio.netty.tryReflectionSetAccessible=true
+-Djdk.tls.ephemeralDHKeySize=2048
+-Djdk.tls.rejectClientInitiatedRenegotiation=true
+-XX:FlightRecorderOptions=stackdepth=256
+-XX:+UnlockDiagnosticVMOptions
+-XX:+DebugNonSafepoints
+--add-opens=java.base/java.nio=ALL-UNNAMED
+--add-opens=java.base/java.io=ALL-UNNAMED
+--add-opens=java.base/sun.nio.ch=ALL-UNNAMED
+-Dlog4j2.disable.jmx=true
+                                                                server.memory.heap.initial_size=1.00GiB
+                                                                server.memory.heap.max_size=2.00GiB
+                                                                server.memory.pagecache.size=2.00GiB
+                                                                server.windows_service_name=neo4j
+                                                                Directories in use:
+                                                                server.directories.data=/var/lib/neo4j/data
+                                                                server.directories.dumps.root=/var/lib/neo4j/data/dumps
+                                                                server.directories.import=/import
+                                                                server.directories.lib=/var/lib/neo4j/lib
+                                                                server.directories.licenses=/var/lib/neo4j/licenses
+                                                                server.directories.logs=/logs
+                                                                server.directories.neo4j_home=/var/lib/neo4j
+                                                                server.directories.plugins=/plugins
+                                                                server.directories.run=/var/lib/neo4j/run
+                                                                server.directories.script.root=/var/lib/neo4j/data/scripts
+                                                                server.directories.transaction.logs.root=/var/lib/neo4j/data/transactions
+                                                                
+                                                                --------------------------------------------------------------------------------
+                                                                                                 [ Packaging ]                                  
+                                                                --------------------------------------------------------------------------------
+                                                                Edition: Community
+                                                                Package Type: docker bullseye
+                                                                
+2025-11-23 10:46:02.473+0000 INFO  [o.n.d.i.DefaultIdentityModule] Found ServerId on disk: ServerId{7f614fa8} (7f614fa8-8504-4783-8d4f-8b161060c1bd)
+2025-11-23 10:46:02.475+0000 INFO  [o.n.d.i.DefaultIdentityModule] This instance is ServerId{7f614fa8} (7f614fa8-8504-4783-8d4f-8b161060c1bd)
+2025-11-23 10:46:03.586+0000 INFO  [o.n.s.CommunityNeoWebServer] ======== Neo4j 5.21.0 ========
+2025-11-23 10:46:03.611+0000 INFO  [o.n.d.d.DatabaseLifecycles] Creating 'DatabaseId{00000000[system]}'.
+2025-11-23 10:46:03.912+0000 INFO  [c.n.g.e.GraphDataScienceExtension] GDS license file: null
+2025-11-23 10:46:03.914+0000 INFO  [c.n.g.e.GraphDataScienceExtension] GDS license state: unlicensed
+2025-11-23 10:46:03.927+0000 INFO  [c.n.g.e.GraphDataScienceExtension] Progress tracking: enabled
+2025-11-23 10:46:03.929+0000 INFO  [c.n.g.e.GraphDataScienceExtension] Memory usage guard: minimum estimate
+2025-11-23 10:46:03.938+0000 INFO  [c.n.g.e.GraphDataScienceExtension] Building Graph Data Science extension...
+2025-11-23 10:46:03.950+0000 INFO  [c.n.g.e.GraphDataScienceExtension] Register Graph Data Science...
+2025-11-23 10:46:03.951+0000 INFO  [c.n.g.e.GraphDataScienceExtension] Graph Data Science registered.
+2025-11-23 10:46:03.953+0000 INFO  [c.n.g.e.GraphDataScienceExtension] Register Metrics Facade...
+2025-11-23 10:46:03.954+0000 INFO  [c.n.g.e.GraphDataScienceExtension] Metrics Facade registered.
+2025-11-23 10:46:03.955+0000 INFO  [c.n.g.e.GraphDataScienceExtension] Register Model Catalog...
+2025-11-23 10:46:03.957+0000 INFO  [c.n.g.e.GraphDataScienceExtension] Model Catalog registered.
+2025-11-23 10:46:03.959+0000 INFO  [c.n.g.e.GraphDataScienceExtension] Register Task Registry Factory...
+2025-11-23 10:46:03.961+0000 INFO  [c.n.g.e.GraphDataScienceExtension] Task Registry Factory registered.
+2025-11-23 10:46:03.962+0000 INFO  [c.n.g.e.GraphDataScienceExtension] Register Task Store...
+2025-11-23 10:46:03.964+0000 INFO  [c.n.g.e.GraphDataScienceExtension] Task Store registered.
+2025-11-23 10:46:03.965+0000 INFO  [c.n.g.e.GraphDataScienceExtension] Register User Log Registry Factory...
+2025-11-23 10:46:03.967+0000 INFO  [c.n.g.e.GraphDataScienceExtension] User Log Registry Factory registered.
+2025-11-23 10:46:03.968+0000 INFO  [c.n.g.e.GraphDataScienceExtension] Graph Data Science extension built.
+2025-11-23 10:46:03.969+0000 INFO  [c.n.g.e.GraphDataScienceExtension] Building Graph Data Science Extras extension...
+2025-11-23 10:46:03.972+0000 INFO  [c.n.g.e.GraphDataScienceExtension] Register Graph Data Science Extras...
+2025-11-23 10:46:03.974+0000 INFO  [c.n.g.e.GraphDataScienceExtension] Graph Data Science Extras registered.
+2025-11-23 10:46:03.975+0000 INFO  [c.n.g.e.GraphDataScienceExtension] Graph Data Science Extras extension built.
+2025-11-23 10:46:04.045+0000 INFO  [o.n.g.c.GdsProxyExtension] GDS compatibility: for Neo4j 5.17 -- not available, for Neo4j 5.18 -- not available, for Neo4j 5.19 -- not available, for Neo4j 5.20 -- not available, for Neo4j 5.21 -- available, for Neo4j 5.22 -- not available, for Neo4j 5.23 -- not available, selected: Neo4j 5.21
+2025-11-23 10:46:04.132+0000 INFO  [o.n.b.BoltServer] Using connector transport epoll
+2025-11-23 10:46:04.240+0000 INFO  [o.n.b.BoltServer] Configured external Bolt connector with listener address /0.0.0.0:7687
+2025-11-23 10:46:04.242+0000 INFO  [o.n.b.BoltServer] Bolt server loaded
+2025-11-23 10:46:04.268+0000 INFO  [o.n.d.d.DatabaseLifecycles] Starting 'DatabaseId{00000000[system]}'.
+2025-11-23 10:46:05.038+0000 INFO  [o.n.k.i.t.l.f.c.CheckpointLogFile] [system/00000000] Scanning log file with version 0 for checkpoint entries
+2025-11-23 10:46:05.439+0000 INFO  [o.n.k.i.s.f.RecordFormatSelector] [system/00000000] Selected RecordFormat:PageAlignedV5_0[aligned-1.1] record format from store /data/databases/system
+2025-11-23 10:46:05.439+0000 INFO  [o.n.k.i.s.f.RecordFormatSelector] [system/00000000] Selected format from the store files: RecordFormat:PageAlignedV5_0[aligned-1.1]
+2025-11-23 10:46:08.267+0000 INFO  [o.n.i.d.DiagnosticsManager] [system/00000000] 
+                                                                [system/00000000] ********************************************************************************
+                                                                [system/00000000]                               [ Database: system ]                              
+                                                                [system/00000000] ********************************************************************************
+                                                                [system/00000000] --------------------------------------------------------------------------------
+                                                                [system/00000000]                                   [ Version ]                                   
+                                                                [system/00000000] --------------------------------------------------------------------------------
+                                                                [system/00000000] DBMS: community record-aligned-1.1
+                                                                [system/00000000] Kernel version: 5.21.0
+                                                                [system/00000000] 
+                                                                [system/00000000] --------------------------------------------------------------------------------
+                                                                [system/00000000]                                 [ Store files ]                                 
+                                                                [system/00000000] --------------------------------------------------------------------------------
+                                                                [system/00000000] Disk space on partition (Total / Free / Free %): 161158787072 / 23187689472 / 14
+                                                                [system/00000000] Storage files stored on file store: 9p
+                                                                [system/00000000] Storage files: (filename : modification date - size)
+                                                                [system/00000000]   database_lock: 2025-10-29 16:00:59.019+0000 - 0B
+                                                                [system/00000000]   id-buffer.tmp.0: 2025-11-18 14:20:14.575+0000 - 0B
+                                                                [system/00000000]   neostore: 2025-10-29 16:00:58.767+0000 - 8.000KiB
+                                                                [system/00000000]   neostore.counts.db: 2025-11-23 10:46:07.532+0000 - 48.00KiB
+                                                                [system/00000000]   neostore.indexstats.db: 2025-11-23 10:46:07.698+0000 - 48.00KiB
+                                                                [system/00000000]   neostore.labeltokenstore.db: 2025-10-29 16:15:53.942+0000 - 8.000KiB
+                                                                [system/00000000]   neostore.labeltokenstore.db.id: 2025-11-23 10:46:07.192+0000 - 40.00KiB
+                                                                [system/00000000]   neostore.labeltokenstore.db.names: 2025-10-29 16:15:53.956+0000 - 8.000KiB
+                                                                [system/00000000]   neostore.labeltokenstore.db.names.id: 2025-11-23 10:46:07.117+0000 - 40.00KiB
+                                                                [system/00000000]   neostore.nodestore.db: 2025-10-29 16:15:53.961+0000 - 8.000KiB
+                                                                [system/00000000]   neostore.nodestore.db.id: 2025-11-23 10:46:05.810+0000 - 40.00KiB
+                                                                [system/00000000]   neostore.nodestore.db.labels: 2025-10-29 16:00:58.640+0000 - 8.000KiB
+                                                                [system/00000000]   neostore.nodestore.db.labels.id: 2025-11-23 10:46:05.597+0000 - 40.00KiB
+                                                                [system/00000000]   neostore.propertystore.db: 2025-10-29 16:15:53.944+0000 - 8.000KiB
+                                                                [system/00000000]   neostore.propertystore.db.arrays: 2025-10-29 16:00:58.692+0000 - 8.000KiB
+                                                                [system/00000000]   neostore.propertystore.db.arrays.id: 2025-11-23 10:46:06.417+0000 - 40.00KiB
+                                                                [system/00000000]   neostore.propertystore.db.id: 2025-11-23 10:46:06.556+0000 - 40.00KiB
+                                                                [system/00000000]   neostore.propertystore.db.index: 2025-10-29 16:15:53.947+0000 - 8.000KiB
+                                                                [system/00000000]   neostore.propertystore.db.index.id: 2025-11-23 10:46:06.132+0000 - 40.00KiB
+                                                                [system/00000000]   neostore.propertystore.db.index.keys: 2025-10-29 16:15:53.967+0000 - 8.000KiB
+                                                                [system/00000000]   neostore.propertystore.db.index.keys.id: 2025-11-23 10:46:05.970+0000 - 40.00KiB
+                                                                [system/00000000]   neostore.propertystore.db.strings: 2025-10-29 16:15:53.965+0000 - 8.000KiB
+                                                                [system/00000000]   neostore.propertystore.db.strings.id: 2025-11-23 10:46:06.252+0000 - 40.00KiB
+                                                                [system/00000000]   neostore.relationshipgroupstore.db: 2025-10-29 16:00:58.753+0000 - 8.000KiB
+                                                                [system/00000000]   neostore.relationshipgroupstore.db.id: 2025-11-23 10:46:07.393+0000 - 40.00KiB
+                                                                [system/00000000]   neostore.relationshipgroupstore.degrees.db: 2025-11-23 10:46:07.614+0000 - 40.00KiB
+                                                                [system/00000000]   neostore.relationshipstore.db: 2025-10-29 16:15:53.958+0000 - 8.000KiB
+                                                                [system/00000000]   neostore.relationshipstore.db.id: 2025-11-23 10:46:06.700+0000 - 40.00KiB
+                                                                [system/00000000]   neostore.relationshiptypestore.db: 2025-10-29 16:15:53.970+0000 - 8.000KiB
+                                                                [system/00000000]   neostore.relationshiptypestore.db.id: 2025-11-23 10:46:06.992+0000 - 40.00KiB
+                                                                [system/00000000]   neostore.relationshiptypestore.db.names: 2025-10-29 16:15:53.937+0000 - 8.000KiB
+                                                                [system/00000000]   neostore.relationshiptypestore.db.names.id: 2025-11-23 10:46:06.843+0000 - 40.00KiB
+                                                                [system/00000000]   neostore.schemastore.db: 2025-10-29 16:15:53.949+0000 - 8.000KiB
+                                                                [system/00000000]   neostore.schemastore.db.id: 2025-11-23 10:46:07.290+0000 - 40.00KiB
+                                                                [system/00000000]   schema:
+                                                                [system/00000000]     index:
+                                                                [system/00000000]       range-1.0:
+                                                                [system/00000000]         3:
+                                                                [system/00000000]           index-3: 2025-11-18 14:20:14.498+0000 - 48.00KiB
+                                                                [system/00000000]         - Total: 2025-10-29 16:01:35.049+0000 - 48.00KiB
+                                                                [system/00000000]         4:
+                                                                [system/00000000]           index-4: 2025-11-18 14:20:14.512+0000 - 48.00KiB
+                                                                [system/00000000]         - Total: 2025-10-29 16:01:35.139+0000 - 48.00KiB
+                                                                [system/00000000]         7:
+                                                                [system/00000000]           index-7: 2025-11-18 14:20:14.527+0000 - 48.00KiB
+                                                                [system/00000000]         - Total: 2025-10-29 16:01:35.416+0000 - 48.00KiB
+                                                                [system/00000000]         8:
+                                                                [system/00000000]           index-8: 2025-11-18 14:20:14.543+0000 - 48.00KiB
+                                                                [system/00000000]         - Total: 2025-10-29 16:01:35.464+0000 - 48.00KiB
+                                                                [system/00000000]         9:
+                                                                [system/00000000]           index-9: 2025-11-18 14:20:14.558+0000 - 48.00KiB
+                                                                [system/00000000]         - Total: 2025-10-29 16:01:35.508+0000 - 48.00KiB
+                                                                [system/00000000]       - Total: 2025-10-29 16:01:35.507+0000 - 240.0KiB
+                                                                [system/00000000]       token-lookup-1.0:
+                                                                [system/00000000]         1:
+                                                                [system/00000000]           index-1: 2025-11-18 14:20:14.453+0000 - 48.00KiB
+                                                                [system/00000000]         - Total: 2025-10-29 16:01:08.063+0000 - 48.00KiB
+                                                                [system/00000000]         2:
+                                                                [system/00000000]           index-2: 2025-11-18 14:20:14.473+0000 - 48.00KiB
+                                                                [system/00000000]         - Total: 2025-10-29 16:01:08.135+0000 - 48.00KiB
+                                                                [system/00000000]       - Total: 2025-10-29 16:01:08.133+0000 - 96.00KiB
+                                                                [system/00000000]     - Total: 2025-10-29 16:01:35.044+0000 - 336.0KiB
+                                                                [system/00000000]   - Total: 2025-10-29 16:01:08.047+0000 - 336.0KiB
+                                                                [system/00000000] Storage summary: 
+                                                                [system/00000000]   Total size of store: 1.125MiB
+                                                                [system/00000000]   Total size of mapped files: 456.0KiB
+                                                                [system/00000000] 
+                                                                [system/00000000] --------------------------------------------------------------------------------
+                                                                [system/00000000]                               [ Transaction log ]                               
+                                                                [system/00000000] --------------------------------------------------------------------------------
+                                                                [system/00000000] Transaction log files stored on file store: 9p
+                                                                [system/00000000] Transaction log metadata:
+                                                                [system/00000000]  - current kernel version used in transactions: V5_20
+                                                                [system/00000000]  - last committed transaction id: 41
+                                                                [system/00000000] Transaction log files:
+                                                                [system/00000000]  - existing transaction log versions: 0-0
+                                                                [system/00000000]  - oldest transaction 2 found in log with version 0
+                                                                [system/00000000]  - files: (filename : creation date - size)
+                                                                [system/00000000]      neostore.transaction.db.0: 1970-01-01 00:00:00.000+0000 - 256.0MiB
+                                                                [system/00000000]  - total size of files: 256.0MiB
+                                                                [system/00000000] Checkpoint log files:
+                                                                [system/00000000]  - existing checkpoint log versions: 0-0
+                                                                [system/00000000]  - last checkpoint: CheckpointInfo[transactionLogPosition=LogPosition{logVersion=0, byteOffset=24028}, storeId=StoreId{creationTime=1761753658746, random=-2630236371374653252, storageEngineName='record', formatName='aligned', majorVersion=1, minorVersion=1}, checkpointEntryPosition=LogPosition{logVersion=0, byteOffset=824}, channelPositionAfterCheckpoint=LogPosition{logVersion=0, byteOffset=1056}, checkpointFilePostReadPosition=LogPosition{logVersion=0, byteOffset=1056}, kernelVersion=KernelVersion{V5_20,version=17}, kernelVersionByte=17, transactionId=TransactionId[id=41, appendIndex=41, kernelVersion=KernelVersion{V5_20,version=17}, checksum=1713330160, commitTimestamp=1761753695826, consensusIndex=-1], appendIndex=41, reason=Checkpoint triggered by "Database shutdown" @ txId: 41, consensusIndexInCheckpoint=true]
+                                                                [system/00000000] 
+                                                                [system/00000000] --------------------------------------------------------------------------------
+                                                                [system/00000000]                                   [ Id usage ]                                  
+                                                                [system/00000000] --------------------------------------------------------------------------------
+                                                                [system/00000000] ArrayPropertyStore[neostore.nodestore.db.labels]: used=1 high=0
+                                                                [system/00000000] NodeStore[neostore.nodestore.db]: used=7 high=6
+                                                                [system/00000000] StringPropertyStore[neostore.propertystore.db.index.keys]: used=47 high=46
+                                                                [system/00000000] PropertyIndexStore[neostore.propertystore.db.index]: used=33 high=32
+                                                                [system/00000000] StringPropertyStore[neostore.propertystore.db.strings]: used=3 high=2
+                                                                [system/00000000] ArrayPropertyStore[neostore.propertystore.db.arrays]: used=1 high=0
+                                                                [system/00000000] PropertyStore[neostore.propertystore.db]: used=73 high=72
+                                                                [system/00000000] RelationshipStore[neostore.relationshipstore.db]: used=3 high=2
+                                                                [system/00000000] StringPropertyStore[neostore.relationshiptypestore.db.names]: used=3 high=2
+                                                                [system/00000000] RelationshipTypeStore[neostore.relationshiptypestore.db]: used=2 high=1
+                                                                [system/00000000] StringPropertyStore[neostore.labeltokenstore.db.names]: used=6 high=5
+                                                                [system/00000000] LabelTokenStore[neostore.labeltokenstore.db]: used=5 high=4
+                                                                [system/00000000] SchemaStore[neostore.schemastore.db]: used=13 high=12
+                                                                [system/00000000] RelationshipGroupStore[neostore.relationshipgroupstore.db]: used=1 high=0
+                                                                [system/00000000] NeoStore[neostore]: used=-1 high=-1
+                                                                [system/00000000] 
+                                                                [system/00000000] --------------------------------------------------------------------------------
+                                                                [system/00000000]                                   [ Metadata ]                                  
+                                                                [system/00000000] --------------------------------------------------------------------------------
+                                                                [system/00000000] EXTERNAL_STORE_UUID (Database identifier exposed as external store identity. Generated on creation and never updated): 02d8e855-e6ff-4e4b-81bd-7b8d9881a756
+                                                                [system/00000000] DATABASE_ID (The last used DatabaseId for this database): null
+                                                                [system/00000000] LEGACY_STORE_VERSION (Legacy store format version. This field is used from 5.0 onwards only to distinguish non-migrated pre 5.0 metadata stores.): -3523014627327384477
+                                                                [system/00000000] STORE_ID (Store ID): StoreId{creationTime=1761753658746, random=-2630236371374653252, storageEngineName='record', formatName='aligned', majorVersion=1, minorVersion=1}
+                                                                [system/00000000] 
+2025-11-23 10:46:08.485+0000 INFO  [o.n.k.i.i.s.TokenIndexProvider] [system/00000000] Schema index cleanup job registered: descriptor=Index( id=1, name='index_343aff4e', type='LOOKUP', schema=(:<any-labels>), indexProvider='token-lookup-1.0' ), indexFile=/data/databases/system/schema/index/token-lookup-1.0/1/index-1
+2025-11-23 10:46:08.486+0000 INFO  [o.n.k.i.i.s.TokenIndexProvider] [system/00000000] Schema index cleanup job started: descriptor=Index( id=1, name='index_343aff4e', type='LOOKUP', schema=(:<any-labels>), indexProvider='token-lookup-1.0' ), indexFile=/data/databases/system/schema/index/token-lookup-1.0/1/index-1
+2025-11-23 10:46:08.503+0000 INFO  [o.n.k.i.i.s.TokenIndexProvider] [system/00000000] Schema index cleanup job finished: descriptor=Index( id=1, name='index_343aff4e', type='LOOKUP', schema=(:<any-labels>), indexProvider='token-lookup-1.0' ), indexFile=/data/databases/system/schema/index/token-lookup-1.0/1/index-1 Number of pages visited: 3, Number of tree nodes: 2, Number of cleaned crashed pointers: 0, Time spent: 14ms
+2025-11-23 10:46:08.504+0000 INFO  [o.n.k.i.i.s.TokenIndexProvider] [system/00000000] Schema index cleanup job closed: descriptor=Index( id=1, name='index_343aff4e', type='LOOKUP', schema=(:<any-labels>), indexProvider='token-lookup-1.0' ), indexFile=/data/databases/system/schema/index/token-lookup-1.0/1/index-1
+2025-11-23 10:46:08.616+0000 INFO  [o.n.k.i.i.s.TokenIndexProvider] [system/00000000] Schema index cleanup job registered: descriptor=Index( id=2, name='index_f7700477', type='LOOKUP', schema=()-[:<any-types>]-(), indexProvider='token-lookup-1.0' ), indexFile=/data/databases/system/schema/index/token-lookup-1.0/2/index-2
+2025-11-23 10:46:08.617+0000 INFO  [o.n.k.i.i.s.TokenIndexProvider] [system/00000000] Schema index cleanup job started: descriptor=Index( id=2, name='index_f7700477', type='LOOKUP', schema=()-[:<any-types>]-(), indexProvider='token-lookup-1.0' ), indexFile=/data/databases/system/schema/index/token-lookup-1.0/2/index-2
+2025-11-23 10:46:08.629+0000 INFO  [o.n.k.i.i.s.TokenIndexProvider] [system/00000000] Schema index cleanup job finished: descriptor=Index( id=2, name='index_f7700477', type='LOOKUP', schema=()-[:<any-types>]-(), indexProvider='token-lookup-1.0' ), indexFile=/data/databases/system/schema/index/token-lookup-1.0/2/index-2 Number of pages visited: 3, Number of tree nodes: 2, Number of cleaned crashed pointers: 0, Time spent: 11ms
+2025-11-23 10:46:08.630+0000 INFO  [o.n.k.i.i.s.TokenIndexProvider] [system/00000000] Schema index cleanup job closed: descriptor=Index( id=2, name='index_f7700477', type='LOOKUP', schema=()-[:<any-types>]-(), indexProvider='token-lookup-1.0' ), indexFile=/data/databases/system/schema/index/token-lookup-1.0/2/index-2
+2025-11-23 10:46:08.769+0000 INFO  [o.n.k.i.i.s.RangeIndexProvider] [system/00000000] Schema index cleanup job registered: descriptor=Index( id=3, name='constraint_798238d6', type='RANGE', schema=(:Label[1] {PropertyKey[11], PropertyKey[12]}), indexProvider='range-1.0', owningConstraint=5 ), indexFile=/data/databases/system/schema/index/range-1.0/3/index-3
+2025-11-23 10:46:08.770+0000 INFO  [o.n.k.i.i.s.RangeIndexProvider] [system/00000000] Schema index cleanup job started: descriptor=Index( id=3, name='constraint_798238d6', type='RANGE', schema=(:Label[1] {PropertyKey[11], PropertyKey[12]}), indexProvider='range-1.0', owningConstraint=5 ), indexFile=/data/databases/system/schema/index/range-1.0/3/index-3
+2025-11-23 10:46:08.780+0000 INFO  [o.n.k.i.i.s.RangeIndexProvider] [system/00000000] Schema index cleanup job finished: descriptor=Index( id=3, name='constraint_798238d6', type='RANGE', schema=(:Label[1] {PropertyKey[11], PropertyKey[12]}), indexProvider='range-1.0', owningConstraint=5 ), indexFile=/data/databases/system/schema/index/range-1.0/3/index-3 Number of pages visited: 3, Number of tree nodes: 2, Number of cleaned crashed pointers: 0, Time spent: 8ms
+2025-11-23 10:46:08.781+0000 INFO  [o.n.k.i.i.s.RangeIndexProvider] [system/00000000] Schema index cleanup job closed: descriptor=Index( id=3, name='constraint_798238d6', type='RANGE', schema=(:Label[1] {PropertyKey[11], PropertyKey[12]}), indexProvider='range-1.0', owningConstraint=5 ), indexFile=/data/databases/system/schema/index/range-1.0/3/index-3
+2025-11-23 10:46:08.857+0000 INFO  [o.n.k.i.i.s.RangeIndexProvider] [system/00000000] Schema index cleanup job registered: descriptor=Index( id=4, name='constraint_8014b60a', type='RANGE', schema=(:Label[2] {PropertyKey[11]}), indexProvider='range-1.0', owningConstraint=6 ), indexFile=/data/databases/system/schema/index/range-1.0/4/index-4
+2025-11-23 10:46:08.858+0000 INFO  [o.n.k.i.i.s.RangeIndexProvider] [system/00000000] Schema index cleanup job started: descriptor=Index( id=4, name='constraint_8014b60a', type='RANGE', schema=(:Label[2] {PropertyKey[11]}), indexProvider='range-1.0', owningConstraint=6 ), indexFile=/data/databases/system/schema/index/range-1.0/4/index-4
+2025-11-23 10:46:08.867+0000 INFO  [o.n.k.i.i.s.RangeIndexProvider] [system/00000000] Schema index cleanup job finished: descriptor=Index( id=4, name='constraint_8014b60a', type='RANGE', schema=(:Label[2] {PropertyKey[11]}), indexProvider='range-1.0', owningConstraint=6 ), indexFile=/data/databases/system/schema/index/range-1.0/4/index-4 Number of pages visited: 3, Number of tree nodes: 2, Number of cleaned crashed pointers: 0, Time spent: 8ms
+2025-11-23 10:46:08.868+0000 INFO  [o.n.k.i.i.s.RangeIndexProvider] [system/00000000] Schema index cleanup job closed: descriptor=Index( id=4, name='constraint_8014b60a', type='RANGE', schema=(:Label[2] {PropertyKey[11]}), indexProvider='range-1.0', owningConstraint=6 ), indexFile=/data/databases/system/schema/index/range-1.0/4/index-4
+2025-11-23 10:46:08.953+0000 INFO  [o.n.k.i.i.s.RangeIndexProvider] [system/00000000] Schema index cleanup job registered: descriptor=Index( id=7, name='constraint_5789ae3', type='RANGE', schema=(:Label[3] {PropertyKey[11]}), indexProvider='range-1.0', owningConstraint=11 ), indexFile=/data/databases/system/schema/index/range-1.0/7/index-7
+2025-11-23 10:46:08.955+0000 INFO  [o.n.k.i.i.s.RangeIndexProvider] [system/00000000] Schema index cleanup job started: descriptor=Index( id=7, name='constraint_5789ae3', type='RANGE', schema=(:Label[3] {PropertyKey[11]}), indexProvider='range-1.0', owningConstraint=11 ), indexFile=/data/databases/system/schema/index/range-1.0/7/index-7
+2025-11-23 10:46:08.965+0000 INFO  [o.n.k.i.i.s.RangeIndexProvider] [system/00000000] Schema index cleanup job finished: descriptor=Index( id=7, name='constraint_5789ae3', type='RANGE', schema=(:Label[3] {PropertyKey[11]}), indexProvider='range-1.0', owningConstraint=11 ), indexFile=/data/databases/system/schema/index/range-1.0/7/index-7 Number of pages visited: 3, Number of tree nodes: 2, Number of cleaned crashed pointers: 0, Time spent: 9ms
+2025-11-23 10:46:08.965+0000 INFO  [o.n.k.i.i.s.RangeIndexProvider] [system/00000000] Schema index cleanup job closed: descriptor=Index( id=7, name='constraint_5789ae3', type='RANGE', schema=(:Label[3] {PropertyKey[11]}), indexProvider='range-1.0', owningConstraint=11 ), indexFile=/data/databases/system/schema/index/range-1.0/7/index-7
+2025-11-23 10:46:08.949+0000 INFO  [o.n.k.i.i.s.RangeIndexProvider] [system/00000000] Schema index cleanup job registered: descriptor=Index( id=8, name='constraint_74fad970', type='RANGE', schema=(:Label[3] {PropertyKey[27]}), indexProvider='range-1.0', owningConstraint=10 ), indexFile=/data/databases/system/schema/index/range-1.0/8/index-8
+2025-11-23 10:46:08.952+0000 INFO  [o.n.k.i.i.s.RangeIndexProvider] [system/00000000] Schema index cleanup job started: descriptor=Index( id=8, name='constraint_74fad970', type='RANGE', schema=(:Label[3] {PropertyKey[27]}), indexProvider='range-1.0', owningConstraint=10 ), indexFile=/data/databases/system/schema/index/range-1.0/8/index-8
+2025-11-23 10:46:08.973+0000 INFO  [o.n.k.i.i.s.RangeIndexProvider] [system/00000000] Schema index cleanup job finished: descriptor=Index( id=8, name='constraint_74fad970', type='RANGE', schema=(:Label[3] {PropertyKey[27]}), indexProvider='range-1.0', owningConstraint=10 ), indexFile=/data/databases/system/schema/index/range-1.0/8/index-8 Number of pages visited: 3, Number of tree nodes: 2, Number of cleaned crashed pointers: 0, Time spent: 19ms
+2025-11-23 10:46:08.973+0000 INFO  [o.n.k.i.i.s.RangeIndexProvider] [system/00000000] Schema index cleanup job closed: descriptor=Index( id=8, name='constraint_74fad970', type='RANGE', schema=(:Label[3] {PropertyKey[27]}), indexProvider='range-1.0', owningConstraint=10 ), indexFile=/data/databases/system/schema/index/range-1.0/8/index-8
+2025-11-23 10:46:09.084+0000 INFO  [o.n.k.i.i.s.RangeIndexProvider] [system/00000000] Schema index cleanup job registered: descriptor=Index( id=9, name='auth-constraint', type='RANGE', schema=(:Label[4] {PropertyKey[28], PropertyKey[27]}), indexProvider='range-1.0', owningConstraint=12 ), indexFile=/data/databases/system/schema/index/range-1.0/9/index-9
+2025-11-23 10:46:09.085+0000 INFO  [o.n.k.i.i.s.RangeIndexProvider] [system/00000000] Schema index cleanup job started: descriptor=Index( id=9, name='auth-constraint', type='RANGE', schema=(:Label[4] {PropertyKey[28], PropertyKey[27]}), indexProvider='range-1.0', owningConstraint=12 ), indexFile=/data/databases/system/schema/index/range-1.0/9/index-9
+2025-11-23 10:46:09.086+0000 INFO  [o.n.k.i.a.i.IndexingService] [system/00000000] IndexingService.init: indexes not specifically mentioned above are ONLINE. Total 7 indexes. Processed in 878ms
+2025-11-23 10:46:09.101+0000 INFO  [o.n.k.i.i.s.RangeIndexProvider] [system/00000000] Schema index cleanup job finished: descriptor=Index( id=9, name='auth-constraint', type='RANGE', schema=(:Label[4] {PropertyKey[28], PropertyKey[27]}), indexProvider='range-1.0', owningConstraint=12 ), indexFile=/data/databases/system/schema/index/range-1.0/9/index-9 Number of pages visited: 3, Number of tree nodes: 2, Number of cleaned crashed pointers: 0, Time spent: 15ms
+2025-11-23 10:46:09.102+0000 INFO  [o.n.k.i.i.s.RangeIndexProvider] [system/00000000] Schema index cleanup job closed: descriptor=Index( id=9, name='auth-constraint', type='RANGE', schema=(:Label[4] {PropertyKey[28], PropertyKey[27]}), indexProvider='range-1.0', owningConstraint=12 ), indexFile=/data/databases/system/schema/index/range-1.0/9/index-9
+2025-11-23 10:46:09.114+0000 INFO  [o.n.k.a.DatabaseAvailabilityGuard] [system/00000000] Requirement `Database unavailable` makes database system unavailable.
+2025-11-23 10:46:09.115+0000 INFO  [o.n.k.a.DatabaseAvailabilityGuard] [system/00000000] DatabaseId{00000000[system]} is unavailable.
+2025-11-23 10:46:09.202+0000 INFO  [o.n.k.d.Database] [system/00000000] Starting transaction log [/data/transactions/system/neostore.transaction.db.0] at version=0
+2025-11-23 10:46:09.216+0000 INFO  [o.n.k.d.Database] [system/00000000] Starting transaction log [/data/transactions/system/checkpoint.0] at version=0
+2025-11-23 10:46:09.221+0000 INFO  [o.n.k.i.t.l.f.c.CheckpointLogFile] [system/00000000] Scanning log file with version 0 for checkpoint entries
+2025-11-23 10:46:09.258+0000 INFO  [o.n.k.i.a.i.IndexingService] [system/00000000] IndexingService.start: indexes not specifically mentioned above are ONLINE. Total 7 indexes. Processed in 0ms
+2025-11-23 10:46:09.266+0000 INFO  [o.n.k.a.DatabaseAvailabilityGuard] [system/00000000] Fulfilling of requirement 'Database unavailable' makes database system available.
+2025-11-23 10:46:09.267+0000 INFO  [o.n.k.a.DatabaseAvailabilityGuard] [system/00000000] DatabaseId{00000000[system]} is ready.
+2025-11-23 10:46:10.756+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.core.write.CypherNodePropertyExporterBuilder` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/kernel/enterprise/api/security/EnterpriseLoginContext
+2025-11-23 10:46:11.148+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.codec.spdy.SpdyHeaderBlockJZlibEncoder` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/com/jcraft/jzlib/Deflater
+2025-11-23 10:46:11.466+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.codec.compression.LzfDecoder` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/com/ning/compress/lzf/ChunkDecoder
+2025-11-23 10:46:11.898+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.codec.marshalling.DefaultUnmarshallerProvider` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/org/jboss/marshalling/Unmarshaller
+2025-11-23 10:46:12.635+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.org.ejml.ops.MatrixIO$MflAccess$IO` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: us/hebi/matlab/mat/types/MatFile
+2025-11-23 10:46:12.750+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.codec.protobuf.ProtobufEncoderNano` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/com/google/protobuf/nano/MessageNano
+2025-11-23 10:46:12.786+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.net.bytebuddy.dynamic.loading.ClassInjector$UsingJna$Dispatcher$Windows32BitFunctionMapper` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/com/sun/jna/FunctionMapper
+2025-11-23 10:46:13.477+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `org.neo4j.gds.compat._523.BatchImporterCompat$MonitorAdapter` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: org/neo4j/batchimport/api/Monitor
+2025-11-23 10:46:13.517+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.ClusterExporterBuilderCatalog$ExporterBuilderCreator` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/kernel/enterprise/api/security/EnterpriseLoginContext
+2025-11-23 10:46:13.819+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.codec.compression.JZlibEncoder` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/com/jcraft/jzlib/Deflater
+2025-11-23 10:46:14.469+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.metrics.projections.PrometheusMetricsForProjectionsProvider` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: io/prometheus/client/Counter
+2025-11-23 10:46:14.470+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `org.neo4j.gds.compat._523.BatchImporterCompat$InputChunkAdapter` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: org/neo4j/batchimport/api/input/InputChunk
+2025-11-23 10:46:14.501+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.ssl.JettyNpnSslEngine$1` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/org/eclipse/jetty/npn/NextProtoNego$ServerProvider
+2025-11-23 10:46:14.505+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.ssl.JettyNpnSslEngine$2` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/org/eclipse/jetty/npn/NextProtoNego$ClientProvider
+2025-11-23 10:46:14.862+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.core.write.CypherNodeLabelExporterBuilder` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/kernel/enterprise/api/security/EnterpriseLoginContext
+2025-11-23 10:46:15.883+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.metrics.PrometheusExecutionMetricProvider` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: io/prometheus/client/Counter
+2025-11-23 10:46:16.354+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.codec.compression.LzmaFrameEncoder` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: lzma/sdk/lzma/Encoder
+2025-11-23 10:46:16.742+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.metrics.GdsMetricsExtension$GdsMetricLifecycleAdapter` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: io/prometheus/client/Collector
+2025-11-23 10:46:17.425+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.util.internal.Hidden$NettyBlockHoundIntegration$1` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: reactor/blockhound/integration/BlockHoundIntegration
+2025-11-23 10:46:17.581+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.codec.marshalling.MarshallingEncoder` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/org/jboss/marshalling/ByteOutput
+2025-11-23 10:46:17.626+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.codec.marshalling.DefaultMarshallerProvider` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/org/jboss/marshalling/Marshaller
+2025-11-23 10:46:17.655+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.ssl.ConscryptAlpnSslEngine$ServerEngine` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/org/conscrypt/BufferAllocator
+2025-11-23 10:46:18.320+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.metrics.CreatedGraphsMetric` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: io/prometheus/client/SimpleCollector
+2025-11-23 10:46:18.624+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.metrics.ShutdownFailureMetric` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: io/prometheus/client/SimpleCollector
+2025-11-23 10:46:19.252+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.ssl.ConscryptAlpnSslEngine` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/org/conscrypt/AllocatedBuffer
+2025-11-23 10:46:19.587+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `org.neo4j.gds.compat._523.BatchImporterCompat$GroupReverseAdapter` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: org/neo4j/batchimport/api/input/Group
+2025-11-23 10:46:19.688+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.ssl.JettyAlpnSslEngine$ClientEngine$1` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/org/eclipse/jetty/alpn/ALPN$ClientProvider
+2025-11-23 10:46:19.911+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.metrics.PrometheusMetricWithTimer` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: io/prometheus/client/Counter
+2025-11-23 10:46:19.995+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.codec.compression.Lz4FrameDecoder` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: net/jpountz/lz4/LZ4Exception
+2025-11-23 10:46:20.376+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.core.write.CypherRelationshipStreamExporterBuilder` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/kernel/enterprise/api/security/EnterpriseLoginContext
+2025-11-23 10:46:20.411+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.metrics.RestoreFailureMetric` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: io/prometheus/client/SimpleCollector
+2025-11-23 10:46:20.524+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.ssl.ConscryptAlpnSslEngine$ClientEngine` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/org/conscrypt/BufferAllocator
+2025-11-23 10:46:20.789+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.org.reflections.vfs.JbossFile` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/org/jboss/vfs/VirtualFile
+2025-11-23 10:46:21.286+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.ClusterExporterBuilderCatalog` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/kernel/enterprise/api/security/EnterpriseLoginContext
+2025-11-23 10:46:21.904+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.org.reflections.vfs.JbossDir` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/org/jboss/vfs/VirtualFile
+2025-11-23 10:46:22.225+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.codec.compression.BrotliEncoder` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/com/aayushatharva/brotli4j/encoder/Encoder$Parameters
+2025-11-23 10:46:22.238+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.metrics.AuraBackupTimeMetric` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: io/prometheus/client/SimpleCollector
+2025-11-23 10:46:22.734+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.codec.marshalling.LimitingByteInput` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/org/jboss/marshalling/ByteInput
+2025-11-23 10:46:22.744+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `org.neo4j.gds.compat._523.BatchImporterCompat$EstimatesAdapter` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: org/neo4j/batchimport/api/input/Input$Estimates
+2025-11-23 10:46:23.071+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.codec.marshalling.ThreadLocalUnmarshallerProvider` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/org/jboss/marshalling/Unmarshaller
+2025-11-23 10:46:23.648+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.util.internal.Hidden` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: reactor/blockhound/integration/BlockHoundIntegration
+2025-11-23 10:46:24.144+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.ssl.ConscryptAlpnSslEngine$ClientEngine$1` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/org/conscrypt/HandshakeListener
+2025-11-23 10:46:24.347+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.codec.marshalling.MarshallingDecoder` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/org/jboss/marshalling/ByteInput
+2025-11-23 10:46:25.194+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.codec.compression.BrotliOptions` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/com/aayushatharva/brotli4j/encoder/Encoder$Parameters
+2025-11-23 10:46:25.291+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.metrics.procedures.PrometheusDeprecatedProceduresMetricRegistrar` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: io/prometheus/client/Counter
+2025-11-23 10:46:25.332+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.javassist.util.HotSwapper` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/com/sun/jdi/request/EventRequest
+2025-11-23 10:46:26.310+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.codec.marshalling.MarshallerProvider` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/org/jboss/marshalling/Marshaller
+2025-11-23 10:46:26.410+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.metrics.ShutdownTimeMetric` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: io/prometheus/client/SimpleCollector
+2025-11-23 10:46:26.716+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.com.fasterxml.jackson.databind.ext.DOMDeserializer` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/org/w3c/dom/Document
+2025-11-23 10:46:26.790+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `org.neo4j.gds.compat._523.BatchImporterCompat` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: org/neo4j/batchimport/api/Configuration
+2025-11-23 10:46:26.859+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.codec.marshalling.ContextBoundUnmarshallerProvider` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/org/jboss/marshalling/Unmarshaller
+2025-11-23 10:46:27.160+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.codec.compression.JZlibDecoder` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/com/jcraft/jzlib/Inflater
+2025-11-23 10:46:27.484+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `org.neo4j.gds.compat._523.BatchImporterCompat$InputAdapter` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: org/neo4j/batchimport/api/input/Input
+2025-11-23 10:46:27.574+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.codec.compression.ZstdDecoder$ZstdStream$2` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/com/github/luben/zstd/ZstdBufferDecompressingStreamNoFinalizer
+2025-11-23 10:46:27.575+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.codec.compression.ZstdDecoder$ZstdStream$1` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/com/github/luben/zstd/ZstdDirectBufferDecompressingStreamNoFinalizer
+2025-11-23 10:46:27.665+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.net.bytebuddy.dynamic.loading.ClassInjector$UsingJna$Dispatcher` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/com/sun/jna/Library
+2025-11-23 10:46:27.861+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.com.fasterxml.jackson.databind.ext.DOMDeserializer$NodeDeserializer` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/org/w3c/dom/Node
+2025-11-23 10:46:28.095+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.ssl.JettyAlpnSslEngine$ServerEngine$1` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/org/eclipse/jetty/alpn/ALPN$ServerProvider
+2025-11-23 10:46:28.099+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.ssl.JettyAlpnSslEngine$ServerEngine` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/org/eclipse/jetty/alpn/ALPN$Provider
+2025-11-23 10:46:28.128+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `org.neo4j.gds.compat._523.BatchImporterCompat$InputIterableAdapter` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: org/neo4j/batchimport/api/InputIterable
+2025-11-23 10:46:28.373+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.codec.marshalling.ChannelBufferByteOutput` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/org/jboss/marshalling/ByteOutput
+2025-11-23 10:46:28.604+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.metrics.GdsMetric` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: io/prometheus/client/SimpleCollector
+2025-11-23 10:46:28.702+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.metrics.AuraBackupFailureMetric$Listener` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: io/prometheus/client/Counter
+2025-11-23 10:46:29.008+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.core.write.DefaultQueryRunner` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/kernel/enterprise/api/security/EnterpriseLoginContext
+2025-11-23 10:46:29.267+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.util.internal.Hidden$NettyBlockHoundIntegration` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: reactor/blockhound/integration/BlockHoundIntegration
+2025-11-23 10:46:29.585+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.core.write.CypherRelationshipPropertiesExporterBuilder` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/kernel/enterprise/api/security/EnterpriseLoginContext
+2025-11-23 10:46:29.684+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.metrics.StoredModelsMetric` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: io/prometheus/client/SimpleCollector
+2025-11-23 10:46:29.766+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.ssl.ConscryptAlpnSslEngine$ServerEngine$1` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/org/conscrypt/HandshakeListener
+2025-11-23 10:46:30.236+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `org.neo4j.gds.compat._523.BatchImporterCompat$ReadableGroupsReverseAdapter` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: org/neo4j/batchimport/api/input/ReadableGroups
+2025-11-23 10:46:30.407+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.metrics.AuraBackupFailureMetric` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: io/prometheus/client/SimpleCollector
+2025-11-23 10:46:30.473+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.metrics.algorithms.PrometheusMetricsForAlgorithmsProvider` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: io/prometheus/client/Counter
+2025-11-23 10:46:30.750+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.codec.compression.StandardCompressionOptions` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/com/aayushatharva/brotli4j/encoder/Encoder$Parameters
+2025-11-23 10:46:31.019+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.codec.marshalling.UnmarshallerProvider` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/org/jboss/marshalling/Unmarshaller
+2025-11-23 10:46:31.077+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.codec.compression.Lz4FrameEncoder` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: net/jpountz/lz4/LZ4Exception
+2025-11-23 10:46:31.180+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `org.neo4j.gds.compat._523.BatchImporterCompat$InputIteratorAdapter` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: org/neo4j/batchimport/api/InputIterator
+2025-11-23 10:46:31.187+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.ssl.ConscryptAlpnSslEngine$BufferAdapter` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/org/conscrypt/AllocatedBuffer
+2025-11-23 10:46:31.252+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.net.bytebuddy.dynamic.loading.ClassInjector$UsingJna$Dispatcher$Jvm` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/com/sun/jna/Library
+2025-11-23 10:46:32.052+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.codec.compression.LzfEncoder` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/com/ning/compress/lzf/ChunkEncoder
+2025-11-23 10:46:32.071+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.codec.compression.BrotliDecoder` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/com/aayushatharva/brotli4j/decoder/DecoderJNI$Wrapper
+2025-11-23 10:46:32.296+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.codec.compression.ZstdDecoder$ZstdStream` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/com/github/luben/zstd/BaseZstdBufferDecompressingStreamNoFinalizer
+2025-11-23 10:46:32.347+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.com.fasterxml.jackson.databind.ext.DOMSerializer` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/org/w3c/dom/Node
+2025-11-23 10:46:32.481+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.ssl.BouncyCastlePemReader` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/org/bouncycastle/openssl/jcajce/JcaPEMKeyConverter
+2025-11-23 10:46:32.511+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.metrics.CreatedModelsMetric` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: io/prometheus/client/SimpleCollector
+2025-11-23 10:46:32.697+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.codec.marshalling.ThreadLocalMarshallerProvider` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/org/jboss/marshalling/Marshaller
+2025-11-23 10:46:32.904+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.util.internal.logging.CommonsLogger` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/org/apache/commons/logging/Log
+2025-11-23 10:46:32.907+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.ssl.ConscryptAlpnSslEngine$BufferAllocatorAdapter` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/org/conscrypt/BufferAllocator
+2025-11-23 10:46:32.952+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.metrics.LoadModelsMetric` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: io/prometheus/client/SimpleCollector
+2025-11-23 10:46:33.148+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.ssl.JettyNpnSslEngine` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/org/eclipse/jetty/npn/NextProtoNego$Provider
+2025-11-23 10:46:33.624+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.metrics.ShutdownTimeMetric$Listener` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: io/prometheus/client/Histogram
+2025-11-23 10:46:33.625+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.metrics.AuraBackupTimeMetric$Listener` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: io/prometheus/client/Histogram
+2025-11-23 10:46:33.635+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.metrics.PrometheusExecutionMetricRegistrar` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: io/prometheus/client/Counter
+2025-11-23 10:46:33.757+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.com.fasterxml.jackson.databind.ext.DOMDeserializer$DocumentDeserializer` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/org/w3c/dom/Document
+2025-11-23 10:46:33.765+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.codec.compression.Lz4XXHash32` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: net/jpountz/xxhash/XXHash32
+2025-11-23 10:46:33.891+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.codec.compression.ZlibUtil` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/com/jcraft/jzlib/Inflater
+2025-11-23 10:46:34.087+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.codec.marshalling.CompatibleMarshallingEncoder` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/org/jboss/marshalling/ByteOutput
+2025-11-23 10:46:34.096+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.ssl.util.BouncyCastleSelfSignedCertGenerator` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/org/bouncycastle/cert/X509v3CertificateBuilder
+2025-11-23 10:46:34.249+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.codec.marshalling.ChannelBufferByteInput` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/org/jboss/marshalling/ByteInput
+2025-11-23 10:46:34.837+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.codec.compression.BrotliEncoder$Writer` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/com/aayushatharva/brotli4j/encoder/BrotliEncoderChannel
+2025-11-23 10:46:34.879+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `org.neo4j.gds.compat._523.BatchImporterCompat$CollectorAdapter` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: org/neo4j/batchimport/api/input/Collector
+2025-11-23 10:46:35.159+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `org.neo4j.gds.compat._523.BatchImporterCompat$ConfigurationAdapter` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: org/neo4j/batchimport/api/Configuration
+2025-11-23 10:46:35.350+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.core.write.CypherRelationshipExporterBuilder` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/kernel/enterprise/api/security/EnterpriseLoginContext
+2025-11-23 10:46:35.431+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.util.internal.logging.Log4JLogger` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/org/apache/log4j/Priority
+2025-11-23 10:46:35.461+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.net.bytebuddy.dynamic.loading.ClassInjector$UsingJna$Dispatcher$Enabled` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/com/sun/jna/Library
+2025-11-23 10:46:35.662+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `org.neo4j.gds.compat._523.BatchImporterCompat$BatchImporterReverseAdapter` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: org/neo4j/batchimport/api/input/Input
+2025-11-23 10:46:35.717+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.ssl.JettyAlpnSslEngine$ClientEngine` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/org/eclipse/jetty/alpn/ALPN$Provider
+2025-11-23 10:46:35.805+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.metrics.RestoreFailureMetric$Listener` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: io/prometheus/client/Counter
+2025-11-23 10:46:35.917+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `org.neo4j.gds.compat._523.BatchImporterCompat$InputEntityVisitorReverseAdapter` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: org/neo4j/batchimport/api/input/InputEntityVisitor
+2025-11-23 10:46:36.137+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.core.write.CypherRelationshipStreamExporter` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/kernel/enterprise/api/security/EnterpriseLoginContext
+2025-11-23 10:46:36.156+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.util.internal.logging.Log4J2Logger` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/org/apache/logging/log4j/spi/ExtendedLoggerWrapper
+2025-11-23 10:46:36.240+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.org.reflections.serializers.XmlSerializer` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/org/dom4j/Document
+2025-11-23 10:46:36.286+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.metrics.ShutdownFailureMetric$Listener` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: io/prometheus/client/Counter
+2025-11-23 10:46:36.406+0000 WARN  [o.n.k.a.p.GlobalProcedures] Failed to load `com.neo4j.gds.shaded.io.netty.handler.codec.marshalling.CompatibleMarshallingDecoder` from plugin jar `/plugins/graph-data-science.jar`: java.lang.NoClassDefFoundError: com/neo4j/gds/shaded/org/jboss/marshalling/ByteInput
+2025-11-23 10:46:38.542+0000 INFO  [o.n.s.s.s.UserSecurityGraphComponent] Performing postInitialization step for component 'security-users' with version 5 and status CURRENT
+2025-11-23 10:46:38.542+0000 INFO  [o.n.s.s.s.UserSecurityGraphComponent] Updating the initial password in component 'security-users'
+2025-11-23 10:46:38.582+0000 INFO  [o.n.d.d.DatabaseLifecycles] Creating 'DatabaseId{43556453[neo4j]}'.
+2025-11-23 10:46:38.590+0000 INFO  [o.n.d.d.DatabaseLifecycles] Starting 'DatabaseId{43556453[neo4j]}'.
+2025-11-23 10:46:38.666+0000 INFO  [o.n.k.i.t.l.f.c.CheckpointLogFile] [neo4j/43556453] Scanning log file with version 0 for checkpoint entries
+2025-11-23 10:46:38.745+0000 INFO  [o.n.k.i.s.f.RecordFormatSelector] [neo4j/43556453] Selected RecordFormat:PageAlignedV5_0[aligned-1.1] record format from store /data/databases/neo4j
+2025-11-23 10:46:38.745+0000 INFO  [o.n.k.i.s.f.RecordFormatSelector] [neo4j/43556453] Selected format from the store files: RecordFormat:PageAlignedV5_0[aligned-1.1]
+2025-11-23 10:46:38.948+0000 INFO  [o.n.i.d.DiagnosticsManager] [neo4j/43556453] 
+                                                                [neo4j/43556453] ********************************************************************************
+                                                                [neo4j/43556453]                               [ Database: neo4j ]                               
+                                                                [neo4j/43556453] ********************************************************************************
+                                                                [neo4j/43556453] --------------------------------------------------------------------------------
+                                                                [neo4j/43556453]                                   [ Version ]                                   
+                                                                [neo4j/43556453] --------------------------------------------------------------------------------
+                                                                [neo4j/43556453] DBMS: community record-aligned-1.1
+                                                                [neo4j/43556453] Kernel version: 5.21.0
+                                                                [neo4j/43556453] 
+                                                                [neo4j/43556453] --------------------------------------------------------------------------------
+                                                                [neo4j/43556453]                                 [ Store files ]                                 
+                                                                [neo4j/43556453] --------------------------------------------------------------------------------
+                                                                [neo4j/43556453] Disk space on partition (Total / Free / Free %): 161158787072 / 23187673088 / 14
+                                                                [neo4j/43556453] Storage files stored on file store: 9p
+                                                                [neo4j/43556453] Storage files: (filename : modification date - size)
+                                                                [neo4j/43556453]   database_lock: 2025-10-29 16:01:35.793+0000 - 0B
+                                                                [neo4j/43556453]   id-buffer.tmp.0: 2025-11-18 14:21:04.615+0000 - 0B
+                                                                [neo4j/43556453]   neostore: 2025-10-29 16:01:35.736+0000 - 8.000KiB
+                                                                [neo4j/43556453]   neostore.counts.db: 2025-11-23 10:46:38.815+0000 - 48.00KiB
+                                                                [neo4j/43556453]   neostore.indexstats.db: 2025-11-23 10:46:38.833+0000 - 48.00KiB
+                                                                [neo4j/43556453]   neostore.labeltokenstore.db: 2025-11-13 02:06:10.381+0000 - 8.000KiB
+                                                                [neo4j/43556453]   neostore.labeltokenstore.db.id: 2025-11-23 10:46:38.765+0000 - 40.00KiB
+                                                                [neo4j/43556453]   neostore.labeltokenstore.db.names: 2025-11-13 02:06:10.403+0000 - 8.000KiB
+                                                                [neo4j/43556453]   neostore.labeltokenstore.db.names.id: 2025-11-23 10:46:38.748+0000 - 40.00KiB
+                                                                [neo4j/43556453]   neostore.nodestore.db: 2025-11-18 15:59:21.752+0000 - 8.000KiB
+                                                                [neo4j/43556453]   neostore.nodestore.db.id: 2025-11-23 10:46:38.646+0000 - 48.00KiB
+                                                                [neo4j/43556453]   neostore.nodestore.db.labels: 2025-10-29 16:01:35.656+0000 - 8.000KiB
+                                                                [neo4j/43556453]   neostore.nodestore.db.labels.id: 2025-11-23 10:46:38.627+0000 - 40.00KiB
+                                                                [neo4j/43556453]   neostore.propertystore.db: 2025-11-18 15:59:21.714+0000 - 8.000KiB
+                                                                [neo4j/43556453]   neostore.propertystore.db.arrays: 2025-10-29 16:01:35.687+0000 - 8.000KiB
+                                                                [neo4j/43556453]   neostore.propertystore.db.arrays.id: 2025-11-23 10:46:38.688+0000 - 40.00KiB
+                                                                [neo4j/43556453]   neostore.propertystore.db.id: 2025-11-23 10:46:38.697+0000 - 48.00KiB
+                                                                [neo4j/43556453]   neostore.propertystore.db.index: 2025-11-13 02:06:10.392+0000 - 8.000KiB
+                                                                [neo4j/43556453]   neostore.propertystore.db.index.id: 2025-11-23 10:46:38.668+0000 - 40.00KiB
+                                                                [neo4j/43556453]   neostore.propertystore.db.index.keys: 2025-11-13 02:06:10.401+0000 - 8.000KiB
+                                                                [neo4j/43556453]   neostore.propertystore.db.index.keys.id: 2025-11-23 10:46:38.657+0000 - 40.00KiB
+                                                                [neo4j/43556453]   neostore.propertystore.db.strings: 2025-10-29 16:01:35.677+0000 - 8.000KiB
+                                                                [neo4j/43556453]   neostore.propertystore.db.strings.id: 2025-11-23 10:46:38.676+0000 - 40.00KiB
+                                                                [neo4j/43556453]   neostore.relationshipgroupstore.db: 2025-10-29 16:01:35.730+0000 - 8.000KiB
+                                                                [neo4j/43556453]   neostore.relationshipgroupstore.db.id: 2025-11-23 10:46:38.790+0000 - 40.00KiB
+                                                                [neo4j/43556453]   neostore.relationshipgroupstore.degrees.db: 2025-11-23 10:46:38.826+0000 - 40.00KiB
+                                                                [neo4j/43556453]   neostore.relationshipstore.db: 2025-10-29 16:01:35.696+0000 - 0B
+                                                                [neo4j/43556453]   neostore.relationshipstore.db.id: 2025-11-23 10:46:38.715+0000 - 40.00KiB
+                                                                [neo4j/43556453]   neostore.relationshiptypestore.db: 2025-10-29 16:01:35.706+0000 - 0B
+                                                                [neo4j/43556453]   neostore.relationshiptypestore.db.id: 2025-11-23 10:46:38.742+0000 - 40.00KiB
+                                                                [neo4j/43556453]   neostore.relationshiptypestore.db.names: 2025-10-29 16:01:35.702+0000 - 8.000KiB
+                                                                [neo4j/43556453]   neostore.relationshiptypestore.db.names.id: 2025-11-23 10:46:38.728+0000 - 40.00KiB
+                                                                [neo4j/43556453]   neostore.schemastore.db: 2025-10-29 16:01:43.997+0000 - 8.000KiB
+                                                                [neo4j/43556453]   neostore.schemastore.db.id: 2025-11-23 10:46:38.778+0000 - 40.00KiB
+                                                                [neo4j/43556453]   schema:
+                                                                [neo4j/43556453]     index:
+                                                                [neo4j/43556453]       token-lookup-1.0:
+                                                                [neo4j/43556453]         1:
+                                                                [neo4j/43556453]           index-1: 2025-11-18 15:59:21.393+0000 - 48.00KiB
+                                                                [neo4j/43556453]         - Total: 2025-10-29 16:01:43.798+0000 - 48.00KiB
+                                                                [neo4j/43556453]         2:
+                                                                [neo4j/43556453]           index-2: 2025-11-18 15:59:21.397+0000 - 40.00KiB
+                                                                [neo4j/43556453]         - Total: 2025-10-29 16:01:43.830+0000 - 40.00KiB
+                                                                [neo4j/43556453]       - Total: 2025-10-29 16:01:43.827+0000 - 88.00KiB
+                                                                [neo4j/43556453]     - Total: 2025-10-29 16:01:43.791+0000 - 88.00KiB
+                                                                [neo4j/43556453]   - Total: 2025-10-29 16:01:43.788+0000 - 88.00KiB
+                                                                [neo4j/43556453] Storage summary: 
+                                                                [neo4j/43556453]   Total size of store: 904.0KiB
+                                                                [neo4j/43556453]   Total size of mapped files: 192.0KiB
+                                                                [neo4j/43556453] 
+                                                                [neo4j/43556453] --------------------------------------------------------------------------------
+                                                                [neo4j/43556453]                               [ Transaction log ]                               
+                                                                [neo4j/43556453] --------------------------------------------------------------------------------
+                                                                [neo4j/43556453] Transaction log files stored on file store: 9p
+                                                                [neo4j/43556453] Transaction log metadata:
+                                                                [neo4j/43556453]  - current kernel version used in transactions: V5_20
+                                                                [neo4j/43556453]  - last committed transaction id: 29
+                                                                [neo4j/43556453] Transaction log files:
+                                                                [neo4j/43556453]  - existing transaction log versions: 0-0
+                                                                [neo4j/43556453]  - oldest transaction 2 found in log with version 0
+                                                                [neo4j/43556453]  - files: (filename : creation date - size)
+                                                                [neo4j/43556453]      neostore.transaction.db.0: 1970-01-01 00:00:00.000+0000 - 256.0MiB
+                                                                [neo4j/43556453]  - total size of files: 256.0MiB
+                                                                [neo4j/43556453] Checkpoint log files:
+                                                                [neo4j/43556453]  - existing checkpoint log versions: 0-0
+                                                                [neo4j/43556453]  - last checkpoint: CheckpointInfo[transactionLogPosition=LogPosition{logVersion=0, byteOffset=14732}, storeId=StoreId{creationTime=1761753695975, random=-3337982006322283881, storageEngineName='record', formatName='aligned', majorVersion=1, minorVersion=1}, checkpointEntryPosition=LogPosition{logVersion=0, byteOffset=3608}, channelPositionAfterCheckpoint=LogPosition{logVersion=0, byteOffset=3840}, checkpointFilePostReadPosition=LogPosition{logVersion=0, byteOffset=3840}, kernelVersion=KernelVersion{V5_20,version=17}, kernelVersionByte=17, transactionId=TransactionId[id=29, appendIndex=29, kernelVersion=KernelVersion{V5_20,version=17}, checksum=874484617, commitTimestamp=1763481550795, consensusIndex=-1], appendIndex=29, reason=Checkpoint triggered by "Scheduled checkpoint for every 15 minutes threshold" @ txId: 29, consensusIndexInCheckpoint=true]
+                                                                [neo4j/43556453] 
+                                                                [neo4j/43556453] --------------------------------------------------------------------------------
+                                                                [neo4j/43556453]                                   [ Id usage ]                                  
+                                                                [neo4j/43556453] --------------------------------------------------------------------------------
+                                                                [neo4j/43556453] ArrayPropertyStore[neostore.nodestore.db.labels]: used=1 high=0
+                                                                [neo4j/43556453] NodeStore[neostore.nodestore.db]: used=6 high=5
+                                                                [neo4j/43556453] StringPropertyStore[neostore.propertystore.db.index.keys]: used=29 high=28
+                                                                [neo4j/43556453] PropertyIndexStore[neostore.propertystore.db.index]: used=19 high=18
+                                                                [neo4j/43556453] StringPropertyStore[neostore.propertystore.db.strings]: used=1 high=0
+                                                                [neo4j/43556453] ArrayPropertyStore[neostore.propertystore.db.arrays]: used=1 high=0
+                                                                [neo4j/43556453] PropertyStore[neostore.propertystore.db]: used=32 high=31
+                                                                [neo4j/43556453] RelationshipStore[neostore.relationshipstore.db]: used=0 high=-1
+                                                                [neo4j/43556453] StringPropertyStore[neostore.relationshiptypestore.db.names]: used=1 high=0
+                                                                [neo4j/43556453] RelationshipTypeStore[neostore.relationshiptypestore.db]: used=0 high=-1
+                                                                [neo4j/43556453] StringPropertyStore[neostore.labeltokenstore.db.names]: used=3 high=2
+                                                                [neo4j/43556453] LabelTokenStore[neostore.labeltokenstore.db]: used=2 high=1
+                                                                [neo4j/43556453] SchemaStore[neostore.schemastore.db]: used=3 high=2
+                                                                [neo4j/43556453] RelationshipGroupStore[neostore.relationshipgroupstore.db]: used=1 high=0
+                                                                [neo4j/43556453] NeoStore[neostore]: used=-1 high=-1
+                                                                [neo4j/43556453] 
+                                                                [neo4j/43556453] --------------------------------------------------------------------------------
+                                                                [neo4j/43556453]                                   [ Metadata ]                                  
+                                                                [neo4j/43556453] --------------------------------------------------------------------------------
+                                                                [neo4j/43556453] EXTERNAL_STORE_UUID (Database identifier exposed as external store identity. Generated on creation and never updated): 7744ca9d-0a9e-461d-a06d-cdabeeedfef5
+                                                                [neo4j/43556453] DATABASE_ID (The last used DatabaseId for this database): null
+                                                                [neo4j/43556453] LEGACY_STORE_VERSION (Legacy store format version. This field is used from 5.0 onwards only to distinguish non-migrated pre 5.0 metadata stores.): -3523014627327384477
+                                                                [neo4j/43556453] STORE_ID (Store ID): StoreId{creationTime=1761753695975, random=-3337982006322283881, storageEngineName='record', formatName='aligned', majorVersion=1, minorVersion=1}
+                                                                [neo4j/43556453] 
+2025-11-23 10:46:38.973+0000 INFO  [o.n.k.i.i.s.TokenIndexProvider] [neo4j/43556453] Schema index cleanup job registered: descriptor=Index( id=1, name='index_343aff4e', type='LOOKUP', schema=(:<any-labels>), indexProvider='token-lookup-1.0' ), indexFile=/data/databases/neo4j/schema/index/token-lookup-1.0/1/index-1
+2025-11-23 10:46:38.974+0000 INFO  [o.n.k.i.i.s.TokenIndexProvider] [neo4j/43556453] Schema index cleanup job started: descriptor=Index( id=1, name='index_343aff4e', type='LOOKUP', schema=(:<any-labels>), indexProvider='token-lookup-1.0' ), indexFile=/data/databases/neo4j/schema/index/token-lookup-1.0/1/index-1
+2025-11-23 10:46:38.978+0000 INFO  [o.n.k.i.i.s.TokenIndexProvider] [neo4j/43556453] Schema index cleanup job finished: descriptor=Index( id=1, name='index_343aff4e', type='LOOKUP', schema=(:<any-labels>), indexProvider='token-lookup-1.0' ), indexFile=/data/databases/neo4j/schema/index/token-lookup-1.0/1/index-1 Number of pages visited: 3, Number of tree nodes: 2, Number of cleaned crashed pointers: 0, Time spent: 2ms
+2025-11-23 10:46:38.978+0000 INFO  [o.n.k.i.i.s.TokenIndexProvider] [neo4j/43556453] Schema index cleanup job closed: descriptor=Index( id=1, name='index_343aff4e', type='LOOKUP', schema=(:<any-labels>), indexProvider='token-lookup-1.0' ), indexFile=/data/databases/neo4j/schema/index/token-lookup-1.0/1/index-1
+2025-11-23 10:46:38.990+0000 INFO  [o.n.k.i.i.s.TokenIndexProvider] [neo4j/43556453] Schema index cleanup job registered: descriptor=Index( id=2, name='index_f7700477', type='LOOKUP', schema=()-[:<any-types>]-(), indexProvider='token-lookup-1.0' ), indexFile=/data/databases/neo4j/schema/index/token-lookup-1.0/2/index-2
+2025-11-23 10:46:38.991+0000 INFO  [o.n.k.i.a.i.IndexingService] [neo4j/43556453] IndexingService.init: indexes not specifically mentioned above are ONLINE. Total 2 indexes. Processed in 38ms
+2025-11-23 10:46:38.991+0000 INFO  [o.n.k.i.i.s.TokenIndexProvider] [neo4j/43556453] Schema index cleanup job started: descriptor=Index( id=2, name='index_f7700477', type='LOOKUP', schema=()-[:<any-types>]-(), indexProvider='token-lookup-1.0' ), indexFile=/data/databases/neo4j/schema/index/token-lookup-1.0/2/index-2
+2025-11-23 10:46:38.993+0000 INFO  [o.n.k.i.i.s.TokenIndexProvider] [neo4j/43556453] Schema index cleanup job finished: descriptor=Index( id=2, name='index_f7700477', type='LOOKUP', schema=()-[:<any-types>]-(), indexProvider='token-lookup-1.0' ), indexFile=/data/databases/neo4j/schema/index/token-lookup-1.0/2/index-2 Number of pages visited: 2, Number of tree nodes: 1, Number of cleaned crashed pointers: 0, Time spent: 1ms
+2025-11-23 10:46:38.993+0000 INFO  [o.n.k.i.i.s.TokenIndexProvider] [neo4j/43556453] Schema index cleanup job closed: descriptor=Index( id=2, name='index_f7700477', type='LOOKUP', schema=()-[:<any-types>]-(), indexProvider='token-lookup-1.0' ), indexFile=/data/databases/neo4j/schema/index/token-lookup-1.0/2/index-2
+2025-11-23 10:46:39.003+0000 INFO  [o.n.k.a.DatabaseAvailabilityGuard] [neo4j/43556453] Requirement `Database unavailable` makes database neo4j unavailable.
+2025-11-23 10:46:39.003+0000 INFO  [o.n.k.a.DatabaseAvailabilityGuard] [neo4j/43556453] DatabaseId{43556453[neo4j]} is unavailable.
+2025-11-23 10:46:39.023+0000 INFO  [o.n.k.d.Database] [neo4j/43556453] Starting transaction log [/data/transactions/neo4j/neostore.transaction.db.0] at version=0
+2025-11-23 10:46:39.037+0000 INFO  [o.n.k.d.Database] [neo4j/43556453] Starting transaction log [/data/transactions/neo4j/checkpoint.0] at version=0
+2025-11-23 10:46:39.044+0000 INFO  [o.n.k.i.t.l.f.c.CheckpointLogFile] [neo4j/43556453] Scanning log file with version 0 for checkpoint entries
+2025-11-23 10:46:39.066+0000 INFO  [o.n.k.i.a.i.IndexingService] [neo4j/43556453] IndexingService.start: indexes not specifically mentioned above are ONLINE. Total 2 indexes. Processed in 0ms
+2025-11-23 10:46:39.068+0000 INFO  [o.n.k.a.DatabaseAvailabilityGuard] [neo4j/43556453] Fulfilling of requirement 'Database unavailable' makes database neo4j available.
+2025-11-23 10:46:39.068+0000 INFO  [o.n.k.a.DatabaseAvailabilityGuard] [neo4j/43556453] DatabaseId{43556453[neo4j]} is ready.
+2025-11-23 10:46:39.069+0000 INFO  [o.n.u.UserDataCollector] Anonymous Usage Data is being sent to Neo4j, see https://neo4j.com/docs/usage-data/
+2025-11-23 10:46:39.125+0000 INFO  [o.n.b.p.c.c.n.SocketNettyConnector] Bolt enabled on 0.0.0.0:7687.
+2025-11-23 10:46:39.128+0000 WARN  [i.n.b.ServerBootstrap] Unknown channel option 'SO_REUSEADDR' for channel '[id: 0x44dd2341]'
+2025-11-23 10:46:39.134+0000 INFO  [o.n.b.BoltServer] Bolt server started
+2025-11-23 10:46:39.134+0000 INFO  [o.n.s.A.ServerComponentsLifecycleAdapter] Starting web server
+2025-11-23 10:46:40.098+0000 INFO  [o.n.s.CommunityNeoWebServer] HTTP enabled on 0.0.0.0:7474.
+2025-11-23 10:46:40.100+0000 INFO  [o.n.s.CommunityNeoWebServer] Remote interface available at http://localhost:7474/
+2025-11-23 10:46:40.101+0000 INFO  [o.n.s.A.ServerComponentsLifecycleAdapter] Web server started.
+2025-11-23 10:46:40.105+0000 INFO  [o.n.g.f.DatabaseManagementServiceFactory] id: 91530B8F2D9472B0E9AA1979DA84978E108D16DF79270FA5839927A308FD4ECE
+2025-11-23 10:46:40.106+0000 INFO  [o.n.g.f.DatabaseManagementServiceFactory] name: system
+2025-11-23 10:46:40.107+0000 INFO  [o.n.g.f.DatabaseManagementServiceFactory] creationDate: 2025-10-29T16:00:58.746Z
+2025-11-23 10:55:29.783+0000 WARN  [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=310, gcTime=0, gcCount=0}
+2025-11-23 10:55:30.076+0000 WARN  [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=229, gcTime=0, gcCount=0}
+2025-11-23 10:55:57.234+0000 WARN  [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=204, gcTime=0, gcCount=0}
+2025-11-23 10:55:57.723+0000 WARN  [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=456, gcTime=0, gcCount=0}
+2025-11-23 10:59:51.861+0000 WARN  [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=209, gcTime=0, gcCount=0}
+2025-11-23 11:11:12.859+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] [neo4j/43556453] Checkpoint triggered by "Scheduled checkpoint for every 15 minutes threshold" @ txId: 31 checkpoint started...
+2025-11-23 11:11:13.538+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] [neo4j/43556453] Checkpoint triggered by "Scheduled checkpoint for every 15 minutes threshold" @ txId: 31 checkpoint completed in 656ms. Checkpoint flushed 41 pages (0% of total available pages), in 33 IOs. Checkpoint performed with IO limit: unlimited, paused in total 0 times( 0 millis).
+2025-11-23 11:11:13.597+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] [neo4j/43556453] No log version pruned. The strategy used was '2 days 2147483648 size'. 
+2025-11-23 14:38:13.355+0000 WARN  [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=970, gcTime=0, gcCount=0}
+2025-11-23 14:38:13.809+0000 WARN  [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=339, gcTime=0, gcCount=0}
+2025-11-23 15:23:28.818+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] [neo4j/43556453] Checkpoint triggered by "Scheduled checkpoint for every 15 minutes threshold" @ txId: 32 checkpoint started...
+2025-11-23 15:23:29.087+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] [neo4j/43556453] Checkpoint triggered by "Scheduled checkpoint for every 15 minutes threshold" @ txId: 32 checkpoint completed in 251ms. Checkpoint flushed 41 pages (0% of total available pages), in 33 IOs. Checkpoint performed with IO limit: unlimited, paused in total 0 times( 0 millis).
+2025-11-23 15:23:29.090+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] [neo4j/43556453] No log version pruned. The strategy used was '2 days 2147483648 size'. 
+2025-11-23 15:31:43.473+0000 WARN  [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=315, gcTime=0, gcCount=0}
+2025-11-23 16:25:50.378+0000 WARN  [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=567, gcTime=0, gcCount=0}
+2025-11-23 17:25:46.448+0000 WARN  [o.n.k.i.c.VmPauseMonitorComponent] Detected VM stop-the-world pause: {pauseTime=202, gcTime=258, gcCount=1}

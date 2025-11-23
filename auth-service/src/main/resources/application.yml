@@ -1,16 +1,15 @@
-
 spring:
   config:
     import:
       - optional:file:./auth-service/.env[.properties]
 
-#  application:
-#    name: auth-service
-#  datasource:
-#    url: jdbc:mysql://localhost:3307/auth_service?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
-#    username: auth_user
-#    password: 12345
-#    driver-class-name: com.mysql.cj.jdbc.Driver
+  #  application:
+  #    name: auth-service
+  #  datasource:
+  #    url: jdbc:mysql://localhost:3307/auth_service?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+  #    username: auth_user
+  #    password: 12345
+  #    driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
     hibernate:
@@ -42,6 +41,7 @@ spring:
             user-name-attribute: username
 cognito:
   domain: https://us-east-1jhi5wpbs9.auth.us-east-1.amazoncognito.com
-  logoutRedirect: http://localhost:3000/login
+  logoutRedirect: http://localhost:3000
 
-
+auth:
+  redirect-uri: http://localhost:3000/auth/callback

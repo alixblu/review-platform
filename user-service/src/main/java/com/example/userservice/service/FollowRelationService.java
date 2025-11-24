@@ -1,5 +1,7 @@
 package com.example.userservice.service;
 
+import com.example.commonlib.exception.AppException;
+import com.example.commonlib.exception.ErrorCode;
 import com.example.userservice.dto.follow_relation.FollowRequest;
 import com.example.userservice.dto.follow_relation.FollowResponse;
 import com.example.userservice.mapper.FollowRelationMapper;
@@ -11,7 +13,6 @@ import lombok.AccessLevel;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service
@@ -23,17 +24,30 @@ public class FollowRelationService {
     final FollowRelationMapper followRelationMapper;
 
     public FollowResponse follow(FollowRequest request) {
-        if (followRelationRepository.findByFollowerIdAndFollowingId(String.valueOf(request.getFollowerId()), request.getFollowingId()).isPresent()) {
-            throw new RuntimeException("Already following this user");
+        boolean exists = followRelationRepository
+                .findByFollowerIdAndFollowingId(
+                        String.valueOf(request.getFollowerId()),
+                        request.getFollowingId()
+                )
+                .isPresent();
+
+        if (exists) {
+            throw new AppException(ErrorCode.EXISTED, "You are already following this user");
         }
+
         FollowRelation relation = followRelationMapper.toModel(request);
         FollowRelation saved = followRelationRepository.save(relation);
         return followRelationMapper.toResponse(saved);
     }
 
     public void unfollow(FollowRequest request) {
-        FollowRelation relation = followRelationRepository.findByFollowerIdAndFollowingId(String.valueOf(request.getFollowerId()), request.getFollowingId())
-                .orElseThrow(() -> new RuntimeException("Follow relation not found"));
+        FollowRelation relation = followRelationRepository
+                .findByFollowerIdAndFollowingId(
+                        String.valueOf(request.getFollowerId()),
+                        request.getFollowingId()
+                )
+                .orElseThrow(() -> new AppException(ErrorCode.NOT_FOUND, "Follow relation not found"));
+
         followRelationRepository.delete(relation);
     }
 

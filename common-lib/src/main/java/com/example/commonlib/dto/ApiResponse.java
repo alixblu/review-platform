@@ -19,7 +19,13 @@ public class ApiResponse<T> {
     private T result;
 
     public ApiResponse(String message, T  result) {
+        this.code = 100;
         this.message = message;
         this.result = result;
+    }
+
+    public ApiResponse(int code, String message) {
+        this.code = code;
+        this.message = message;
     }
 }

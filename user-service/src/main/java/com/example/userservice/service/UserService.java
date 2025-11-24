@@ -47,6 +47,12 @@ public class UserService {
                 .orElseThrow(() -> new AppException(ErrorCode.NOT_FOUND, "User not found"));
         return userMapper.toResponse(user);
     }
+	
+		public UserResponse getUserByAccId(String accId) {
+			User user = userRepository.findUserByAccId(accId)
+					.orElseThrow(() -> new AppException(ErrorCode.NOT_FOUND, "User not found"));
+			return userMapper.toResponse(user);
+		}
 
     public List<UserResponse> getAllUsers() {
         return userRepository.findAll()

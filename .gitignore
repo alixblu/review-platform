@@ -2,6 +2,10 @@
 data/
 .env
 
-#http://localhost:8080/swagger-ui/index.html
+#http://localhost:8082/swagger-ui/index.html
 review-platform-fe/
 logs/
+
+#testuser123: 8f66wF3YGW6ARYA*
+#admin:
+#ali: 2Cr6c-38UgnNqiV

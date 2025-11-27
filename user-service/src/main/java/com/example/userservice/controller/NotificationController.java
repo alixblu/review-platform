@@ -17,6 +17,8 @@ import java.util.List;
 @RequestMapping("api/notification")
 @RequiredArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
+@CrossOrigin(origins = "http://localhost:3000")
+
 public class NotificationController {
 
     NotificationService notificationService;

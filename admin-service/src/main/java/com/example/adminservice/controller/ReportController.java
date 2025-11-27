@@ -28,12 +28,14 @@ public class ReportController {
     @PreAuthorize("hasRole('USER')")
     public ApiResponse<ReportResponse> createReport(
             @Valid @RequestBody ReportCreationRequest request) {
-        log.info("Request to create report for contentId: {}",
-                request.getContentId());
+        log.info("Request to create report for contentId: {}", request.getContentId());
         ReportResponse response = reportService.createReport(request);
-        return ApiResponse.success(response, "Report created successfully");
+        return ApiResponse.<ReportResponse>builder()
+                .code(1000)
+                .message("Report created successfully")
+                .result(response)
+                .build();
     }
-
 
     @GetMapping
     @PreAuthorize("hasRole('ADMIN')")
@@ -41,9 +43,12 @@ public class ReportController {
             @RequestParam(required = false) RequestStatus status) {
         log.info("Request to get all reports with status: {}", status);
         List<ReportResponse> responses = reportService.getAllReports(status);
-        return ApiResponse.success(responses);
+        return ApiResponse.<List<ReportResponse>>builder()
+                .code(1000)
+                .message("Fetched reports successfully")
+                .result(responses)
+                .build();
     }
-
 
     @GetMapping("/{reportId}")
     @PreAuthorize("hasRole('ADMIN')")
@@ -51,9 +56,12 @@ public class ReportController {
             @PathVariable UUID reportId) {
         log.info("Request to get report by id: {}", reportId);
         ReportResponse response = reportService.getReport(reportId);
-        return ApiResponse.success(response);
+        return ApiResponse.<ReportResponse>builder()
+                .code(1000)
+                .message("Fetched report successfully")
+                .result(response)
+                .build();
     }
-
 
     @PutMapping("/{reportId}/status")
     @PreAuthorize("hasRole('ADMIN')")
@@ -61,8 +69,11 @@ public class ReportController {
             @PathVariable UUID reportId,
             @Valid @RequestBody RequestStatusUpdateRequest request) {
         log.info("Request to update status for reportId: {}", reportId);
-        ReportResponse response =
-                reportService.updateReportStatus(reportId, request);
-        return ApiResponse.success(response, "Report status updated");
+        ReportResponse response = reportService.updateReportStatus(reportId, request);
+        return ApiResponse.<ReportResponse>builder()
+                .code(1000)
+                .message("Report status updated")
+                .result(response)
+                .build();
     }
 }

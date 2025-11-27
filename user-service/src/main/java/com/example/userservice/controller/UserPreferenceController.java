@@ -18,6 +18,8 @@ import java.lang.String;
 @RequestMapping("api/user-preference")
 @RequiredArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@CrossOrigin(origins = "http://localhost:3000")
+
 public class UserPreferenceController {
 
     final UserPreferenceService userPreferenceService;

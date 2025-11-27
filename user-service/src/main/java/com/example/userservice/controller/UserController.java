@@ -19,6 +19,8 @@ import java.util.List;
 @RequestMapping("api/user")
 @RequiredArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@CrossOrigin(origins = "http://localhost:3000")
+
 public class UserController {
 
     final UserService userService;

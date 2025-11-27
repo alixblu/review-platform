@@ -14,6 +14,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/api/posts") // Gắn vào /api/posts
 @RequiredArgsConstructor
+@CrossOrigin(origins = "http://localhost:3000")
 public class PostLikeController {
 
     private final PostLikeService postLikeService;

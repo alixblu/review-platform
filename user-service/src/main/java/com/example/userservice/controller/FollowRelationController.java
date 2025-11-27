@@ -17,6 +17,8 @@ import java.util.List;
 @RequestMapping("api/follow")
 @RequiredArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
+@CrossOrigin(origins = "http://localhost:3000")
+
 public class FollowRelationController {
 
     FollowRelationService followRelationService;

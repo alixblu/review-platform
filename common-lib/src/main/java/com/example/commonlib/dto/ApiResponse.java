@@ -6,6 +6,8 @@ import lombok.Builder; // <-- Dòng này tạo ra hàm builder()
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @Builder // <--- Annotation này tự động tạo ra hàm ApiResponse.builder()
 @NoArgsConstructor

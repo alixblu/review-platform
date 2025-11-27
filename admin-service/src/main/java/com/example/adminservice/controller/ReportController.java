@@ -31,7 +31,7 @@ public class ReportController {
         log.info("Request to create report for contentId: {}",
                 request.getContentId());
         ReportResponse response = reportService.createReport(request);
-        return ApiResponse.success(response, "Report created successfully");
+        return new ApiResponse<>("Report created successfully", response);
     }
 
 
@@ -41,7 +41,7 @@ public class ReportController {
             @RequestParam(required = false) RequestStatus status) {
         log.info("Request to get all reports with status: {}", status);
         List<ReportResponse> responses = reportService.getAllReports(status);
-        return ApiResponse.success(responses);
+        return new ApiResponse<>("Reports retrieved successfully", responses);
     }
 
 
@@ -51,7 +51,7 @@ public class ReportController {
             @PathVariable UUID reportId) {
         log.info("Request to get report by id: {}", reportId);
         ReportResponse response = reportService.getReport(reportId);
-        return ApiResponse.success(response);
+        return new ApiResponse<>("Report retrieved successfully", response);
     }
 
 
@@ -63,6 +63,6 @@ public class ReportController {
         log.info("Request to update status for reportId: {}", reportId);
         ReportResponse response =
                 reportService.updateReportStatus(reportId, request);
-        return ApiResponse.success(response, "Report status updated");
+        return new ApiResponse<>("Report status updated", response);
     }
 }

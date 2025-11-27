@@ -32,8 +32,7 @@ public class ProductRequestController {
                 request.getOfficialLink());
         ProductRequestResponse response =
                 productRequestService.createProductRequest(request);
-        return ApiResponse.success(response,
-                "Product request created successfully");
+        return new ApiResponse<>("Product request created successfully", response);
     }
 
 
@@ -44,7 +43,7 @@ public class ProductRequestController {
         log.info("Request to get all product requests with status: {}", status);
         List<ProductRequestResponse> responses =
                 productRequestService.getAllProductRequests(status);
-        return ApiResponse.success(responses);
+        return new ApiResponse<>("Product requests retrieved successfully", responses);
     }
 
 
@@ -55,7 +54,7 @@ public class ProductRequestController {
         log.info("Request to get product request by id: {}", requestId);
         ProductRequestResponse response =
                 productRequestService.getProductRequest(requestId);
-        return ApiResponse.success(response);
+        return new ApiResponse<>("Product request retrieved successfully", response);
     }
 
 
@@ -69,6 +68,6 @@ public class ProductRequestController {
         ProductRequestResponse response =
                 productRequestService.updateProductRequestStatus(requestId,
                         request);
-        return ApiResponse.success(response, "Product request status updated");
+        return new ApiResponse<>("Product request status updated", response);
     }
 }

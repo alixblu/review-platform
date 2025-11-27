@@ -16,7 +16,4 @@ public class UserPreferenceUpdateRequest {
 
     private List<String> concerns;
 
-    @Size(max = 1000, message = "Preferences text tối đa 1000 ký tự")
-    private String preferencesText;
-
 }

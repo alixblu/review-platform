@@ -17,6 +17,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/api/brand")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "http://localhost:3000")
 public class BrandController {
 
     private final BrandService brandService;

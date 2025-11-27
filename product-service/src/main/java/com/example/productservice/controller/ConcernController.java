@@ -16,6 +16,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/api/concern")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "http://localhost:3000")
 public class ConcernController {
 
     private final ConcernService concernService;

@@ -16,6 +16,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/api/skintype")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "http://localhost:3000")
 public class SkinTypeController {
 
     private final SkinTypeService skinTypeService;

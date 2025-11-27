@@ -5,7 +5,6 @@ import jakarta.validation.constraints.Size;
 import lombok.*;
 
 import java.util.List;
-import java.util.UUID;
 
 @Data
 @NoArgsConstructor
@@ -21,7 +20,5 @@ public class UserPreferenceCreationRequest {
 
     private List<String> concerns;
 
-    @Size(max = 1000, message = "Preferences text tối đa 1000 ký tự")
-    private String preferencesText;
 
 }

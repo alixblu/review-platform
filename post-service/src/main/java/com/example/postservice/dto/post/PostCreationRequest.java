@@ -20,7 +20,7 @@ public record PostCreationRequest(
         String content,
 
         @Size(max = 3, message = "You can upload up to 3 media items")
-        List<String> mediaList
+        List<String> mediaUrls
 
 //need AI api for this
 //        PGvector embedding

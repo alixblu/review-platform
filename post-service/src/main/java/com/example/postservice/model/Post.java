@@ -35,7 +35,7 @@
         @ElementCollection
         @CollectionTable(name = "post_media", joinColumns = @JoinColumn(name = "post_id"))
         @Column(name = "url")
-        private List<String> mediaList;
+        private List<String> mediaUrls;
 
         @Column(name = "create_at", nullable = false, updatable = false)
         private LocalDateTime createAt;

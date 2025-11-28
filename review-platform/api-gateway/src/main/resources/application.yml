@@ -41,6 +41,8 @@ spring:
           uri: http://localhost:8083
           predicates:
             - Path=/api/posts/**,/api/comments/**
+  codec:
+    max-in-memory-size: 50MB
 server:
   port: 8888
 

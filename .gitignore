@@ -19,6 +19,3 @@ target/
 # OS
 .DS_Store
 Thumbs.db
-
-# Frontend (now a submodule)
-review-platform-fe/

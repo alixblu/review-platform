@@ -5,7 +5,7 @@ data/
 #http://localhost:8082/swagger-ui/index.html
 review-platform-fe/
 logs/
-.vscode
+/.vscode
 
 #testuser123: 8f66wF3YGW6ARYA*
 #admin:

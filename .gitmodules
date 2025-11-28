@@ -1,0 +1,3 @@
+[submodule "review-platform-fe"]
+	path = review-platform-fe
+	url = https://github.com/alixblu/review-platform-fe.git

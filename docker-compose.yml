@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   neo4j:
     image: neo4j:5.23
@@ -54,7 +52,7 @@ services:
 
   auth-service:
     build:
-      context: .
+      context: ./review-platform
       dockerfile: auth-service/Dockerfile
     container_name: auth_service
     ports:
@@ -67,7 +65,7 @@ services:
 
   user-service:
     build:
-      context: .
+      context: ./review-platform
       dockerfile: user-service/Dockerfile
     container_name: user_service
     ports:
@@ -82,7 +80,7 @@ services:
 
   product-service:
     build:
-      context: .
+      context: ./review-platform
       dockerfile: product-service/Dockerfile
     container_name: product_service
     ports:
@@ -97,7 +95,7 @@ services:
 
   post-service:
     build:
-      context: .
+      context: ./review-platform
       dockerfile: post-service/Dockerfile
     container_name: post_service
     ports:
@@ -112,7 +110,7 @@ services:
 
   admin-service:
     build:
-      context: .
+      context: ./review-platform
       dockerfile: admin-service/Dockerfile
     container_name: admin_service
     ports:
@@ -127,7 +125,7 @@ services:
 
   api-gateway:
     build:
-      context: .
+      context: ./review-platform
       dockerfile: api-gateway/Dockerfile
     container_name: api_gateway
     ports:
@@ -139,20 +137,20 @@ services:
       - user-service
       - product-service
 
-  # frontend:
-  #   build:
-  #     context: ../review-platform-fe
-  #     dockerfile: Dockerfile
-  #     args:
-  #       VITE_BACKEND_URL: http://localhost:8888
-  #       # Set real Cognito values as needed
-  #       VITE_COGNITO_DOMAIN: ${VITE_COGNITO_DOMAIN:-https://us-east-1jhi5wpbs9.auth.us-east-1.amazoncognito.com}
-  #       VITE_COGNITO_CLIENT_ID: ${VITE_COGNITO_CLIENT_ID:-62te3nhct6ltri9o1acf44n5b5}
-  #   container_name: review_frontend
-  #   ports:
-  #     - "3000:80"
-  #   depends_on:
-  #     - api-gateway
+  frontend:
+    build:
+      context: ./review-platform-fe
+      dockerfile: Dockerfile
+      args:
+        VITE_BACKEND_URL: http://localhost:8888
+        # Set real Cognito values as needed
+        VITE_COGNITO_DOMAIN: ${VITE_COGNITO_DOMAIN:-https://us-east-1jhi5wpbs9.auth.us-east-1.amazoncognito.com}
+        VITE_COGNITO_CLIENT_ID: ${VITE_COGNITO_CLIENT_ID:-62te3nhct6ltri9o1acf44n5b5}
+    container_name: review_frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - api-gateway
 
 volumes:
   neo4j-data: {}

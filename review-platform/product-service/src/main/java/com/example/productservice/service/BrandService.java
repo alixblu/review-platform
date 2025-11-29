@@ -23,6 +23,7 @@ public class BrandService {
 
     private final BrandRepository brandRepository;
     private final BrandMapper brandMapper;
+    private final KnowledgeBaseS3Service knowledgeBaseS3Service;
 
     /**
      * Tạo mới thương hiệu
@@ -37,6 +38,13 @@ public class BrandService {
 
         brandRepository.save(brand);
         log.info("Created brand successfully: {}", brand.getName());
+
+        // Upload to knowledge base S3 (non-blocking)
+        try {
+            knowledgeBaseS3Service.uploadBrandJson(brand);
+        } catch (Exception e) {
+            log.error("Failed to upload brand to knowledge base", e);
+        }
 
         // Entity → DTO Response
         return brandMapper.toResponse(brand);
@@ -86,6 +94,14 @@ public class BrandService {
     public void deleteBrand(UUID id) {
         Brand brand = brandRepository.findById(id)
                 .orElseThrow(() -> new AppException(ErrorCode.NOT_FOUND, "Brand not found"));
+        
+        // Delete from knowledge base S3 (non-blocking)
+        try {
+            knowledgeBaseS3Service.deleteBrandJson(id.toString());
+        } catch (Exception e) {
+            log.error("Failed to delete brand from knowledge base", e);
+        }
+        
         brandRepository.delete(brand);
         log.info("Deleted brand successfully: {}", brand.getName());
     }
@@ -99,6 +115,13 @@ public class BrandService {
 
         brandRepository.save(existingBrand);
         log.info("Updated brand successfully: {}", existingBrand.getName());
+
+        // Upload to knowledge base S3 (non-blocking)
+        try {
+            knowledgeBaseS3Service.uploadBrandJson(existingBrand);
+        } catch (Exception e) {
+            log.error("Failed to upload brand to knowledge base", e);
+        }
 
         return brandMapper.toResponse(existingBrand);
     }

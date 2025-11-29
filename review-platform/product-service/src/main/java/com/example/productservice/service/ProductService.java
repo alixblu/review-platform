@@ -22,6 +22,7 @@ public class ProductService {
 
     private final ProductRepository productRepository;
     private final ProductMapper productMapper;
+    private final KnowledgeBaseS3Service knowledgeBaseS3Service;
 
     public ProductResponse createProduct(ProductCreationRequest request) {
         if (productRepository.existsByName(request.name())) {
@@ -33,6 +34,13 @@ public class ProductService {
 
         productRepository.save(product);
         log.info("Create product successfully");
+
+        // Upload to knowledge base S3 (non-blocking)
+        try {
+            knowledgeBaseS3Service.uploadProductJson(product);
+        } catch (Exception e) {
+            log.error("Failed to upload product to knowledge base", e);
+        }
 
         // Map model → response
         return productMapper.toResponse(product);
@@ -55,6 +63,13 @@ public class ProductService {
 
         productRepository.save(product);
         log.info("Updated product successfully: {}", product.getName());
+
+        // Upload to knowledge base S3 (non-blocking)
+        try {
+            knowledgeBaseS3Service.uploadProductJson(product);
+        } catch (Exception e) {
+            log.error("Failed to upload product to knowledge base", e);
+        }
 
         return productMapper.toResponse(product);
     }

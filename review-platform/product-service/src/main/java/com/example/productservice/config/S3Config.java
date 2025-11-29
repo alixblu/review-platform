@@ -13,7 +13,7 @@ import software.amazon.awssdk.services.s3.S3ClientBuilder;
 @Slf4j
 public class S3Config {
 
-	@Bean
+	@Bean(name = "s3Client")
 	public S3Client s3Client(
 			@Value("${s3.region}") String region,
 			@Value("${aws.accessKeyId:${AWS_ACCESS_KEY_ID:${AWS_ACCESS_KEY:}}}") String accessKeyId,
@@ -33,6 +33,16 @@ public class S3Config {
 //			builder = builder.credentialsProvider(DefaultCredentialsProvider.create());
 //		}
 
+		return builder.build();
+	}
+
+	@Bean(name = "knowledgeBaseS3Client")
+	public S3Client knowledgeBaseS3Client(
+			@Value("${s3.knowledgebase.region}") String region,
+			@Value("${aws.accessKeyId:${AWS_ACCESS_KEY_ID:${AWS_ACCESS_KEY:}}}") String accessKeyId,
+			@Value("${aws.secretAccessKey:${AWS_SECRET_ACCESS_KEY:${AWS_SECRET_KEY:}}}") String secretAccessKey
+	) {
+		S3ClientBuilder builder = S3Client.builder().region(Region.of(region));
 		return builder.build();
 	}
 }

@@ -15,7 +15,8 @@ public enum ErrorCode {
     FORBIDDEN(1005, "Forbidden action", HttpStatus.FORBIDDEN),
     INTERNAL_ERROR(1006, "Internal server error", HttpStatus.INTERNAL_SERVER_ERROR),
     INVALID_REQUEST(1007, "Invalid request", HttpStatus.BAD_REQUEST),
-    INVALID_TOKEN_RESPONSE(1008, "Invalid token response", HttpStatus.BAD_REQUEST);
+    INVALID_TOKEN_RESPONSE(1008, "Invalid token response", HttpStatus.BAD_REQUEST),
+    UNCATEGORIZED_EXCEPTION(1009, "Uncategorize", HttpStatus.BAD_REQUEST);
 
 
 

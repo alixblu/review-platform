@@ -60,7 +60,9 @@ services:
     environment:
       - SERVER_PORT=8080
       - SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_COGNITO_CLIENT-SECRET=${COGNITO_CLIENT_SECRET}
-      - USER-SERVICE_URL=http://user-service:8081/api
+      - USER_SERVICE_URL=http://user-service:8081/api
+      - FRONTEND_URL=${FRONTEND_URL:-http://localhost:3000}
+      - AUTH_SERVICE_URL=${AUTH_SERVICE_URL:-http://localhost:8080}
     depends_on: []
 
   user-service:
@@ -90,6 +92,10 @@ services:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres-product:5432/product-service
       - SPRING_DATASOURCE_USERNAME=postgres
       - SPRING_DATASOURCE_PASSWORD=12345
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_ACCESS_KEY_ID_PROD=${AWS_ACCESS_KEY_ID_PROD}
+      - AWS_SECRET_ACCESS_KEY_PROD=${AWS_SECRET_ACCESS_KEY_PROD}
     depends_on:
       - postgres-product
 
@@ -105,6 +111,8 @@ services:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres-post:5432/post-service
       - SPRING_DATASOURCE_USERNAME=postgres
       - SPRING_DATASOURCE_PASSWORD=12345
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
     depends_on:
       - postgres-post
 
@@ -132,6 +140,7 @@ services:
       - "8888:8888"
     environment:
       - SPRING_PROFILES_ACTIVE=docker
+      - FRONTEND_URL=${FRONTEND_URL:-http://localhost:3000}
     depends_on:
       - auth-service
       - user-service
@@ -142,8 +151,8 @@ services:
       context: ./review-platform-fe
       dockerfile: Dockerfile
       args:
-        VITE_BACKEND_URL: http://localhost:8888
-        # Set real Cognito values as needed
+        VITE_API_URL: ${VITE_API_URL:-http://localhost:8888}
+        VITE_APP_URL: ${VITE_APP_URL:-http://localhost:3000}
         VITE_COGNITO_DOMAIN: ${VITE_COGNITO_DOMAIN:-https://us-east-1jhi5wpbs9.auth.us-east-1.amazoncognito.com}
         VITE_COGNITO_CLIENT_ID: ${VITE_COGNITO_CLIENT_ID:-62te3nhct6ltri9o1acf44n5b5}
     container_name: review_frontend

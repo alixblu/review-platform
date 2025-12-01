@@ -122,13 +122,22 @@ public class KnowledgeBaseS3Service {
     }
 
     private void uploadJsonToS3(String key, String jsonContent) {
+        log.info("Attempting to upload to S3: bucket={}, key={}", knowledgeBaseBucket, key);
+        
         PutObjectRequest putObjectRequest = PutObjectRequest.builder()
                 .bucket(knowledgeBaseBucket)
                 .key(key)
                 .contentType("application/json")
                 .build();
 
-        knowledgeBaseS3Client.putObject(putObjectRequest, RequestBody.fromString(jsonContent));
+        try {
+            knowledgeBaseS3Client.putObject(putObjectRequest, RequestBody.fromString(jsonContent));
+            log.info("Successfully uploaded to S3: {}", key);
+        } catch (Exception e) {
+            log.error("Failed to upload to S3. Bucket: {}, Key: {}, Error: {}", 
+                    knowledgeBaseBucket, key, e.getMessage());
+            throw e;
+        }
     }
 
     public void deleteProductJson(String productId) {

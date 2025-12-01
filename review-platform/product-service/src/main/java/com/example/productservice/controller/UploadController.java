@@ -17,7 +17,7 @@ import java.util.Set;
 @RestController
 @RequestMapping("/api/upload")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")
+@CrossOrigin(origins = "${FRONTEND_URL:http://localhost:3000}", allowCredentials = "true")
 public class UploadController {
 
 	private static final Set<String> ALLOWED_TYPES = Set.of("product", "brand", "review");

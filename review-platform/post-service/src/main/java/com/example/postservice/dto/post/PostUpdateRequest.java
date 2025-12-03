@@ -9,7 +9,7 @@ public record PostUpdateRequest(
         String content,
 
         @Size(max = 3, message = "You can upload up to 3 media items")
-        List<String> mediaList,
+        List<String> mediaUrls,
 
         Post.Status status
 ) {}

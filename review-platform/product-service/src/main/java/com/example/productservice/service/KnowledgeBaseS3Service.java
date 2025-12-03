@@ -83,6 +83,7 @@ public class KnowledgeBaseS3Service {
                     .description(product.getDescription())
                     .concernType(concernTypes)
                     .skinType(skinTypes)
+                    .imageUrl(product.getImageUrl())
                     .price(product.getPrice())
                     .rating(product.getRating())
                     .status(product.getStatus().name().toLowerCase())

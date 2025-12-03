@@ -16,6 +16,7 @@
         <module>product-service</module>
         <module>post-service</module>
         <module>admin-service</module>
+        <module>chat-service</module>
     </modules>
 
     <properties>

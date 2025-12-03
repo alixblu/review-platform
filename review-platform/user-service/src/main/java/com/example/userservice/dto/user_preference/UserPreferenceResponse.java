@@ -5,6 +5,9 @@ import lombok.*;
 import java.time.Instant;
 import java.util.List;
 
+import com.example.commonlib.enums.ConcernTypeEnum;
+import com.example.commonlib.enums.SkinTypeEnum;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -13,7 +16,7 @@ public class UserPreferenceResponse {
 
     private String id;
     private String userId;
-    private String skinType;
-    private List<String> concerns;
+    private SkinTypeEnum skinType;
+    private List<ConcernTypeEnum> concerns;
     private Instant updatedAt;
 }

@@ -4,6 +4,7 @@ import com.example.commonlib.exception.AppException;
 import com.example.commonlib.exception.ErrorCode;
 import com.example.userservice.dto.user_preference.*;
 import com.example.userservice.mapper.UserPreferenceMapper;
+import com.example.userservice.model.User;
 import com.example.userservice.model.UserPreference;
 import com.example.userservice.repository.UserPreferenceRepository;
 import com.example.userservice.repository.UserRepository;
@@ -14,6 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -27,12 +29,15 @@ public class UserPreferenceService {
 
     public UserPreferenceResponse createUserPreference(UserPreferenceCreationRequest request) {
 
+        User user = userRepository.findById(request.getUserId())
+            .orElseThrow(() -> new AppException(ErrorCode.NOT_FOUND, "User not found"));
+
         if (userPreferenceRepository.findByUser_Id(request.getUserId()).isPresent()) {
             throw new AppException(ErrorCode.EXISTED, "User preference already exists");
         }
 
         UserPreference preference = userPreferenceMapper.toModel(request);
-        preference.setUser(null);
+        preference.setUser(user); 
         preference.setUpdatedAt(Instant.now());
 
         UserPreference saved = userPreferenceRepository.save(preference);

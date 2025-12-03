@@ -41,5 +41,14 @@ spring:
           uri: http://post-service:8083
           predicates:
             - Path=/api/posts/**,/api/comments/**
+
+        - id: chat-service
+          uri: http://chat-service:8085
+          predicates:
+            - Path=/api/chat/**
   codec:
     max-in-memory-size: 50MB
+
+jwt:
+  public-paths: /api/auth/exchange,/api/auth/refresh,/logout,/api/chat
+

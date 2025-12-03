@@ -1,6 +1,7 @@
 package com.example.userservice.dto.user_preference;
 
-import jakarta.validation.constraints.Size;
+import com.example.commonlib.enums.ConcernTypeEnum;
+import com.example.commonlib.enums.SkinTypeEnum;
 import lombok.*;
 
 import java.util.List;
@@ -11,9 +12,7 @@ import java.util.List;
 @Builder
 public class UserPreferenceUpdateRequest {
 
-    @Size(max = 50, message = "Skin type tối đa 50 ký tự")
-    private String skinType;
+    private SkinTypeEnum skinType;
 
-    private List<String> concerns;
-
+    private List<ConcernTypeEnum> concerns;
 }

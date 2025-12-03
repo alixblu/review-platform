@@ -21,3 +21,5 @@ EXPOSE 8888
 ENTRYPOINT ["java","-jar","/app/app.jar"]
 
 
+
+

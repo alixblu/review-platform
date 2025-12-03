@@ -42,8 +42,8 @@ public class PostService {
         if (updateRequest.content() != null) {
             post.setContent(updateRequest.content());
         }
-        if (updateRequest.mediaList() != null) {
-            post.setMediaList(updateRequest.mediaList());
+        if (updateRequest.mediaUrls() != null) {
+            post.setMediaUrls(updateRequest.mediaUrls());
         }
         if (updateRequest.status() != null) {
             post.setStatus(updateRequest.status());

@@ -22,7 +22,6 @@ spring:
             scope:
               - email
               - openid
-              - phone
             # Spring Security by default uses a redirect-uri in the format: {baseUrl}/login/oauth2/code/{registrationId}
             # For example: http://localhost:8080/login/oauth2/code/cognito
             # See more: https://docs.spring.io/spring-security/reference/servlet/oauth2/login/core.html#oauth2login-sample-redirect-uri
@@ -33,7 +32,7 @@ spring:
             user-name-attribute: username
 cognito:
   domain: https://us-east-1jhi5wpbs9.auth.us-east-1.amazoncognito.com
-  logoutRedirect: ${FRONTEND_URL:http://localhost:3000}
+  logoutRedirect: ${FRONTEND_URL:http://localhost:3000}/login
 
 auth:
   redirect-uri: ${FRONTEND_URL:http://localhost:3000}/auth/callback

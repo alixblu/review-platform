@@ -25,6 +25,7 @@ public class ReviewService {
 
     private final ReviewRepository reviewRepository;
     private final ReviewMapper reviewMapper;
+    private final ProductService productService;
 
     /**
      * Create a new review
@@ -33,8 +34,32 @@ public class ReviewService {
         Review review = reviewMapper.toModel(request);
         review.setCreatedAt(LocalDateTime.now());
         reviewRepository.save(review);
-        log.info("Created review successfully for product {}", review.getProductId());
+        log.info("Created review successfully for product {}", request.productId());
+        
+        // Update product rating
+        updateProductRating(request.productId());
+        
         return reviewMapper.toResponse(review);
+    }
+    
+    /**
+     * Calculate and update product rating based on all reviews
+     */
+    private void updateProductRating(UUID productId) {
+        List<Review> reviews = reviewRepository.findByProductId(productId);
+        
+        if (reviews.isEmpty()) {
+            productService.updateProductRating(productId, 0.0f);
+            return;
+        }
+        
+        double averageRating = reviews.stream()
+                .mapToInt(Review::getRating)
+                .average()
+                .orElse(0.0);
+        
+        productService.updateProductRating(productId, (float) averageRating);
+        log.info("Updated product {} rating to {}", productId, averageRating);
     }
 
     /**

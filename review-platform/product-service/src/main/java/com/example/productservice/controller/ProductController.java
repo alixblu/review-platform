@@ -1,9 +1,7 @@
 package com.example.productservice.controller;
 
 import com.example.commonlib.dto.ApiResponse;
-import com.example.productservice.dto.product.ProductCreationRequest;
-import com.example.productservice.dto.product.ProductResponse;
-import com.example.productservice.dto.product.ProductUpdateRequest;
+import com.example.productservice.dto.product.*;
 import com.example.productservice.service.ProductService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -43,6 +41,15 @@ public class ProductController {
         ProductResponse updated = productService.updateProduct(id, request);
         return ResponseEntity.status(HttpStatus.OK)
                 .body(new ApiResponse<>("Product updated successfully", updated));
+    }
+    @PutMapping("/{id}/rating")
+    public ApiResponse<ProductResponse> updateRating(
+            @PathVariable UUID id,
+            @RequestBody @Valid ProductRatingUpdateRequest request
+    ) {
+        return ApiResponse.<ProductResponse>builder()
+                .result(productService.updateProductRating(id, request.rating()))
+                .build();
     }
 
     @GetMapping("/{id}")

@@ -80,4 +80,16 @@ public class ProductService {
 
         return productMapper.toResponse(product);
     }
+    
+    /**
+     * Update product rating
+     */
+    public void updateProductRating(UUID productId, float newRating) {
+        Product product = productRepository.findById(productId)
+                .orElseThrow(() -> new AppException(ErrorCode.NOT_FOUND, "Product not found"));
+        
+        product.setRating(newRating);
+        productRepository.save(product);
+        log.info("Updated product {} rating to {}", productId, newRating);
+    }
 }

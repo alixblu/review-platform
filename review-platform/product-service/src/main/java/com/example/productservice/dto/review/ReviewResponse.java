@@ -11,6 +11,6 @@ public record ReviewResponse(
         int rating,
         String description,
         String imgUrl,
-        LocalDateTime createAt,
+        LocalDateTime createdAt,
         Status status
 ) {}

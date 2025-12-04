@@ -133,23 +133,23 @@ services:
     depends_on:
       - postgres-admin
 
-  chat-service:
-    build:
-      context: ./review-platform
-      dockerfile: chat-service/Dockerfile
-    container_name: chat_service
-    ports:
-      - "8085:8085"
-    environment:
-      - SERVER_PORT=8085
-      - AWS_REGION=${AWS_REGION:-ap-southeast-2}
-      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
-      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
-      - BEDROCK_AGENT_ID=${BEDROCK_AGENT_ID}
-      - BEDROCK_AGENT_ALIAS_ID=${BEDROCK_AGENT_ALIAS_ID:-TSTALIASID}
-      - USER_SERVICE_URL=http://user-service:8081
-    depends_on:
-      - user-service
+  # chat-service:
+  #   build:
+  #     context: ./review-platform
+  #     dockerfile: chat-service/Dockerfile
+  #   container_name: chat_service
+  #   ports:
+  #     - "8085:8085"
+  #   environment:
+  #     - SERVER_PORT=8085
+  #     - AWS_REGION=${AWS_REGION:-ap-southeast-2}
+  #     - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+  #     - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+  #     - BEDROCK_AGENT_ID=${BEDROCK_AGENT_ID}
+  #     - BEDROCK_AGENT_ALIAS_ID=${BEDROCK_AGENT_ALIAS_ID:-TSTALIASID}
+  #     - USER_SERVICE_URL=http://user-service:8081
+  #   depends_on:
+  #     - user-service
 
   api-gateway:
     build:
@@ -165,7 +165,7 @@ services:
       - auth-service
       - user-service
       - product-service
-      - chat-service
+      # - chat-service
 
   frontend:
     build:

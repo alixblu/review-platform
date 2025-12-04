@@ -7,7 +7,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.*;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 @Service
@@ -17,6 +23,7 @@ public class ChatService {
 
     private final UserClient userClient;
     private final ObjectMapper objectMapper;
+    private final RestTemplate restTemplate = new RestTemplate();
 
     @Value("${aws.region}")
     private String awsRegion;
@@ -32,6 +39,9 @@ public class ChatService {
 
     @Value("${bedrock.agent.alias-id}")
     private String agentAliasId;
+
+    @Value("${bedrock.agent.api-url:https://xgd5sz06fc.execute-api.ap-southeast-2.amazonaws.com/dev/agent}")
+    private String bedrockAgentApiUrl;
 
     public ChatResponse chat(ChatRequest request) {
         try {
@@ -89,43 +99,41 @@ public class ChatService {
     }
 
     private String invokeBedrockAgent(String inputText) {
-        log.info("Creating Bedrock Agent client for region: {}", awsRegion);
-        log.info("Agent ID: {}, Alias ID: {}", agentId, agentAliasId);
-        
-        // TODO: Implement actual Bedrock Agent call
-        // For now, return a mock response for testing
-        log.warn("Using mock response - Bedrock Agent integration pending");
-        
-        return """
-                Dựa trên yêu cầu của bạn về sữa rửa mặt cho da dầu, tôi gợi ý một số sản phẩm phù hợp. 
-                Các sản phẩm này đều có khả năng kiểm soát dầu tốt và được đánh giá cao.
-                
-                JSON_RESULT_START
-                {
-                  "query": "Gợi ý sữa rửa mặt cho da dầu",
-                  "detected_filters": {
-                    "skin_type": ["oily"],
-                    "concern_type": [],
-                    "category": ["cleanser"],
-                    "price_range": {"min": null, "max": null}
-                  },
-                  "products": [
-                    {
-                      "id": "test-001",
-                      "name": "CeraVe Foaming Facial Cleanser",
-                      "brand_name": "CeraVe",
-                      "category": "cleanser",
-                      "price": 289000,
-                      "rating": 4.7,
-                      "image_url": "https://via.placeholder.com/150",
-                      "skin_type": ["oily", "combination"],
-                      "concern_type": ["acne"],
-                      "reason": "Sữa rửa mặt dạng bọt nhẹ nhàng, kiểm soát dầu hiệu quả."
-                    }
-                  ]
-                }
-                JSON_RESULT_END
-                """;
+        try {
+            log.info("Calling AWS Bedrock Agent API: {}", bedrockAgentApiUrl);
+            
+            // Prepare request body
+            Map<String, String> requestBody = new HashMap<>();
+            requestBody.put("message", inputText);
+            
+            // Set headers
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.APPLICATION_JSON);
+            
+            HttpEntity<Map<String, String>> request = new HttpEntity<>(requestBody, headers);
+            
+            // Make the API call
+            ResponseEntity<Map<String, Object>> response = restTemplate.exchange(
+                bedrockAgentApiUrl,
+                HttpMethod.POST,
+                request,
+                new ParameterizedTypeReference<Map<String, Object>>() {}
+            );
+            
+            if (response.getStatusCode().is2xxSuccessful() && response.getBody() != null) {
+                Map<String, Object> responseBody = response.getBody();
+                Object replyObj = responseBody.get("reply");
+                String reply = replyObj != null ? replyObj.toString() : "";
+                log.info("Successfully received response from Bedrock Agent");
+                return reply;
+            } else {
+                log.error("Bedrock Agent API returned non-success status: {}", response.getStatusCode());
+                throw new RuntimeException("Failed to get response from Bedrock Agent");
+            }
+        } catch (Exception e) {
+            log.error("Error calling Bedrock Agent API: {}", e.getMessage(), e);
+            throw new RuntimeException("Failed to invoke Bedrock Agent: " + e.getMessage(), e);
+        }
     }
 
     private ChatResponse parseAgentResponse(String agentResponse) {

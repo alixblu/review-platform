@@ -15,7 +15,7 @@ import java.lang.String;
 
 
 @RestController
-@RequestMapping("api/user-preference")
+@RequestMapping("/api/user/preference")
 @RequiredArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class UserPreferenceController {

@@ -1,4 +1,7 @@
 package com.example.commonlib.enums;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import lombok.Getter;
 
 @Getter
@@ -17,6 +20,21 @@ public enum ConcernTypeEnum {
 
     ConcernTypeEnum(String value) {
         this.value = value;
+    }
+
+    @JsonValue
+    public String getValue() {
+        return value;
+    }
+
+    @JsonCreator
+    public static ConcernTypeEnum fromValue(String value) {
+        for (ConcernTypeEnum type : ConcernTypeEnum.values()) {
+            if (type.name().equalsIgnoreCase(value) || type.value.equalsIgnoreCase(value)) {
+                return type;
+            }
+        }
+        throw new IllegalArgumentException("Invalid ConcernType value: " + value);
     }
 
     @Override

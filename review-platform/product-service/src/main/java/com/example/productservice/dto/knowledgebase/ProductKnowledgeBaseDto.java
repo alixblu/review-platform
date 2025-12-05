@@ -16,6 +16,7 @@ public record ProductKnowledgeBaseDto(
         String description,
         @JsonProperty("concern_type") List<String> concernType,
         @JsonProperty("skin_type") List<String> skinType,
+        @JsonProperty("image_url") String imageUrl,
         long price,
         float rating,
         String status,

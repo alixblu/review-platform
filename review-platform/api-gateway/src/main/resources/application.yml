@@ -47,4 +47,4 @@ server:
   port: 8888
 
 jwt:
-  public-paths: /api/auth/exchange,/api/auth/refresh,/logout
+  public-paths: /api/auth/exchange,/api/auth/refresh,/logout,/api/chat

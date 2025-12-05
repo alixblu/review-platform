@@ -19,3 +19,4 @@ EXPOSE 8084
 ENTRYPOINT ["java","-jar","/app/app.jar"]
 
 
+

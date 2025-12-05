@@ -5,10 +5,9 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.logout.SimpleUrlLogoutSuccessHandler;
-import org.springframework.web.util.UriComponentsBuilder;
 
 import java.io.IOException;
-import java.net.URI;
+import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 
 /**
@@ -42,13 +41,14 @@ public class CognitoLogoutHandler extends SimpleUrlLogoutSuccessHandler {
     @Override
     public void onLogoutSuccess(HttpServletRequest request, HttpServletResponse response,
             Authentication authentication) throws IOException, ServletException {
-        String logoutUrl = UriComponentsBuilder
-                .fromUri(URI.create(domain + "/logout"))
-                .queryParam("client_id", userPoolClientId)
-                .queryParam("logout_uri", logoutRedirectUrl)
-                .encode(StandardCharsets.UTF_8)
-                .build()
-                .toUriString();
+        // Ensure the logout URL is properly constructed with URL encoding
+        // The logout_uri must match exactly one of the Allowed Sign-Out URLs in Cognito
+        // Important: The logout_uri must be registered in Cognito App Client Settings > Sign out URL(s)
+        String encodedLogoutUri = URLEncoder.encode(logoutRedirectUrl, StandardCharsets.UTF_8);
+        String logoutUrl = String.format("%s/logout?client_id=%s&logout_uri=%s",
+                domain,
+                userPoolClientId,
+                encodedLogoutUri);
 
         response.sendRedirect(logoutUrl);
     }

@@ -43,3 +43,7 @@ spring:
             - Path=/api/posts/**,/api/comments/**
   codec:
     max-in-memory-size: 50MB
+
+jwt:
+  public-paths: /api/auth/exchange,/api/auth/refresh,/logout,/api/chat
+

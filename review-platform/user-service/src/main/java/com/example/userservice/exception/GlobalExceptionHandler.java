@@ -22,9 +22,11 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler({IllegalArgumentException.class, org.springframework.http.converter.HttpMessageConversionException.class})
     public ResponseEntity<ApiResponse<?>> handleEnumParseError(Exception e) {
+        e.printStackTrace(); // Log the full exception
+        String message = e.getMessage() != null ? e.getMessage() : "Invalid value provided";
         ApiResponse<?> response = new ApiResponse<>(
                 ErrorCode.INVALID_INPUT.getCode(),
-                "Invalid value provided",
+                message,
                 null
         );
         return ResponseEntity.status(ErrorCode.INVALID_INPUT.getStatus()).body(response);

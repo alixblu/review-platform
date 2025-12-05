@@ -31,5 +31,7 @@ public record ProductUpdateRequest(
         String imageUrl,
 
         @Min(value = 1000, message = "Minimum price is 1000")
-        Long price
+        Long price,
+
+        Double rating
 ) {}

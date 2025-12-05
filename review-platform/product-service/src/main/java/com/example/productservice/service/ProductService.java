@@ -53,6 +53,31 @@ public class ProductService {
                 .map(productMapper::toResponse)
                 .toList();
     }
+    public ProductResponse updateProductRating(UUID id, Float newRating) {
+        Product product = productRepository.findById(id)
+                .orElseThrow(() -> new AppException(ErrorCode.NOT_FOUND, "Product not found"));
+
+        // Nếu client không truyền rating → giữ nguyên rating cũ
+        if (newRating == null) {
+            return productMapper.toResponse(product);
+        }
+
+        // Validate: rating phải từ 0 đến 5
+        if (newRating < 0 || newRating > 5) {
+            throw new AppException(ErrorCode.INVALID_INPUT, "Rating must be between 0 and 5");
+        }
+
+        product.setRating(newRating);
+        productRepository.save(product);
+
+        try {
+            knowledgeBaseS3Service.uploadProductJson(product);
+        } catch (Exception e) {
+            log.error("Failed to upload product to knowledge base", e);
+        }
+
+        return productMapper.toResponse(product);
+    }
 
     public ProductResponse updateProduct(UUID id, ProductUpdateRequest request) {
         Product product = productRepository.findById(id)
